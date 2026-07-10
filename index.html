@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Xavier Enciso - Licensed California Insurance Producer. Empowering families through financial education, life insurance solutions, and community-focused financial strategies. Join my team of dedicated financial professionals.">
+    <title>Xavier Enciso | Financial Professional &amp; Community Educator</title>
+
+    <!-- === ANALYTICS SCRIPT GOES HERE === -->
+    <!-- After you create a Plausible / Umami / Cloudflare account, paste the tracking script here (between these comments) -->
+    <!-- Example for Plausible:
+    <script defer data-domain="masterxe.github.io/your-repo-name" src="https://plausible.io/js/script.js"></script>
+    -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
+        
+        :root {
+            --gold: #c9a227;
+            --dark: #0a0a0a;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .heading-serif {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+        }
+
+        .gold-text {
+            color: #c9a227;
+        }
+
+        .section-header {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, #c9a227, #d4af37);
+            border-radius: 3px;
+        }
+
+        .nav-link {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .nav-link:hover {
+            color: #c9a227;
+            transform: translateY(-1px);
+        }
+
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            border-color: #c9a227;
+        }
+
+        .benefit-card {
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-4px);
+            border-color: #c9a227;
+        }
+
+        .hero-bg {
+            background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 70%);
+        }
+
+        .gold-glow {
+            box-shadow: 0 0 15px rgba(201, 162, 39, 0.3);
+        }
+
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
+
+        .modal {
+            animation: modalPopIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes modalPopIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8) translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .nav-active {
+            color: #c9a227;
+            position: relative;
+        }
+        
+        .nav-active:after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #c9a227;
+        }
+
+        .finance-grid {
+            background-image: 
+                linear-gradient(rgba(201, 162, 39, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(201, 162, 39, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        .premium-shadow {
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3),
+                        0 4px 6px -4px rgb(0 0 0 / 0.3);
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-200">
+    <!-- NAVBAR -->
+    <nav class="bg-zinc-900/95 backdrop-blur-lg border-b border-zinc-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-x-3">
+                    <div class="w-11 h-11 rounded-full overflow-hidden border border-zinc-700 flex-shrink-0">
+                        <img src="xe-logo.jpg" alt="XE Logo - Xavier Enciso Financial Services" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <div class="font-semibold text-xl tracking-tight">Xavier Enciso</div>
+                        <div class="text-[10px] text-zinc-500 -mt-1">FINANCIAL PROFESSIONAL</div>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-x-9 text-sm font-medium">
+                    <a href="#about" class="nav-link text-zinc-300 hover:text-white">About</a>
+                    <a href="#services" class="nav-link text-zinc-300 hover:text-white">How I Help</a>
+                    <a href="#impact" class="nav-link text-zinc-300 hover:text-white">Community</a>
+                    <a href="#join" class="nav-link text-zinc-300 hover:text-white">Join the Team</a>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="hidden md:flex items-center gap-x-3">
+                    <a href="#contact" 
+                       class="px-5 py-2.5 text-sm font-medium border border-zinc-700 hover:border-zinc-600 rounded-full transition-colors">
+                        Contact Me
+                    </a>
+                    <a href="#join" 
+                       class="px-6 py-2.5 bg-[#c9a227] hover:bg-amber-500 text-zinc-950 font-semibold text-sm rounded-full transition-all active:scale-[0.985]">
+                        Join My Team
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn"
+                        class="md:hidden w-10 h-10 flex items-center justify-center text-zinc-400 hover:text-white transition-colors"
+                        aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-zinc-800 bg-zinc-900">
+            <div class="px-6 py-6 flex flex-col gap-y-4 text-sm font-medium">
+                <a href="#about" class="mobile-nav-link py-1 text-zinc-300">About</a>
+                <a href="#services" class="mobile-nav-link py-1 text-zinc-300">How I Help</a>
+                <a href="#impact" class="mobile-nav-link py-1 text-zinc-300">Community Impact</a>
+                <a href="#join" class="mobile-nav-link py-1 text-zinc-300">Join the Team</a>
+                
+                <div class="pt-4 border-t border-zinc-800 flex flex-col gap-y-3">
+                    <a href="#contact" class="py-2.5 text-center border border-zinc-700 rounded-full">Contact Me</a>
+                    <a href="#join" class="py-2.5 text-center bg-[#c9a227] text-zinc-950 font-semibold rounded-full">Join My Team</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero-bg pt-16 pb-20 border-b border-zinc-800">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <!-- Central Logo -->
+            <div class="flex justify-center mb-8">
+                <div class="relative">
+                    <div class="w-72 h-72 md:w-80 md:h-80 rounded-full border-[12px] border-[#c9a227]/20 p-3 gold-glow">
+                        <div class="w-full h-full rounded-full overflow-hidden border border-[#c9a227]/30">
+                            <img src="xe-logo.jpg" 
+                                 alt="XE - Xavier Enciso Professional Logo" 
+                                 class="w-full h-full object-cover scale-[1.02]">
+                        </div>
+                    </div>
+                    <!-- Subtle decorative ring -->
+                    <div class="absolute -inset-3 rounded-full border border-[#c9a227]/10"></div>
+                </div>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <div class="inline-flex items-center gap-x-2 px-4 py-1.5 bg-zinc-900 border border-zinc-800 rounded-full mb-6">
+                    <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                    <span class="text-xs font-medium tracking-[1px] text-emerald-400">CALIFORNIA LICENSED INSURANCE PRODUCER</span>
+                </div>
+
+                <h1 class="text-6xl md:text-7xl font-semibold tracking-tighter heading-serif mb-4">
+                    Xavier Enciso
+                </h1>
+                
+                <p class="text-2xl md:text-3xl text-zinc-400 tracking-tight mb-3">
+                    Financial Professional &amp; Community Educator
+                </p>
+                
+                <p class="max-w-xl mx-auto text-lg text-zinc-400 mb-10">
+                    Empowering families across California with financial knowledge, 
+                    protection strategies, and a clear path to long-term security.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#services" 
+                       class="group inline-flex items-center justify-center gap-x-3 px-8 py-4 bg-white text-zinc-950 font-semibold rounded-2xl hover:bg-zinc-100 transition-all text-base active:scale-[0.985]">
+                        <span>Explore How I Can Help</span>
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-0.5 transition-transform"></i>
+                    </a>
+                    
+                    <a href="#join" 
+                       class="inline-flex items-center justify-center gap-x-3 px-8 py-4 border-2 border-[#c9a227] text-[#c9a227] hover:bg-[#c9a227] hover:text-zinc-950 font-semibold rounded-2xl transition-all text-base active:scale-[0.985]">
+                        <span>Join My Team of Agents</span>
+                    </a>
+                </div>
+                
+                <div class="mt-8 flex items-center justify-center gap-x-8 text-xs text-zinc-500">
+                    <div class="flex items-center gap-x-1.5">
+                        <i class="fa-solid fa-check text-emerald-400"></i>
+                        <span>License #4279749</span>
+                    </div>
+                    <div class="flex items-center gap-x-1.5">
+                        <i class="fa-solid fa-check text-emerald-400"></i>
+                        <span>Life Insurance Producer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="max-w-5xl mx-auto px-6 py-20">
+        <div class="grid md:grid-cols-12 gap-x-12 gap-y-10 items-center">
+            <div class="md:col-span-7">
+                <div class="uppercase tracking-[2px] text-xs font-semibold text-[#c9a227] mb-3">MEET YOUR PARTNER IN FINANCIAL SECURITY</div>
+                <h2 class="section-header text-5xl md:text-6xl tracking-tighter heading-serif mb-8">Who I Am</h2>
+                
+                <div class="prose prose-invert text-lg text-zinc-300 max-w-2xl">
+                    <p class="mb-6">I am a dedicated California-licensed Insurance Producer focused on one mission: 
+                    helping families build lasting financial security through education, protection, and smart planning.</p>
+                    
+                    <p class="mb-6">My approach is rooted in the belief that when families understand their options and have the right protections in place, 
+                    they thrive — and entire communities grow stronger. I work directly with individuals and families to create personalized strategies 
+                    tailored to their goals, values, and stage of life.</p>
+                    
+                    <p>I am also building a team of like-minded professionals who share this vision. Together, we are committed to raising the level of 
+                    financial literacy in our communities while creating meaningful careers for those who join us.</p>
+                </div>
+
+                <div class="mt-8 flex items-center gap-x-4">
+                    <div class="px-5 py-3 bg-zinc-900 border border-zinc-800 rounded-2xl">
+                        <div class="text-xs text-zinc-500">LICENSED SINCE</div>
+                        <div class="font-semibold text-xl tracking-tight">2023</div>
+                    </div>
+                    <div class="px-5 py-3 bg-zinc-900 border border-zinc-800 rounded-2xl">
+                        <div class="text-xs text-zinc-500">LICENSE NUMBER</div>
+                        <div class="font-semibold text-xl tracking-tight">4279749</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Credentials Card -->
+            <div class="md:col-span-5">
+                <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 premium-shadow">
+                    <div class="flex items-center gap-x-3 mb-6">
+                        <i class="fa-solid fa-shield-halved text-[#c9a227] text-3xl"></i>
+                        <div>
+                            <div class="font-semibold text-xl">Verified Credentials</div>
+                            <div class="text-xs text-emerald-400">California Department of Insurance</div>
+                        </div>
+                    </div>
+                    
+                    <div class="rounded-2xl overflow-hidden border border-zinc-700 mb-6">
+                        <img src="license.jpg" alt="California Department of Insurance License - Xavier Enciso, Insurance Producer Life, License #4279749" 
+                             class="w-full h-auto">
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="inline-flex items-center gap-x-2 text-sm bg-emerald-950 text-emerald-400 px-4 py-1.5 rounded-full">
+                            <i class="fa-solid fa-check-double"></i>
+                            <span class="font-medium">Active &amp; In Good Standing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES / HOW I CAN HELP -->
+    <section id="services" class="bg-zinc-900 border-y border-zinc-800 py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-14">
+                <div class="uppercase tracking-[2.5px] text-xs font-semibold text-[#c9a227]">WHAT I OFFER</div>
+                <h2 class="section-header text-5xl md:text-6xl tracking-tighter heading-serif mt-3">How I Can Help You &amp; Your Family</h2>
+                <p class="mt-4 max-w-md mx-auto text-zinc-400">My focus is education first. I equip families with the knowledge and tools they need to make confident financial decisions.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Service 1 -->
+                <div class="service-card bg-zinc-950 border border-zinc-800 hover:border-[#c9a227]/60 rounded-3xl p-8 group">
+                    <div class="w-12 h-12 flex items-center justify-center bg-zinc-900 rounded-2xl mb-6 group-hover:bg-[#c9a227]/10 transition-colors">
+                        <i class="fa-solid fa-graduation-cap text-[#c9a227] text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-2xl tracking-tight mb-3">Financial Education &amp; Literacy</h3>
+                    <p class="text-zinc-400 leading-relaxed">One-on-one guidance and community workshops that demystify budgeting, saving, credit, insurance, and long-term planning. Knowledge is the foundation of financial freedom.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card bg-zinc-950 border border-zinc-800 hover:border-[#c9a227]/60 rounded-3xl p-8 group">
+                    <div class="w-12 h-12 flex items-center justify-center bg-zinc-900 rounded-2xl mb-6 group-hover:bg-[#c9a227]/10 transition-colors">
+                        <i class="fa-solid fa-shield-halved text-[#c9a227] text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-2xl tracking-tight mb-3">Life Insurance &amp; Family Protection</h3>
+                    <p class="text-zinc-400 leading-relaxed">Customized life insurance strategies designed to protect your loved ones' lifestyle, cover debts, and create a lasting legacy. Peace of mind is priceless.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card bg-zinc-950 border border-zinc-800 hover:border-[#c9a227]/60 rounded-3xl p-8 group">
+                    <div class="w-12 h-12 flex items-center justify-center bg-zinc-900 rounded-2xl mb-6 group-hover:bg-[#c9a227]/10 transition-colors">
+                        <i class="fa-solid fa-chart-line text-[#c9a227] text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-2xl tracking-tight mb-3">Retirement &amp; Wealth Strategies</h3>
+                    <p class="text-zinc-400 leading-relaxed">Clear, actionable plans to help you prepare for retirement, build generational wealth, and make the most of your hard-earned money through disciplined strategies.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card bg-zinc-950 border border-zinc-800 hover:border-[#c9a227]/60 rounded-3xl p-8 group">
+                    <div class="w-12 h-12 flex items-center justify-center bg-zinc-900 rounded-2xl mb-6 group-hover:bg-[#c9a227]/10 transition-colors">
+                        <i class="fa-solid fa-users text-[#c9a227] text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-2xl tracking-tight mb-3">Community Financial Workshops</h3>
+                    <p class="text-zinc-400 leading-relaxed">Free and low-cost educational seminars for schools, churches, community organizations, and workplaces. Raising financial literacy across the Central Valley and California.</p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card bg-zinc-950 border border-zinc-800 hover:border-[#c9a227]/60 rounded-3xl p-8 group">
+                    <div class="w-12 h-12 flex items-center justify-center bg-zinc-900 rounded-2xl mb-6 group-hover:bg-[#c9a227]/10 transition-colors">
+                        <i class="fa-solid fa-handshake text-[#c9a227] text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-2xl tracking-tight mb-3">Personalized Financial Reviews</h3>
+                    <p class="text-zinc-400 leading-relaxed">Complimentary, no-obligation reviews of your current situation. We identify gaps, opportunities, and create a clear roadmap tailored specifically to you and your family.</p>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card bg-zinc-950 border border-zinc-800 hover:border-[#c9a227]/60 rounded-3xl p-8 group">
+                    <div class="w-12 h-12 flex items-center justify-center bg-zinc-900 rounded-2xl mb-6 group-hover:bg-[#c9a227]/10 transition-colors">
+                        <i class="fa-solid fa-seedling text-[#c9a227] text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-2xl tracking-tight mb-3">Legacy &amp; Estate Planning Guidance</h3>
+                    <p class="text-zinc-400 leading-relaxed">Help ensuring your hard work benefits the people you love most. Proper planning today creates security and harmony for generations tomorrow.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMMUNITY IMPACT -->
+    <section id="impact" class="max-w-5xl mx-auto px-6 py-20">
+        <div class="text-center mb-12">
+            <div class="uppercase tracking-[2px] text-xs font-semibold text-[#c9a227]">MY WHY</div>
+            <h2 class="section-header text-5xl md:text-6xl tracking-tighter heading-serif mt-3">Strengthening Our Community</h2>
+        </div>
+
+        <div class="max-w-3xl mx-auto text-center mb-12">
+            <p class="text-xl text-zinc-300">Financial stress is one of the biggest challenges families face. My goal is to change that by making high-quality financial education and professional guidance accessible to everyone in our community — not just the wealthy.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 text-center">
+                <div class="mx-auto w-16 h-16 flex items-center justify-center bg-zinc-950 rounded-full mb-6">
+                    <i class="fa-solid fa-graduation-cap text-4xl text-[#c9a227]"></i>
+                </div>
+                <div class="font-semibold text-2xl mb-2">Education First</div>
+                <p class="text-zinc-400">I believe informed families make better decisions. I host workshops and provide ongoing education so people understand their options before making commitments.</p>
+            </div>
+            
+            <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 text-center">
+                <div class="mx-auto w-16 h-16 flex items-center justify-center bg-zinc-950 rounded-full mb-6">
+                    <i class="fa-solid fa-heart text-4xl text-[#c9a227]"></i>
+                </div>
+                <div class="font-semibold text-2xl mb-2">Family Protection</div>
+                <p class="text-zinc-400">Every family deserves to feel secure. I help parents protect their children's future and create legacies that last beyond a single generation.</p>
+            </div>
+            
+            <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 text-center">
+                <div class="mx-auto w-16 h-16 flex items-center justify-center bg-zinc-950 rounded-full mb-6">
+                    <i class="fa-solid fa-users text-4xl text-[#c9a227]"></i>
+                </div>
+                <div class="font-semibold text-2xl mb-2">Building Together</div>
+                <p class="text-zinc-400">By growing a team of agents who share these values, we multiply our impact — reaching more families and creating more opportunities for people in our community to build meaningful careers.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- JOIN THE TEAM SECTION -->
+    <section id="join" class="bg-zinc-900 border-y border-zinc-800 py-20">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-x-16 gap-y-12 items-center">
+                <!-- Left Content -->
+                <div>
+                    <div class="uppercase tracking-[2px] text-xs font-semibold text-[#c9a227] mb-3">OPPORTUNITY TO GROW</div>
+                    <h2 class="text-5xl md:text-6xl tracking-tighter heading-serif leading-none mb-6">Join My Team.<br>Build Your Legacy.</h2>
+                    
+                    <p class="text-xl text-zinc-300 mb-8">I'm looking for motivated, coachable individuals who want more than just a job — people who want to build a meaningful career helping families while creating financial freedom for themselves.</p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex gap-x-4">
+                            <i class="fa-solid fa-check text-[#c9a227] mt-1.5"></i>
+                            <div><span class="font-medium">No prior experience required</span> — we provide world-class training</div>
+                        </div>
+                        <div class="flex gap-x-4">
+                            <i class="fa-solid fa-check text-[#c9a227] mt-1.5"></i>
+                            <div><span class="font-medium">Flexible schedule</span> — build your business around your life</div>
+                        </div>
+                        <div class="flex gap-x-4">
+                            <i class="fa-solid fa-check text-[#c9a227] mt-1.5"></i>
+                            <div><span class="font-medium">Unlimited earning potential</span> with residual income opportunities</div>
+                        </div>
+                        <div class="flex gap-x-4">
+                            <i class="fa-solid fa-check text-[#c9a227] mt-1.5"></i>
+                            <div><span class="font-medium">Full mentorship &amp; support</span> as you grow your own agency</div>
+                        </div>
+                    </div>
+
+                    <button onclick="showJoinModal()"
+                            class="w-full md:w-auto px-10 py-4 bg-[#c9a227] hover:bg-amber-500 active:bg-amber-600 transition-all text-zinc-950 font-bold text-lg rounded-2xl flex items-center justify-center gap-x-3 group">
+                        <span>Start Your Journey Today</span>
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
+                    </button>
+                    <p class="text-xs text-zinc-500 mt-3">I personally review every application and respond within 24 hours.</p>
+                </div>
+
+                <!-- Benefits Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="benefit-card bg-zinc-950 border border-zinc-800 rounded-3xl p-6">
+                        <i class="fa-solid fa-graduation-cap text-2xl text-[#c9a227] mb-4"></i>
+                        <div class="font-semibold mb-1.5">Comprehensive Training</div>
+                        <div class="text-sm text-zinc-400">Step-by-step education, licensing support, and ongoing professional development.</div>
+                    </div>
+                    <div class="benefit-card bg-zinc-950 border border-zinc-800 rounded-3xl p-6">
+                        <i class="fa-solid fa-home text-2xl text-[#c9a227] mb-4"></i>
+                        <div class="font-semibold mb-1.5">Work-Life Flexibility</div>
+                        <div class="text-sm text-zinc-400">Work from home, set your own hours, and create the lifestyle you want.</div>
+                    </div>
+                    <div class="benefit-card bg-zinc-950 border border-zinc-800 rounded-3xl p-6">
+                        <i class="fa-solid fa-chart-line text-2xl text-[#c9a227] mb-4"></i>
+                        <div class="font-semibold mb-1.5">Uncapped Income</div>
+                        <div class="text-sm text-zinc-400">Direct compensation + residuals. Your effort directly determines your success.</div>
+                    </div>
+                    <div class="benefit-card bg-zinc-950 border border-zinc-800 rounded-3xl p-6">
+                        <i class="fa-solid fa-handshake text-2xl text-[#c9a227] mb-4"></i>
+                        <div class="font-semibold mb-1.5">Build Your Own Agency</div>
+                        <div class="text-sm text-zinc-400">Develop leadership skills and create a business you can pass down or sell.</div>
+                    </div>
+                    <div class="benefit-card bg-zinc-950 border border-zinc-800 rounded-3xl p-6">
+                        <i class="fa-solid fa-users text-2xl text-[#c9a227] mb-4"></i>
+                        <div class="font-semibold mb-1.5">Supportive Team Culture</div>
+                        <div class="text-sm text-zinc-400">You're never alone. We win together and lift each other up.</div>
+                    </div>
+                    <div class="benefit-card bg-zinc-950 border border-zinc-800 rounded-3xl p-6">
+                        <i class="fa-solid fa-globe text-2xl text-[#c9a227] mb-4"></i>
+                        <div class="font-semibold mb-1.5">Make a Real Impact</div>
+                        <div class="text-sm text-zinc-400">Help families in your community achieve financial peace and security.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT / CONSULTATION -->
+    <section id="contact" class="max-w-4xl mx-auto px-6 py-20">
+        <div class="text-center mb-10">
+            <div class="uppercase tracking-[2px] text-xs font-semibold text-[#c9a227]">LET'S CONNECT</div>
+            <h2 class="section-header text-5xl tracking-tighter heading-serif mt-3">Ready to Take the Next Step?</h2>
+            <p class="mt-4 text-lg text-zinc-400 max-w-md mx-auto">Whether you're looking for guidance for your family or exploring a career opportunity, I'm here to help.</p>
+        </div>
+
+        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-10 md:p-12">
+            <form id="contact-form" onsubmit="handleContactSubmit(event)" class="grid md:grid-cols-2 gap-x-6 gap-y-6">
+                <div class="md:col-span-1">
+                    <label class="block text-xs font-medium tracking-widest text-zinc-400 mb-2">FULL NAME</label>
+                    <input type="text" id="contact-name" required 
+                           class="w-full bg-zinc-950 border border-zinc-700 focus:border-[#c9a227] rounded-2xl px-5 py-3.5 outline-none transition-colors placeholder:text-zinc-600">
+                </div>
+                <div class="md:col-span-1">
+                    <label class="block text-xs font-medium tracking-widest text-zinc-400 mb-2">EMAIL ADDRESS</label>
+                    <input type="email" id="contact-email" required 
+                           class="w-full bg-zinc-950 border border-zinc-700 focus:border-[#c9a227] rounded-2xl px-5 py-3.5 outline-none transition-colors placeholder:text-zinc-600">
+                </div>
+                <div class="md:col-span-1">
+                    <label class="block text-xs font-medium tracking-widest text-zinc-400 mb-2">PHONE NUMBER</label>
+                    <input type="tel" id="contact-phone" 
+                           class="w-full bg-zinc-950 border border-zinc-700 focus:border-[#c9a227] rounded-2xl px-5 py-3.5 outline-none transition-colors placeholder:text-zinc-600">
+                </div>
+                <div class="md:col-span-1">
+                    <label class="block text-xs font-medium tracking-widest text-zinc-400 mb-2">CITY / AREA</label>
+                    <input type="text" id="contact-city" value="Delano / Central Valley, CA" 
+                           class="w-full bg-zinc-950 border border-zinc-700 focus:border-[#c9a227] rounded-2xl px-5 py-3.5 outline-none transition-colors">
+                </div>
+                <div class="md:col-span-2">
+                    <label class="block text-xs font-medium tracking-widest text-zinc-400 mb-2">HOW CAN I HELP YOU?</label>
+                    <textarea id="contact-message" rows="4" required placeholder="I'm interested in a financial review for my family..." 
+                              class="w-full bg-zinc-950 border border-zinc-700 focus:border-[#c9a227] rounded-3xl px-5 py-4 outline-none transition-colors resize-y min-h-[120px]"></textarea>
+                </div>
+                
+                <div class="md:col-span-2 flex flex-col md:flex-row items-center gap-4 pt-2">
+                    <button type="submit"
+                            class="w-full md:w-auto px-10 py-4 bg-white hover:bg-zinc-100 active:bg-zinc-200 transition-all text-zinc-950 font-bold rounded-2xl flex-shrink-0">
+                        Send Message
+                    </button>
+                    <p class="text-xs text-zinc-500 text-center md:text-left">I personally respond to every inquiry within 24 hours.</p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black border-t border-zinc-800 py-12">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-y-8">
+                <div>
+                    <div class="flex items-center gap-x-3 mb-3">
+                        <div class="w-8 h-8 rounded-full overflow-hidden border border-zinc-700">
+                            <img src="xe-logo.jpg" alt="XE Logo" class="w-full h-full object-cover">
+                        </div>
+                        <div class="font-semibold">Xavier Enciso</div>
+                    </div>
+                    <div class="text-xs text-zinc-500">Licensed Insurance Producer • Life • California</div>
+                    <div class="text-xs text-zinc-500 mt-0.5">License #4279749</div>
+                </div>
+
+                <div class="text-xs text-zinc-500 max-w-xs md:text-right leading-relaxed">
+                    This website is for informational and educational purposes only. It does not constitute an offer to sell or solicitation to buy securities or insurance products. 
+                    All insurance products are subject to underwriting approval. Past performance is not indicative of future results.
+                </div>
+            </div>
+            
+            <div class="mt-10 pt-8 border-t border-zinc-900 text-center text-[10px] text-zinc-600 tracking-wider">
+                © 2026 Xavier Enciso. All rights reserved. | Serving families across California with integrity and excellence.<br>
+                <a href="https://github.com/masterxe/YOUR-REPO-NAME" target="_blank" class="hover:text-[#c9a227] transition-colors">View source on GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JOIN TEAM MODAL -->
+    <div id="join-modal" onclick="if (event.target.id === 'join-modal') hideJoinModal()" 
+         class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
+        <div onclick="event.stopImmediatePropagation()" 
+             class="modal bg-zinc-900 border border-zinc-700 rounded-3xl w-full max-w-lg overflow-hidden">
+            
+            <!-- Modal Header -->
+            <div class="px-8 pt-8 pb-6 border-b border-zinc-800 flex items-center justify-between">
+                <div>
+                    <div class="font-semibold text-2xl tracking-tight">Join My Team</div>
+                    <div class="text-sm text-[#c9a227]">Let's build something meaningful together</div>
+                </div>
+                <button onclick="hideJoinModal()" class="text-zinc-400 hover:text-white w-9 h-9 flex items-center justify-center">
+                    <i class="fa-solid fa-times text-2xl"></i>
+                </button>
+            </div>
+
+            <form id="join-form" onsubmit="handleJoinSubmit(event)" class="p-8 space-y-5">
+                <div class="grid grid-cols-1 gap-5">
+                    <div>
+                        <label class="text-xs tracking-widest text-zinc-400 block mb-1.5">FULL NAME</label>
+                        <input type="text" id="join-name" required class="w-full bg-zinc-950 border border-zinc-700 focus:border-[#c9a227] px-4 py-3 rounded-2xl text-sm outline-none">
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-5">
+                        <div>
+                            <label class="text-xs tracking-widest text-zinc-400 block mb-1.5">EMAIL</label>
+                            <input type="email" id="join-email" required class="w-full bg-zinc-950 border border-zinc-700 focus:border-[#c9a227] px-4 py-3 rounded-2xl text-sm outline-none">
+                        </div>
+                        <div>
+                            <label class="text-xs tracking-widest text-zinc-400 block mb-1.5">PHONE</label>
+                            <input type="tel" id="join-phone" required class="w-full bg-zinc-950 border border-zinc-700 focus:border-[#c9a227] px-4 py-3 rounded-2xl text-sm outline-none">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="text-xs tracking-widest text-zinc-400 block mb-1.5">CITY / AREA YOU SERVE</label>
+                        <input type="text" id="join-city" value="Delano / Bakersfield Area" class="w-full bg-zinc-950 border border-zinc-700 focus:border-[#c9a227] px-4 py-3 rounded-2xl text-sm outline-none">
+                    </div>
+
+                    <div>
+                        <label class="text-xs tracking-widest text-zinc-400 block mb-1.5">WHAT MOTIVATES YOU TO JOIN?</label>
+                        <textarea id="join-motivation" rows="3" required placeholder="I want to help families in my community while building a career with purpose and unlimited potential..." 
+                                  class="w-full bg-zinc-950 border border-zinc-700 focus:border-[#c9a227] px-4 py-3 rounded-3xl text-sm outline-none resize-y"></textarea>
+                    </div>
+
+                    <div>
+                        <label class="text-xs tracking-widest text-zinc-400 block mb-1.5">RELEVANT EXPERIENCE (OPTIONAL)</label>
+                        <textarea id="join-experience" rows="2" placeholder="Sales, customer service, teaching, community involvement..." 
+                                  class="w-full bg-zinc-950 border border-zinc-700 focus:border-[#c9a227] px-4 py-3 rounded-3xl text-sm outline-none resize-y"></textarea>
+                    </div>
+                </div>
+
+                <div class="pt-3">
+                    <button type="submit"
+                            class="w-full py-4 bg-[#c9a227] hover:bg-amber-500 active:bg-amber-600 transition-all text-zinc-950 font-bold rounded-2xl text-base flex items-center justify-center gap-x-2">
+                        <span>SUBMIT MY INTEREST</span>
+                    </button>
+                    <p class="text-center text-[10px] text-zinc-500 mt-3">I personally review every submission. You'll hear from me directly within 24 hours.</p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Toast -->
+    <div id="success-toast" class="hidden fixed bottom-6 left-1/2 -translate-x-1/2 bg-emerald-900 border border-emerald-700 text-emerald-200 px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-x-3 z-[200]">
+        <i class="fa-solid fa-check-circle text-xl"></i>
+        <div>
+            <div class="font-semibold">Thank you! Your message has been received.</div>
+            <div class="text-xs text-emerald-300">I'll personally reach out within 24 hours.</div>
+        </div>
+    </div>
+
+    <script>
+        // Tailwind Script
+        function initializeTailwind() {
+            document.documentElement.style.setProperty('--accent-gold', '#c9a227');
+        }
+
+        // Mobile Menu
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileBtn.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                mobileBtn.innerHTML = '<i class="fa-solid fa-times text-xl"></i>';
+            } else {
+                mobileMenu.classList.add('hidden');
+                mobileBtn.innerHTML = '<i class="fa-solid fa-bars text-xl"></i>';
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileBtn.innerHTML = '<i class="fa-solid fa-bars text-xl"></i>';
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    const navHeight = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.scrollY - navHeight;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Active nav highlighting
+        function highlightActiveNav() {
+            const sections = ['about', 'services', 'impact', 'join', 'contact'];
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                const scrollY = window.scrollY + 120;
+
+                sections.forEach(sectionId => {
+                    const section = document.getElementById(sectionId);
+                    if (section && section.offsetTop <= scrollY) {
+                        current = sectionId;
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('nav-active', 'text-[#c9a227]');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('nav-active', 'text-[#c9a227]');
+                    }
+                });
+            });
+        }
+
+        // Join Modal
+        let joinModal = null;
+
+        function showJoinModal() {
+            joinModal = document.getElementById('join-modal');
+            joinModal.classList.remove('hidden');
+            joinModal.classList.add('flex');
+            // Focus first input
+            setTimeout(() => {
+                document.getElementById('join-name').focus();
+            }, 300);
+        }
+
+        function hideJoinModal() {
+            if (joinModal) {
+                joinModal.classList.remove('flex');
+                joinModal.classList.add('hidden');
+            }
+        }
+
+        // Handle Join Form Submit
+        function handleJoinSubmit(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = `<span class="flex items-center justify-center gap-x-2"><i class="fa-solid fa-spinner fa-spin"></i> SUBMITTING...</span>`;
+            submitBtn.disabled = true;
+
+            // Simulate processing
+            setTimeout(() => {
+                hideJoinModal();
+                
+                // Show success toast
+                showSuccessToast("Application received! I'll reach out personally within 24 hours.");
+                
+                // Reset form
+                form.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                
+                // Optional: You could add analytics or email integration here
+                console.log('%c[Website] New team interest submitted', 'color:#666');
+            }, 1450);
+        }
+
+        // Handle Contact Form
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = `SENDING...`;
+            submitBtn.disabled = true;
+
+            setTimeout(() => {
+                showSuccessToast("Thank you! Your message has been sent. I'll respond within 24 hours.");
+                
+                form.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 1200);
+        }
+
+        function showSuccessToast(message) {
+            const toast = document.getElementById('success-toast');
+            toast.querySelector('div').innerHTML = `
+                <div class="font-semibold">${message}</div>
+            `;
+            toast.style.display = 'flex';
+            toast.classList.remove('hidden');
+
+            setTimeout(() => {
+                toast.style.transition = 'all 0.4s ease';
+                toast.style.opacity = '0';
+                
+                setTimeout(() => {
+                    toast.style.opacity = '1';
+                    toast.style.transition = '';
+                    toast.style.display = 'none';
+                    toast.classList.add('hidden');
+                }, 300);
+            }, 5200);
+        }
+
+        // Keyboard escape for modal
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('join-modal');
+                if (!modal.classList.contains('hidden') && modal.classList.contains('flex')) {
+                    hideJoinModal();
+                }
+            }
+        });
+
+        // Initialize everything
+        function initializeWebsite() {
+            initializeTailwind();
+            highlightActiveNav();
+            
+            // Preload images hint (optional)
+            console.log('%c[XE Financial] Website initialized successfully. Images: xe-logo.jpg and license.jpg required in same directory.', 'color:#555');
+            
+            // Easter egg: Logo click shows a nice message
+            const logoContainers = document.querySelectorAll('img[src*="xe-logo"]');
+            logoContainers.forEach(img => {
+                img.style.cursor = 'pointer';
+                img.addEventListener('click', () => {
+                    img.style.transition = 'transform 0.6s cubic-bezier(0.34,1.56,0.64,1)';
+                    img.style.transform = 'rotate(360deg) scale(1.05)';
+                    setTimeout(() => {
+                        img.style.transform = 'rotate(0deg) scale(1)';
+                    }, 650);
+                });
+            });
+
+            // Make sure images have proper error handling
+            document.querySelectorAll('img').forEach(img => {
+                img.addEventListener('error', function() {
+                    if (this.src.includes('xe-logo') || this.src.includes('license')) {
+                        this.style.border = '2px dashed #c9a22730';
+                        this.alt = 'Please place xe-logo.jpg and license.jpg in the same folder as this HTML file';
+                    }
+                });
+            });
+        }
+
+        // Boot up
+        window.onload = initializeWebsite;
+    </script>
+</body>
+</html>
