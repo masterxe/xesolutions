@@ -54,9 +54,7 @@
         .enter-4 { animation-delay: 0.55s; }
         .enter-5 { animation-delay: 0.7s; }
         .enter-6 { animation-delay: 0.85s; }
-        @keyframes enterUp {
-            to { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes enterUp { to { opacity: 1; transform: translateY(0); } }
         .hot-link {
             position: relative;
             overflow: hidden;
@@ -76,10 +74,7 @@
             box-shadow: 0 25px 50px -20px rgba(201,162,39,0.35);
         }
         .hot-link:hover::before { opacity: 1; }
-        .hot-link:hover .link-arrow {
-            transform: translateX(6px);
-            color: #c9a227;
-        }
+        .hot-link:hover .link-arrow { transform: translateX(6px); color: #c9a227; }
         .link-arrow { transition: transform 0.3s ease, color 0.3s ease; }
         .link-enter {
             opacity: 0;
@@ -92,9 +87,7 @@
         .link-enter:nth-child(4) { animation-delay: 1.2s; }
         .link-enter:nth-child(5) { animation-delay: 1.3s; }
         .link-enter:nth-child(6) { animation-delay: 1.4s; }
-        @keyframes linkIn {
-            to { opacity: 1; transform: translateY(0) scale(1); }
-        }
+        @keyframes linkIn { to { opacity: 1; transform: translateY(0) scale(1); } }
         .live-dot { animation: livePulse 2s ease-in-out infinite; }
         @keyframes livePulse {
             0%, 100% { box-shadow: 0 0 0 0 rgba(52,211,153,0.5); }
@@ -105,10 +98,11 @@
             0%, 100% { transform: translateY(0); opacity: 0.5; }
             50% { transform: translateY(8px); opacity: 1; }
         }
-        a:focus-visible, button:focus-visible {
-            outline: 2px solid #c9a227;
-            outline-offset: 3px;
-        }
+        .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .proof-card { transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; }
+        .proof-card:hover { transform: translateY(-4px); border-color: #c9a227; box-shadow: 0 16px 36px -18px rgba(201,162,39,0.3); }
+        a:focus-visible, button:focus-visible { outline: 2px solid #c9a227; outline-offset: 3px; }
     </style>
 </head>
 <body class="bg-zinc-950 text-zinc-200 antialiased">
@@ -136,26 +130,18 @@
             </div>
         </div>
 
-        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl heading-serif tracking-tighter mb-3 enter enter-3">
-            Xavier Enciso
-        </h1>
-        <p class="text-lg sm:text-xl md:text-2xl text-zinc-400 tracking-tight mb-3 enter enter-4">
-            Financial Professional &amp; Community Educator
-        </p>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl heading-serif tracking-tighter mb-3 enter enter-3">Xavier Enciso</h1>
+        <p class="text-lg sm:text-xl md:text-2xl text-zinc-400 tracking-tight mb-3 enter enter-4">Financial Professional &amp; Community Educator</p>
         <p class="max-w-md mx-auto text-sm sm:text-base text-zinc-500 mb-10 sm:mb-12 leading-relaxed enter enter-5">
             Protecting families. Building leaders. Raising financial literacy across the Central Valley — and recruiting nationwide.
         </p>
 
         <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-14 sm:mb-16 enter enter-6">
-            <a href="solutions.html" class="px-8 py-3.5 bg-white text-zinc-950 font-semibold rounded-2xl hover:bg-zinc-100 transition-all hover:shadow-[0_0_30px_rgba(255,255,255,0.15)] text-sm sm:text-base">
-                Explore Solutions
-            </a>
-            <a href="join.html" class="px-8 py-3.5 border-2 border-[#c9a227] text-[#c9a227] hover:bg-[#c9a227] hover:text-zinc-950 font-semibold rounded-2xl transition-all hover:shadow-[0_0_30px_rgba(201,162,39,0.4)] text-sm sm:text-base">
-                Join My Team
-            </a>
+            <a href="solutions.html" class="px-8 py-3.5 bg-white text-zinc-950 font-semibold rounded-2xl hover:bg-zinc-100 transition-all hover:shadow-[0_0_30px_rgba(255,255,255,0.15)] text-sm sm:text-base">Explore Solutions</a>
+            <a href="join.html" class="px-8 py-3.5 border-2 border-[#c9a227] text-[#c9a227] hover:bg-[#c9a227] hover:text-zinc-950 font-semibold rounded-2xl transition-all hover:shadow-[0_0_30px_rgba(201,162,39,0.4)] text-sm sm:text-base">Join My Team</a>
         </div>
 
-        <div id="explore-links" class="w-full max-w-3xl grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
+        <div class="w-full max-w-3xl grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
             <a href="about.html" class="hot-link link-enter bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5 sm:p-6 text-left group">
                 <div class="flex items-center justify-between mb-3">
                     <i class="fa-solid fa-user text-[#c9a227] text-lg"></i>
@@ -207,24 +193,123 @@
         </div>
     </div>
 
-    <div class="relative z-10 pb-6 text-center">
-        <button type="button" id="explore-btn" class="group inline-flex flex-col items-center gap-1 text-zinc-500 hover:text-[#c9a227] transition-colors cursor-pointer" aria-label="Explore site pages">
+    <div class="relative z-10 pb-8 text-center">
+        <button type="button" id="explore-btn" class="group inline-flex flex-col items-center gap-1 text-zinc-500 hover:text-[#c9a227] transition-colors cursor-pointer" aria-label="Explore the proof behind this approach">
             <span class="scroll-hint text-xs tracking-widest uppercase">Explore</span>
             <i class="fa-solid fa-chevron-down text-sm scroll-hint group-hover:translate-y-1 transition-transform"></i>
         </button>
     </div>
 </div>
 
+<section id="explore-proof" class="bg-zinc-950 border-t border-zinc-800 py-16 sm:py-20">
+    <div class="max-w-5xl mx-auto px-5 sm:px-6">
+        <div class="text-center mb-12 reveal">
+            <div class="uppercase tracking-[2px] text-xs font-semibold text-[#c9a227] mb-3">WHY THIS APPROACH WORKS</div>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl heading-serif tracking-tighter mb-4">Principles, Voices &amp; Facts</h2>
+            <p class="text-zinc-400 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+                The ideas behind family protection, term life, and financial education didn’t start here. They’ve been taught, tested, and repeated by leaders who spent decades helping ordinary families build security.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-5 sm:gap-6 mb-10">
+            <div class="proof-card reveal bg-zinc-900 border border-zinc-800 rounded-3xl p-6 sm:p-8">
+                <div class="flex items-center gap-x-3 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-[#c9a227]/15 flex items-center justify-center">
+                        <i class="fa-solid fa-quote-left text-[#c9a227]"></i>
+                    </div>
+                    <div>
+                        <div class="font-semibold">Art Williams</div>
+                        <div class="text-xs text-zinc-500">Founder, A.L. Williams · Term life advocate</div>
+                    </div>
+                </div>
+                <p class="text-zinc-300 text-sm sm:text-base leading-relaxed mb-4">
+                    “Buy term and invest the difference.” The core idea: get the pure protection your family needs at the lowest cost, then put the money you save to work building assets — instead of locking most of your premium into expensive permanent policies.
+                </p>
+                <p class="text-xs text-zinc-500 leading-relaxed">
+                    This philosophy shaped an entire industry movement focused on middle-income families. It remains the foundation of how many agents still educate clients today.
+                </p>
+            </div>
+
+            <div class="proof-card reveal bg-zinc-900 border border-zinc-800 rounded-3xl p-6 sm:p-8">
+                <div class="flex items-center gap-x-3 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-[#c9a227]/15 flex items-center justify-center">
+                        <i class="fa-solid fa-quote-left text-[#c9a227]"></i>
+                    </div>
+                    <div>
+                        <div class="font-semibold">Suze Orman</div>
+                        <div class="text-xs text-zinc-500">Personal finance educator &amp; author</div>
+                    </div>
+                </div>
+                <p class="text-zinc-300 text-sm sm:text-base leading-relaxed mb-4">
+                    For most families, term life insurance is the practical choice: high coverage while children are young and income is needed, without draining cash flow. Education comes first — know what you own, why you own it, and what it costs.
+                </p>
+                <p class="text-xs text-zinc-500 leading-relaxed">
+                    Her long-standing guidance aligns with an education-first, protection-first approach for working families who need clarity more than complexity.
+                </p>
+            </div>
+        </div>
+
+        <div class="reveal mb-10">
+            <h3 class="text-xl sm:text-2xl font-semibold tracking-tight mb-5 text-center">Principles that still hold</h3>
+            <div class="grid sm:grid-cols-2 gap-4">
+                <div class="proof-card bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5">
+                    <div class="text-[#c9a227] text-xs font-semibold tracking-wider mb-2">PROTECTION FIRST</div>
+                    <p class="text-sm text-zinc-300 leading-relaxed">Income replacement is the primary job of life insurance for most households. Term coverage is designed for that job — maximum protection for the premium paid during the years it matters most.</p>
+                </div>
+                <div class="proof-card bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5">
+                    <div class="text-[#c9a227] text-xs font-semibold tracking-wider mb-2">EDUCATION BEFORE PRODUCTS</div>
+                    <p class="text-sm text-zinc-300 leading-relaxed">Families make better decisions when they understand options in plain language. Workshops, one-on-one reviews, and clear explanations reduce confusion and regret.</p>
+                </div>
+                <div class="proof-card bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5">
+                    <div class="text-[#c9a227] text-xs font-semibold tracking-wider mb-2">MIDDLE-INCOME FOCUS</div>
+                    <p class="text-sm text-zinc-300 leading-relaxed">The strategies that help working families — affordable term, systematic saving, and simple planning — are different from products built mainly for high-net-worth complexity.</p>
+                </div>
+                <div class="proof-card bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5">
+                    <div class="text-[#c9a227] text-xs font-semibold tracking-wider mb-2">COMMUNITY MULTIPLIER</div>
+                    <p class="text-sm text-zinc-300 leading-relaxed">When one family gains clarity and protection, the effect spreads — through relatives, workplaces, and local networks. Literacy is a community asset, not just an individual one.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="reveal bg-zinc-900 border border-zinc-800 rounded-3xl p-6 sm:p-8 text-center">
+            <h3 class="text-xl sm:text-2xl font-semibold tracking-tight mb-3">How this shows up in my work</h3>
+            <p class="text-zinc-400 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto mb-6">
+                I focus on term life and practical education for Central Valley families, keep securities as “coming soon” until licensing is complete, and recruit people who want to serve — not sell pressure. The goal is the same one Art Williams and educators like Suze Orman kept returning to: protect the family, then build from a position of strength.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                <a href="solutions.html" class="px-6 py-3 bg-white text-zinc-950 font-semibold rounded-2xl hover:bg-zinc-100 transition-all text-sm">See Solutions</a>
+                <a href="about.html" class="px-6 py-3 border border-zinc-600 hover:border-[#c9a227] text-zinc-300 hover:text-white font-medium rounded-2xl transition-all text-sm">About Me</a>
+                <a href="contact.html" class="px-6 py-3 border border-[#c9a227] text-[#c9a227] hover:bg-[#c9a227] hover:text-zinc-950 font-semibold rounded-2xl transition-all text-sm">Start a Conversation</a>
+            </div>
+        </div>
+
+        <p class="mt-8 text-center text-[11px] text-zinc-600 max-w-2xl mx-auto leading-relaxed">
+            References are educational and historical in nature. Art Williams popularized “buy term and invest the difference” through A.L. Williams. Suze Orman has long recommended term life for most families in her books and public guidance. This site does not claim endorsement by any individual or organization.
+        </p>
+    </div>
+</section>
+
+<footer class="bg-black border-t border-zinc-800 pt-10 pb-8">
+    <div class="max-w-6xl mx-auto px-5 sm:px-6 text-center">
+        <p class="text-xs text-zinc-500 mb-2">License #4279749 · California Department of Insurance</p>
+        <p class="text-xs text-zinc-600">© 2026 Xavier Enciso. All rights reserved.</p>
+    </div>
+</footer>
+
 <script>
     document.getElementById('explore-btn').addEventListener('click', () => {
-        const target = document.getElementById('explore-links');
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            target.style.transition = 'box-shadow 0.4s ease';
-            target.style.boxShadow = '0 0 0 1px rgba(201,162,39,0.35)';
-            setTimeout(() => { target.style.boxShadow = ''; }, 1400);
-        }
+        const target = document.getElementById('explore-proof');
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
