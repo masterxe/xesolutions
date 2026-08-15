@@ -3,32 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Xavier Enciso — California-licensed Insurance Producer and Community Educator based in Delano / Central Valley. Helping families with financial education, life insurance protection, and long-term security. Building a team of professionals who put families first.">
-    <meta name="keywords" content="Xavier Enciso, California insurance, life insurance Delano, financial education Bakersfield, Central Valley insurance agent, Primerica, family protection, financial literacy workshops">
+    <meta name="description" content="Xavier Enciso — California-licensed Insurance Producer and Community Educator in Delano / Central Valley. Term life insurance, family protection, financial education, and more. Investments & securities coming soon. Helping families build lasting security.">
+    <meta name="keywords" content="Xavier Enciso, Primerica, term life insurance Delano, financial education Bakersfield, Central Valley insurance, family protection, Buy Term and Invest the Difference, retirement planning, legal protection">
     <meta name="author" content="Xavier Enciso">
     <meta name="robots" content="index, follow">
     
-    <!-- Open Graph / Social -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://masterxe.github.io/xesolutions/">
     <meta property="og:title" content="Xavier Enciso | Financial Professional & Community Educator">
-    <meta property="og:description" content="California-licensed Insurance Producer helping families across the Central Valley with financial education, protection strategies, and a clear path to long-term security.">
+    <meta property="og:description" content="California-licensed Insurance Producer helping families across the Central Valley with term life protection, financial education, and a clear path to long-term security. Investments coming soon.">
     <meta property="og:image" content="https://masterxe.github.io/xesolutions/xe-logo.jpg">
     <meta property="og:locale" content="en_US">
     
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Xavier Enciso | Financial Professional & Community Educator">
-    <meta name="twitter:description" content="California-licensed Insurance Producer & Community Educator serving families in Delano and the Central Valley.">
+    <meta name="twitter:description" content="Term life, family protection & financial education for Central Valley families. Investments & securities licensing coming soon.">
     <meta name="twitter:image" content="https://masterxe.github.io/xesolutions/xe-logo.jpg">
     
     <title>Xavier Enciso | Financial Professional & Community Educator | Delano, CA</title>
     
-    <!-- Favicon (uses logo) -->
     <link rel="icon" type="image/jpeg" href="xe-logo.jpg">
     <link rel="apple-touch-icon" href="xe-logo.jpg">
 
-    <!-- Analytics placeholder -->
     <!-- === ANALYTICS SCRIPT GOES HERE (optional) === -->
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -40,16 +36,11 @@
         :root {
             --gold: #c9a227;
             --gold-light: #d4af37;
-            --gold-dark: #a6851f;
         }
         
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
         
-        body {
-            font-family: 'Inter', system-ui, sans-serif;
-        }
+        body { font-family: 'Inter', system-ui, sans-serif; }
         
         .heading-serif {
             font-family: 'Playfair Display', Georgia, serif;
@@ -57,10 +48,7 @@
             letter-spacing: -0.025em;
         }
 
-        .section-header {
-            position: relative;
-            display: inline-block;
-        }
+        .section-header { position: relative; display: inline-block; }
         
         .section-header:after {
             content: '';
@@ -78,12 +66,12 @@
             transform: translateX(-50%);
         }
 
-        .service-card, .benefit-card, .faq-item, .impact-card {
+        .service-card, .benefit-card, .faq-item, .impact-card, .product-card {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
-        .service-card:hover, .benefit-card:hover, .impact-card:hover {
-            transform: translateY(-6px);
+        .service-card:hover, .benefit-card:hover, .impact-card:hover, .product-card:hover {
+            transform: translateY(-5px);
             border-color: #c9a227;
         }
 
@@ -104,11 +92,6 @@
             to { opacity: 1; transform: scale(1) translateY(0); }
         }
         
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(24px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
         .animate-on-scroll {
             opacity: 0;
             transform: translateY(24px);
@@ -124,43 +107,40 @@
             box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
         }
         
-        /* Focus styles for accessibility */
         a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
             outline: 2px solid #c9a227;
             outline-offset: 3px;
         }
         
-        /* FAQ accordion */
         .faq-answer {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.35s ease, padding 0.35s ease;
         }
         
-        .faq-item.open .faq-answer {
-            max-height: 300px;
-        }
+        .faq-item.open .faq-answer { max-height: 340px; }
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
         
-        .faq-item.open .faq-icon {
-            transform: rotate(45deg);
-        }
-        
-        /* Mobile menu transition */
-        #mobile-menu {
-            transition: opacity 0.2s ease, transform 0.2s ease;
+        .coming-soon-badge {
+            background: linear-gradient(135deg, #c9a227 0%, #a6851f 100%);
+            color: #0a0a0a;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            padding: 3px 8px;
+            border-radius: 9999px;
+            text-transform: uppercase;
         }
     </style>
     
-    <!-- Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "InsuranceAgency",
         "name": "Xavier Enciso Financial Services",
-        "description": "California-licensed Insurance Producer helping families with financial education, life insurance, and long-term security strategies in the Central Valley.",
+        "description": "California-licensed Insurance Producer helping families with term life insurance, financial education, and long-term security strategies in the Central Valley. Investments and securities licensing coming soon.",
         "url": "https://masterxe.github.io/xesolutions/",
         "image": "https://masterxe.github.io/xesolutions/xe-logo.jpg",
-        "telephone": "",
         "email": "encisox03@gmail.com",
         "address": {
             "@type": "PostalAddress",
@@ -168,22 +148,13 @@
             "addressRegion": "CA",
             "addressCountry": "US"
         },
-        "areaServed": [
-            "Delano",
-            "Bakersfield",
-            "Central Valley",
-            "Kern County",
-            "Tulare County"
-        ],
+        "areaServed": ["Delano", "Bakersfield", "Central Valley", "Kern County", "Tulare County"],
         "founder": {
             "@type": "Person",
             "name": "Xavier Enciso",
-            "jobTitle": "California Licensed Insurance Producer",
-            "url": "https://masterxe.github.io/xesolutions/"
+            "jobTitle": "California Licensed Insurance Producer"
         },
-        "sameAs": [
-            "https://x.com/masterxe"
-        ]
+        "sameAs": ["https://x.com/masterxe"]
     }
     </script>
 </head>
@@ -203,9 +174,9 @@
                     </div>
                 </a>
 
-                <div class="hidden lg:flex items-center gap-x-8 text-sm font-medium">
+                <div class="hidden lg:flex items-center gap-x-7 text-sm font-medium">
                     <a href="#about" class="nav-link text-zinc-300 hover:text-white transition-colors">About</a>
-                    <a href="#services" class="nav-link text-zinc-300 hover:text-white transition-colors">How I Help</a>
+                    <a href="#services" class="nav-link text-zinc-300 hover:text-white transition-colors">Solutions</a>
                     <a href="#impact" class="nav-link text-zinc-300 hover:text-white transition-colors">Community</a>
                     <a href="#join" class="nav-link text-zinc-300 hover:text-white transition-colors">Join the Team</a>
                     <a href="#faq" class="nav-link text-zinc-300 hover:text-white transition-colors">FAQ</a>
@@ -222,11 +193,10 @@
             </div>
         </div>
 
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-zinc-900 px-5 py-5" role="menu">
             <div class="flex flex-col gap-y-1 text-sm font-medium">
                 <a href="#about" class="mobile-nav-link py-2.5 px-3 rounded-lg text-zinc-300 hover:bg-zinc-800 hover:text-white">About</a>
-                <a href="#services" class="mobile-nav-link py-2.5 px-3 rounded-lg text-zinc-300 hover:bg-zinc-800 hover:text-white">How I Help</a>
+                <a href="#services" class="mobile-nav-link py-2.5 px-3 rounded-lg text-zinc-300 hover:bg-zinc-800 hover:text-white">Solutions</a>
                 <a href="#impact" class="mobile-nav-link py-2.5 px-3 rounded-lg text-zinc-300 hover:bg-zinc-800 hover:text-white">Community Impact</a>
                 <a href="#join" class="mobile-nav-link py-2.5 px-3 rounded-lg text-zinc-300 hover:bg-zinc-800 hover:text-white">Join the Team</a>
                 <a href="#faq" class="mobile-nav-link py-2.5 px-3 rounded-lg text-zinc-300 hover:bg-zinc-800 hover:text-white">FAQ</a>
@@ -265,7 +235,7 @@
 
                 <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                     <a href="#services" class="inline-flex items-center justify-center gap-x-2 px-7 sm:px-8 py-3.5 sm:py-4 bg-white text-zinc-950 font-semibold rounded-2xl hover:bg-zinc-100 transition-all text-sm sm:text-base">
-                        Explore How I Can Help
+                        Explore Solutions
                     </a>
                     <a href="#join" class="inline-flex items-center justify-center gap-x-2 px-7 sm:px-8 py-3.5 sm:py-4 border-2 border-[#c9a227] text-[#c9a227] hover:bg-[#c9a227] hover:text-zinc-950 font-semibold rounded-2xl transition-all text-sm sm:text-base">
                         Join My Team of Agents
@@ -285,7 +255,7 @@
                 <div class="text-base sm:text-lg text-zinc-300 max-w-2xl space-y-5 leading-relaxed">
                     <p>I am a dedicated California-licensed Insurance Producer focused on helping families build lasting financial security through education, protection, and smart planning.</p>
                     <p>My approach is rooted in the belief that when families understand their options and have the right protections in place, they thrive — and entire communities grow stronger. I serve clients across Delano, Bakersfield, and the greater Central Valley.</p>
-                    <p>Beyond client work, I am building a team of like-minded professionals who share this vision of raising financial literacy while creating meaningful careers. I also lead community education efforts with local youth and families.</p>
+                    <p>I help families with term life insurance and related protection solutions today. I am also preparing to expand into investment and securities products (coming soon) so I can support the full “Buy Term and Invest the Difference” strategy that has helped middle-income families for decades.</p>
                 </div>
 
                 <div class="mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
@@ -329,51 +299,137 @@
         </div>
     </section>
 
-    <!-- SERVICES -->
+    <!-- SOLUTIONS / PRODUCTS -->
     <section id="services" class="bg-zinc-900 border-y border-zinc-800 py-16 sm:py-20">
         <div class="max-w-6xl mx-auto px-5 sm:px-6">
             <div class="text-center mb-12 sm:mb-14 animate-on-scroll">
                 <div class="uppercase tracking-[2.5px] text-xs font-semibold text-[#c9a227]">WHAT I OFFER</div>
-                <h2 class="section-header centered text-4xl sm:text-5xl md:text-6xl tracking-tighter heading-serif mt-3">How I Can Help You &amp; Your Family</h2>
-                <p class="mt-6 max-w-2xl mx-auto text-zinc-400 text-base sm:text-lg">Practical guidance tailored to real families in the Central Valley — no complicated jargon, just clear next steps.</p>
+                <h2 class="section-header centered text-4xl sm:text-5xl md:text-6xl tracking-tighter heading-serif mt-3">Solutions for Every Stage</h2>
+                <p class="mt-6 max-w-2xl mx-auto text-zinc-400 text-base sm:text-lg">Practical tools that help Central Valley families protect income, reduce risk, and build toward the future — explained in plain language.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-6 mb-8 animate-on-scroll">
+                <div class="product-card bg-zinc-950 border border-[#c9a227]/40 rounded-3xl p-7 sm:p-8 relative overflow-hidden">
+                    <div class="absolute top-4 right-4">
+                        <span class="text-[10px] font-bold tracking-wider text-emerald-400 bg-emerald-950/60 px-3 py-1 rounded-full">AVAILABLE NOW</span>
+                    </div>
+                    <div class="w-12 h-12 flex items-center justify-center bg-zinc-900 rounded-2xl mb-5">
+                        <i class="fa-solid fa-shield-halved text-[#c9a227] text-2xl" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="font-semibold text-2xl tracking-tight mb-3">Term Life Insurance</h3>
+                    <p class="text-zinc-400 text-sm sm:text-base leading-relaxed mb-4">
+                        Affordable income protection designed for the years your family needs it most. Term life gives you the highest amount of coverage for the premium you pay — so your mortgage, income, and children’s future stay protected if something happens to you.
+                    </p>
+                    <ul class="space-y-2 text-sm text-zinc-300">
+                        <li class="flex gap-x-2"><i class="fa-solid fa-check text-[#c9a227] mt-0.5" aria-hidden="true"></i> Level premiums for 10–35 year terms</li>
+                        <li class="flex gap-x-2"><i class="fa-solid fa-check text-[#c9a227] mt-0.5" aria-hidden="true"></i> Ideal for young families and growing households</li>
+                        <li class="flex gap-x-2"><i class="fa-solid fa-check text-[#c9a227] mt-0.5" aria-hidden="true"></i> Foundation of the “Buy Term and Invest the Difference” approach</li>
+                    </ul>
+                </div>
+
+                <div class="product-card bg-zinc-950 border border-zinc-800 rounded-3xl p-7 sm:p-8 relative overflow-hidden">
+                    <div class="absolute top-4 right-4">
+                        <span class="coming-soon-badge">Coming Soon</span>
+                    </div>
+                    <div class="w-12 h-12 flex items-center justify-center bg-zinc-900 rounded-2xl mb-5">
+                        <i class="fa-solid fa-chart-line text-[#c9a227] text-2xl" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="font-semibold text-2xl tracking-tight mb-3">Investments &amp; Wealth Building</h3>
+                    <p class="text-zinc-400 text-sm sm:text-base leading-relaxed mb-4">
+                        Once properly protected with term life, many families want to put the difference to work. Mutual funds, managed accounts, IRAs, and education savings plans help turn monthly contributions into long-term growth potential.
+                    </p>
+                    <ul class="space-y-2 text-sm text-zinc-300">
+                        <li class="flex gap-x-2"><i class="fa-solid fa-check text-[#c9a227] mt-0.5" aria-hidden="true"></i> Mutual funds &amp; managed investments</li>
+                        <li class="flex gap-x-2"><i class="fa-solid fa-check text-[#c9a227] mt-0.5" aria-hidden="true"></i> Traditional &amp; Roth IRAs, 529 education plans</li>
+                        <li class="flex gap-x-2"><i class="fa-solid fa-check text-[#c9a227] mt-0.5" aria-hidden="true"></i> Annuities for retirement income planning</li>
+                    </ul>
+                    <p class="mt-4 text-xs text-zinc-500 italic">Securities licensing in progress. Educational conversations available now; product transactions coming after licensing.</p>
+                </div>
             </div>
 
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-                <div class="service-card bg-zinc-950 border border-zinc-800 hover:border-[#c9a227]/60 rounded-3xl p-7 sm:p-8 animate-on-scroll">
-                    <div class="w-12 h-12 flex items-center justify-center bg-zinc-900 rounded-2xl mb-5 sm:mb-6">
-                        <i class="fa-solid fa-graduation-cap text-[#c9a227] text-2xl" aria-hidden="true"></i>
+                <div class="product-card bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-7 animate-on-scroll">
+                    <div class="w-11 h-11 flex items-center justify-center bg-zinc-900 rounded-xl mb-4">
+                        <i class="fa-solid fa-piggy-bank text-[#c9a227] text-xl" aria-hidden="true"></i>
                     </div>
-                    <h3 class="font-semibold text-xl sm:text-2xl tracking-tight mb-3">Financial Education &amp; Literacy</h3>
-                    <p class="text-zinc-400 text-sm sm:text-base leading-relaxed">One-on-one guidance and community workshops that demystify budgeting, saving, credit, insurance, and long-term planning so families can make confident decisions.</p>
+                    <h3 class="font-semibold text-lg sm:text-xl tracking-tight mb-2">Retirement Strategies</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">
+                        Clear, actionable plans to prepare for retirement. Start with protection, then layer savings and investment strategies as your situation allows. Goal: income that lasts as long as you do.
+                    </p>
                 </div>
 
-                <div class="service-card bg-zinc-950 border border-zinc-800 hover:border-[#c9a227]/60 rounded-3xl p-7 sm:p-8 animate-on-scroll">
-                    <div class="w-12 h-12 flex items-center justify-center bg-zinc-900 rounded-2xl mb-5 sm:mb-6">
-                        <i class="fa-solid fa-shield-halved text-[#c9a227] text-2xl" aria-hidden="true"></i>
+                <div class="product-card bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-7 animate-on-scroll">
+                    <div class="w-11 h-11 flex items-center justify-center bg-zinc-900 rounded-xl mb-4">
+                        <i class="fa-solid fa-graduation-cap text-[#c9a227] text-xl" aria-hidden="true"></i>
                     </div>
-                    <h3 class="font-semibold text-xl sm:text-2xl tracking-tight mb-3">Life Insurance &amp; Family Protection</h3>
-                    <p class="text-zinc-400 text-sm sm:text-base leading-relaxed">Customized life insurance strategies designed to protect your loved ones’ lifestyle, cover final expenses, and help create a lasting legacy for the next generation.</p>
+                    <h3 class="font-semibold text-lg sm:text-xl tracking-tight mb-2">Financial Education</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">
+                        One-on-one guidance and workshops that demystify budgeting, debt, credit, insurance, and long-term planning. Knowledge first — products second. Families make better decisions when they understand the “why.”
+                    </p>
                 </div>
 
-                <div class="service-card bg-zinc-950 border border-zinc-800 hover:border-[#c9a227]/60 rounded-3xl p-7 sm:p-8 animate-on-scroll sm:col-span-2 lg:col-span-1">
-                    <div class="w-12 h-12 flex items-center justify-center bg-zinc-900 rounded-2xl mb-5 sm:mb-6">
-                        <i class="fa-solid fa-chart-line text-[#c9a227] text-2xl" aria-hidden="true"></i>
+                <div class="product-card bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-7 animate-on-scroll">
+                    <div class="w-11 h-11 flex items-center justify-center bg-zinc-900 rounded-xl mb-4">
+                        <i class="fa-solid fa-scale-balanced text-[#c9a227] text-xl" aria-hidden="true"></i>
                     </div>
-                    <h3 class="font-semibold text-xl sm:text-2xl tracking-tight mb-3">Retirement &amp; Wealth Strategies</h3>
-                    <p class="text-zinc-400 text-sm sm:text-base leading-relaxed">Clear, actionable plans to help you prepare for retirement and begin building generational wealth — starting from wherever you are today.</p>
+                    <h3 class="font-semibold text-lg sm:text-xl tracking-tight mb-2">Legal Protection</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">
+                        Access to attorney services for everyday legal needs — will preparation, document review, and more — through a prepaid legal program. Peace of mind without waiting until a crisis hits.
+                    </p>
+                </div>
+
+                <div class="product-card bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-7 animate-on-scroll">
+                    <div class="w-11 h-11 flex items-center justify-center bg-zinc-900 rounded-xl mb-4">
+                        <i class="fa-solid fa-user-shield text-[#c9a227] text-xl" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg sm:text-xl tracking-tight mb-2">Identity Theft Defense</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">
+                        Monitoring, counseling, and restoration support if your identity is compromised. A practical layer of protection in a world where personal information is constantly at risk.
+                    </p>
+                </div>
+
+                <div class="product-card bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-7 animate-on-scroll">
+                    <div class="w-11 h-11 flex items-center justify-center bg-zinc-900 rounded-xl mb-4">
+                        <i class="fa-solid fa-car text-[#c9a227] text-xl" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg sm:text-xl tracking-tight mb-2">Auto &amp; Home Quotes</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">
+                        Competitive quotes from multiple carriers through a referral program. Many families discover they can improve coverage or reduce premiums once they compare options side-by-side.
+                    </p>
+                </div>
+
+                <div class="product-card bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-7 animate-on-scroll">
+                    <div class="w-11 h-11 flex items-center justify-center bg-zinc-900 rounded-xl mb-4">
+                        <i class="fa-solid fa-house-chimney text-[#c9a227] text-xl" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg sm:text-xl tracking-tight mb-2">Mortgage Solutions</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">
+                        Guidance and access to competitive mortgage options through a trusted partnership. Useful for first-time buyers, refinancing, or exploring how home equity can support broader financial goals.
+                    </p>
                 </div>
             </div>
-            
-            <div class="mt-10 sm:mt-12 text-center animate-on-scroll">
-                <a href="#contact" class="inline-flex items-center gap-x-2 px-7 py-3.5 bg-white text-zinc-950 font-semibold rounded-2xl hover:bg-zinc-100 transition-all text-sm sm:text-base">
-                    Schedule a Conversation
-                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
-                </a>
+
+            <div class="mt-12 sm:mt-14 bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-8 animate-on-scroll">
+                <div class="flex flex-col md:flex-row md:items-center gap-6">
+                    <div class="flex-1">
+                        <div class="text-xs font-semibold tracking-[2px] text-[#c9a227] mb-2">THE CORE IDEA</div>
+                        <h3 class="text-xl sm:text-2xl font-semibold tracking-tight mb-3">Buy Term and Invest the Difference</h3>
+                        <p class="text-zinc-400 text-sm sm:text-base leading-relaxed">
+                            Instead of locking most of your premium into permanent life insurance, many families choose affordable term coverage for pure protection and then systematically invest the difference they save. The goal: protect the family today while building assets for tomorrow. Education comes first — so you understand whether this approach fits your situation.
+                        </p>
+                    </div>
+                    <div class="md:w-auto">
+                        <a href="#contact" class="inline-flex items-center gap-x-2 px-6 py-3.5 bg-white text-zinc-950 font-semibold rounded-2xl hover:bg-zinc-100 transition-all text-sm whitespace-nowrap">
+                            Talk Through Your Situation
+                            <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- COMMUNITY IMPACT (NEW) -->
+    <!-- COMMUNITY IMPACT -->
     <section id="impact" class="max-w-6xl mx-auto px-5 sm:px-6 py-16 sm:py-20">
         <div class="text-center mb-12 sm:mb-14 animate-on-scroll">
             <div class="uppercase tracking-[2.5px] text-xs font-semibold text-[#c9a227]">GIVING BACK LOCALLY</div>
@@ -386,9 +442,9 @@
                 <div class="w-12 h-12 flex items-center justify-center bg-zinc-950 rounded-2xl mb-5">
                     <i class="fa-solid fa-users text-[#c9a227] text-2xl" aria-hidden="true"></i>
                 </div>
-                <h3 class="font-semibold text-xl sm:text-2xl tracking-tight mb-3">Youth &amp; SEL Leadership</h3>
+                <h3 class="font-semibold text-xl sm:text-2xl tracking-tight mb-3">Youth Leadership</h3>
                 <p class="text-zinc-400 text-sm sm:text-base leading-relaxed mb-4">
-                    I lead an after-school POWER program focused on Social Emotional Learning for 8th-grade students. We work on growth mindset, resilience, conflict resolution, empathy, and leadership — skills that transfer directly into stronger futures.
+                    I lead an after-school POWER program for 8th-grade students focused on building real leadership. We develop growth mindset, resilience, conflict resolution, empathy, and decision-making — skills and habits that transfer into every endeavor they pursue.
                 </p>
                 <p class="text-zinc-500 text-sm">La Viña Middle School · Delano area</p>
             </div>
@@ -430,7 +486,7 @@
                     <ul class="space-y-3 mb-8 text-zinc-300 text-sm sm:text-base">
                         <li class="flex items-start gap-x-3">
                             <i class="fa-solid fa-check text-[#c9a227] mt-1" aria-hidden="true"></i>
-                            <span>Learn a real skill that serves families in your community</span>
+                            <span>Learn real skills that serve families in your community</span>
                         </li>
                         <li class="flex items-start gap-x-3">
                             <i class="fa-solid fa-check text-[#c9a227] mt-1" aria-hidden="true"></i>
@@ -473,7 +529,7 @@
         </div>
     </section>
 
-    <!-- FAQ (NEW) -->
+    <!-- FAQ -->
     <section id="faq" class="max-w-3xl mx-auto px-5 sm:px-6 py-16 sm:py-20">
         <div class="text-center mb-10 sm:mb-12 animate-on-scroll">
             <div class="uppercase tracking-[2px] text-xs font-semibold text-[#c9a227]">COMMON QUESTIONS</div>
@@ -481,6 +537,26 @@
         </div>
 
         <div class="space-y-3 animate-on-scroll">
+            <div class="faq-item bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden">
+                <button class="faq-toggle w-full flex items-center justify-between px-5 sm:px-6 py-4 sm:py-5 text-left" aria-expanded="false">
+                    <span class="font-medium text-sm sm:text-base pr-4">What products can you help me with right now?</span>
+                    <i class="fa-solid fa-plus faq-icon text-[#c9a227] transition-transform duration-300 flex-shrink-0" aria-hidden="true"></i>
+                </button>
+                <div class="faq-answer px-5 sm:px-6">
+                    <p class="pb-5 text-zinc-400 text-sm sm:text-base leading-relaxed">I am currently licensed for life insurance products in California and can help with term life and related protection strategies. I also provide education and referrals for legal protection, identity theft defense, auto &amp; home quotes, and mortgage solutions. Investment and securities products will become available after I complete the required securities licensing (SIE and related exams).</p>
+                </div>
+            </div>
+
+            <div class="faq-item bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden">
+                <button class="faq-toggle w-full flex items-center justify-between px-5 sm:px-6 py-4 sm:py-5 text-left" aria-expanded="false">
+                    <span class="font-medium text-sm sm:text-base pr-4">What does “Buy Term and Invest the Difference” mean?</span>
+                    <i class="fa-solid fa-plus faq-icon text-[#c9a227] transition-transform duration-300 flex-shrink-0" aria-hidden="true"></i>
+                </button>
+                <div class="faq-answer px-5 sm:px-6">
+                    <p class="pb-5 text-zinc-400 text-sm sm:text-base leading-relaxed">It is a long-standing approach: purchase affordable term life insurance for pure protection, then invest the money you save compared with more expensive permanent policies. The idea is to protect your family today while building assets for the future. Whether it fits your situation depends on your goals, budget, and risk tolerance — that is why education comes first.</p>
+                </div>
+            </div>
+
             <div class="faq-item bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden">
                 <button class="faq-toggle w-full flex items-center justify-between px-5 sm:px-6 py-4 sm:py-5 text-left" aria-expanded="false">
                     <span class="font-medium text-sm sm:text-base pr-4">Do I need prior experience to join the team?</span>
@@ -503,31 +579,11 @@
 
             <div class="faq-item bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden">
                 <button class="faq-toggle w-full flex items-center justify-between px-5 sm:px-6 py-4 sm:py-5 text-left" aria-expanded="false">
-                    <span class="font-medium text-sm sm:text-base pr-4">Is this only about selling insurance?</span>
-                    <i class="fa-solid fa-plus faq-icon text-[#c9a227] transition-transform duration-300 flex-shrink-0" aria-hidden="true"></i>
-                </button>
-                <div class="faq-answer px-5 sm:px-6">
-                    <p class="pb-5 text-zinc-400 text-sm sm:text-base leading-relaxed">Protection products are an important tool, but the foundation is education. My goal is to help families understand their options so they can make informed decisions that fit their situation — not pressure them into anything.</p>
-                </div>
-            </div>
-
-            <div class="faq-item bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden">
-                <button class="faq-toggle w-full flex items-center justify-between px-5 sm:px-6 py-4 sm:py-5 text-left" aria-expanded="false">
-                    <span class="font-medium text-sm sm:text-base pr-4">How do I get started as a client?</span>
-                    <i class="fa-solid fa-plus faq-icon text-[#c9a227] transition-transform duration-300 flex-shrink-0" aria-hidden="true"></i>
-                </button>
-                <div class="faq-answer px-5 sm:px-6">
-                    <p class="pb-5 text-zinc-400 text-sm sm:text-base leading-relaxed">Simply reach out through the contact form below or message me. We’ll schedule a conversation to understand your goals and see how I can best support you and your family.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden">
-                <button class="faq-toggle w-full flex items-center justify-between px-5 sm:px-6 py-4 sm:py-5 text-left" aria-expanded="false">
                     <span class="font-medium text-sm sm:text-base pr-4">Are you licensed and in good standing?</span>
                     <i class="fa-solid fa-plus faq-icon text-[#c9a227] transition-transform duration-300 flex-shrink-0" aria-hidden="true"></i>
                 </button>
                 <div class="faq-answer px-5 sm:px-6">
-                    <p class="pb-5 text-zinc-400 text-sm sm:text-base leading-relaxed">Yes. I hold an active California Insurance Producer license (#4279749) with the California Department of Insurance and am in good standing. You can verify this on the CDI website.</p>
+                    <p class="pb-5 text-zinc-400 text-sm sm:text-base leading-relaxed">Yes. I hold an active California Insurance Producer license (#4279749) with the California Department of Insurance and am in good standing. You can verify this on the CDI website. Securities licensing is in progress and will be noted once complete.</p>
                 </div>
             </div>
         </div>
@@ -593,7 +649,7 @@
                         </div>
                     </div>
                     <p class="text-sm text-zinc-400 max-w-sm leading-relaxed">
-                        California-licensed Insurance Producer helping families in Delano, Bakersfield, and the Central Valley build lasting financial security.
+                        California-licensed Insurance Producer helping families in Delano, Bakersfield, and the Central Valley build lasting financial security. Term life available now; investment products coming after securities licensing.
                     </p>
                 </div>
                 
@@ -601,7 +657,7 @@
                     <div class="text-xs font-semibold tracking-widest text-zinc-500 mb-4">QUICK LINKS</div>
                     <ul class="space-y-2 text-sm">
                         <li><a href="#about" class="text-zinc-400 hover:text-[#c9a227] transition-colors">About</a></li>
-                        <li><a href="#services" class="text-zinc-400 hover:text-[#c9a227] transition-colors">How I Help</a></li>
+                        <li><a href="#services" class="text-zinc-400 hover:text-[#c9a227] transition-colors">Solutions</a></li>
                         <li><a href="#impact" class="text-zinc-400 hover:text-[#c9a227] transition-colors">Community</a></li>
                         <li><a href="#join" class="text-zinc-400 hover:text-[#c9a227] transition-colors">Join the Team</a></li>
                         <li><a href="#contact" class="text-zinc-400 hover:text-[#c9a227] transition-colors">Contact</a></li>
@@ -631,7 +687,7 @@
             
             <div class="border-t border-zinc-800 pt-6 text-center">
                 <p class="text-xs text-zinc-500 leading-relaxed max-w-3xl mx-auto mb-3">
-                    Xavier Enciso is a licensed insurance producer in the State of California. Insurance products are offered through licensed carriers. This website is for informational purposes and does not constitute an offer or solicitation in any jurisdiction where prohibited. Not affiliated with any government agency.
+                    Xavier Enciso is a licensed insurance producer in the State of California (License #4279749). Insurance products are offered through licensed carriers. Investment and securities products are not currently offered and will only be available after required securities licensing is obtained. This website is for informational and educational purposes and does not constitute an offer or solicitation in any jurisdiction where prohibited. Not all products are available in all states. Not affiliated with any government agency.
                 </p>
                 <p class="text-xs text-zinc-600">
                     © 2026 Xavier Enciso. All rights reserved. · 
@@ -687,7 +743,6 @@
     </div>
 
     <script>
-        // Mobile Menu
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const menuIcon = document.getElementById('menu-icon');
@@ -700,7 +755,6 @@
             menuIcon.classList.toggle('fa-times');
         });
         
-        // Close mobile menu when a link is clicked
         document.querySelectorAll('.mobile-nav-link').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
@@ -710,13 +764,11 @@
             });
         });
 
-        // Join Modal
         function showJoinModal() {
             const modal = document.getElementById('join-modal');
             modal.classList.remove('hidden');
             modal.classList.add('flex');
             document.body.style.overflow = 'hidden';
-            // Focus first input for accessibility
             setTimeout(() => document.getElementById('join-name')?.focus(), 100);
         }
         
@@ -727,36 +779,26 @@
             document.body.style.overflow = '';
         }
 
-        // Close modal on Escape
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') hideJoinModal();
         });
         
-        // FAQ Accordion
         document.querySelectorAll('.faq-toggle').forEach(button => {
             button.addEventListener('click', () => {
                 const item = button.closest('.faq-item');
                 const isOpen = item.classList.contains('open');
                 
-                // Close all
                 document.querySelectorAll('.faq-item').forEach(i => {
                     i.classList.remove('open');
                     i.querySelector('.faq-toggle').setAttribute('aria-expanded', 'false');
                 });
                 
-                // Open clicked if it was closed
                 if (!isOpen) {
                     item.classList.add('open');
                     button.setAttribute('aria-expanded', 'true');
                 }
             });
         });
-        
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.12,
-            rootMargin: '0px 0px -40px 0px'
-        };
         
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -765,13 +807,10 @@
                     observer.unobserve(entry.target);
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
         
-        document.querySelectorAll('.animate-on-scroll').forEach(el => {
-            observer.observe(el);
-        });
+        document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
         
-        // Active nav highlight on scroll (optional polish)
         const sections = document.querySelectorAll('section[id]');
         const navLinks = document.querySelectorAll('.nav-link');
         
@@ -779,9 +818,7 @@
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop - 120;
-                if (scrollY >= sectionTop) {
-                    current = section.getAttribute('id');
-                }
+                if (scrollY >= sectionTop) current = section.getAttribute('id');
             });
             
             navLinks.forEach(link => {
