@@ -47,14 +47,16 @@
 </head>
 <body class="bg-zinc-950 text-zinc-200 antialiased">
 
+<!-- Fixed floating home logo — always follows scroll -->
+<a href="index.html" id="float-home" class="fixed top-4 left-4 sm:top-5 sm:left-5 z-[60] flex items-center gap-x-2.5 group rounded-full pr-3 sm:pr-4 bg-zinc-950/80 backdrop-blur-md border border-zinc-800 hover:border-[#c9a227]/50 shadow-lg shadow-black/40 transition-all hover:scale-[1.03]" title="Return home" aria-label="Return to home">
+    <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden border border-zinc-700 group-hover:border-[#c9a227]/70 transition-colors">
+        <img src="xe-logo.jpg" alt="XE" class="w-full h-full object-cover" width="44" height="44">
+    </div>
+    <span class="text-sm font-medium tracking-wide text-zinc-400 group-hover:text-white hidden sm:block transition-colors py-2">XE Solutions</span>
+</a>
+
 <div class="title-bg flex flex-col">
-    <div class="relative z-10 flex justify-between items-center px-5 sm:px-8 py-5 enter enter-1">
-        <a href="index.html" class="flex items-center gap-x-3 group" title="Return home" aria-label="Return to home">
-            <div class="w-9 h-9 rounded-full overflow-hidden border border-zinc-700 group-hover:border-[#c9a227]/60 transition-colors">
-                <img src="xe-logo.jpg" alt="XE" class="w-full h-full object-cover" width="36" height="36">
-            </div>
-            <span class="text-sm font-medium tracking-wide text-zinc-400 group-hover:text-zinc-200 hidden sm:block transition-colors">XE Solutions</span>
-        </a>
+    <div class="relative z-10 flex justify-end items-center px-5 sm:px-8 py-5 enter enter-1">
         <div class="inline-flex items-center gap-x-2 px-3 py-1.5 bg-zinc-900/70 border border-zinc-800 rounded-full">
             <div class="w-2 h-2 bg-emerald-400 rounded-full live-dot"></div>
             <span class="text-[10px] sm:text-xs font-medium tracking-wider text-emerald-400">LICENSED · CA #4279749</span>
@@ -137,70 +139,41 @@
             <div class="proof-card reveal bg-zinc-900 border border-zinc-800 rounded-3xl p-6 sm:p-8">
                 <div class="flex items-center gap-x-3 mb-4">
                     <div class="w-10 h-10 rounded-full bg-[#c9a227]/15 flex items-center justify-center"><i class="fa-solid fa-quote-left text-[#c9a227]"></i></div>
-                    <div>
-                        <div class="font-semibold">Art Williams</div>
-                        <div class="text-xs text-zinc-500">Founder, A.L. Williams · Term life advocate</div>
-                    </div>
+                    <div><div class="font-semibold">Art Williams</div><div class="text-xs text-zinc-500">Founder, A.L. Williams · Term life advocate</div></div>
                 </div>
-                <p class="text-zinc-300 text-sm sm:text-base leading-relaxed mb-4">
-                    “Buy term and invest the difference.” Get the pure protection your family needs at the lowest cost, then put the money you save to work building assets — instead of locking most of your premium into expensive permanent policies.
-                </p>
+                <p class="text-zinc-300 text-sm sm:text-base leading-relaxed mb-4">“Buy term and invest the difference.” Get the pure protection your family needs at the lowest cost, then put the money you save to work building assets — instead of locking most of your premium into expensive permanent policies.</p>
                 <p class="text-xs text-zinc-500 leading-relaxed">This philosophy shaped an industry movement focused on middle-income families and still guides how many agents educate clients today.</p>
             </div>
-
             <div class="proof-card reveal bg-zinc-900 border border-zinc-800 rounded-3xl p-6 sm:p-8">
                 <div class="flex items-center gap-x-3 mb-4">
                     <div class="w-10 h-10 rounded-full bg-[#c9a227]/15 flex items-center justify-center"><i class="fa-solid fa-quote-left text-[#c9a227]"></i></div>
-                    <div>
-                        <div class="font-semibold">Suze Orman</div>
-                        <div class="text-xs text-zinc-500">Personal finance educator &amp; author</div>
-                    </div>
+                    <div><div class="font-semibold">Suze Orman</div><div class="text-xs text-zinc-500">Personal finance educator &amp; author</div></div>
                 </div>
-                <p class="text-zinc-300 text-sm sm:text-base leading-relaxed mb-4">
-                    For most families, term life is the practical choice: high coverage while children are young and income is needed, without draining cash flow. Education comes first — know what you own, why you own it, and what it costs.
-                </p>
+                <p class="text-zinc-300 text-sm sm:text-base leading-relaxed mb-4">For most families, term life is the practical choice: high coverage while children are young and income is needed, without draining cash flow. Education comes first — know what you own, why you own it, and what it costs.</p>
                 <p class="text-xs text-zinc-500 leading-relaxed">Her guidance aligns with an education-first, protection-first approach for working families who need clarity more than complexity.</p>
             </div>
-
             <div class="proof-card reveal bg-zinc-900 border border-zinc-800 rounded-3xl p-6 sm:p-8">
                 <div class="flex items-center gap-x-3 mb-4">
                     <div class="w-10 h-10 rounded-full bg-[#c9a227]/15 flex items-center justify-center"><i class="fa-solid fa-quote-left text-[#c9a227]"></i></div>
-                    <div>
-                        <div class="font-semibold">Dave Ramsey</div>
-                        <div class="text-xs text-zinc-500">Personal finance educator · Author</div>
-                    </div>
+                    <div><div class="font-semibold">Dave Ramsey</div><div class="text-xs text-zinc-500">Personal finance educator · Author</div></div>
                 </div>
-                <p class="text-zinc-300 text-sm sm:text-base leading-relaxed mb-4">
-                    Term life for the years your family depends on your income. Clear steps, no jargon, and a focus on getting out of debt and building an emergency fund so protection and progress work together.
-                </p>
+                <p class="text-zinc-300 text-sm sm:text-base leading-relaxed mb-4">Term life for the years your family depends on your income. Clear steps, no jargon, and a focus on getting out of debt and building an emergency fund so protection and progress work together.</p>
                 <p class="text-xs text-zinc-500 leading-relaxed">His teaching reaches millions of ordinary households with the same core idea: protect first, then build wealth on solid ground.</p>
             </div>
-
             <div class="proof-card reveal bg-zinc-900 border border-zinc-800 rounded-3xl p-6 sm:p-8">
                 <div class="flex items-center gap-x-3 mb-4">
                     <div class="w-10 h-10 rounded-full bg-[#c9a227]/15 flex items-center justify-center"><i class="fa-solid fa-quote-left text-[#c9a227]"></i></div>
-                    <div>
-                        <div class="font-semibold">John C. Bogle</div>
-                        <div class="text-xs text-zinc-500">Founder, Vanguard · Index investing pioneer</div>
-                    </div>
+                    <div><div class="font-semibold">John C. Bogle</div><div class="text-xs text-zinc-500">Founder, Vanguard · Index investing pioneer</div></div>
                 </div>
-                <p class="text-zinc-300 text-sm sm:text-base leading-relaxed mb-4">
-                    Keep costs low. Invest simply. Stay the course for the long term. The “invest the difference” side of the equation only works when savings are put to work in a disciplined, low-cost way.
-                </p>
+                <p class="text-zinc-300 text-sm sm:text-base leading-relaxed mb-4">Keep costs low. Invest simply. Stay the course for the long term. The “invest the difference” side of the equation only works when savings are put to work in a disciplined, low-cost way.</p>
                 <p class="text-xs text-zinc-500 leading-relaxed">His philosophy supports the idea that everyday families can build wealth without complex products — by being consistent and cost-conscious.</p>
             </div>
-
             <div class="proof-card reveal bg-zinc-900 border border-zinc-800 rounded-3xl p-6 sm:p-8 md:col-span-2">
                 <div class="flex items-center gap-x-3 mb-4">
                     <div class="w-10 h-10 rounded-full bg-[#c9a227]/15 flex items-center justify-center"><i class="fa-solid fa-quote-left text-[#c9a227]"></i></div>
-                    <div>
-                        <div class="font-semibold">Thomas J. Stanley</div>
-                        <div class="text-xs text-zinc-500">Author, <em>The Millionaire Next Door</em></div>
-                    </div>
+                    <div><div class="font-semibold">Thomas J. Stanley</div><div class="text-xs text-zinc-500">Author, <em>The Millionaire Next Door</em></div></div>
                 </div>
-                <p class="text-zinc-300 text-sm sm:text-base leading-relaxed mb-4">
-                    Many wealthy households look ordinary from the outside. They live below their means, avoid status spending, and build assets over time. Financial strength is often quiet discipline — not flash.
-                </p>
+                <p class="text-zinc-300 text-sm sm:text-base leading-relaxed mb-4">Many wealthy households look ordinary from the outside. They live below their means, avoid status spending, and build assets over time. Financial strength is often quiet discipline — not flash.</p>
                 <p class="text-xs text-zinc-500 leading-relaxed">His research reinforces that middle-income families who protect their income and invest consistently can create lasting security without needing a high-net-worth lifestyle.</p>
             </div>
         </div>
@@ -261,15 +234,9 @@
             <img src="xe-logo.jpg" alt="" class="w-full h-full object-cover">
         </div>
         <h2 id="thanks-title" class="text-2xl sm:text-3xl heading-serif tracking-tight mb-3 text-white">Thank you for being here</h2>
-        <p class="text-zinc-300 text-sm sm:text-base leading-relaxed mb-4">
-            We’re stronger together — in unison, with clear focus on the objectives that protect our families and lift our communities.
-        </p>
-        <p class="text-zinc-500 text-xs sm:text-sm leading-relaxed mb-6">
-            One step at a time. One conversation at a time. Moving forward with purpose.
-        </p>
-        <button type="button" id="thanks-dismiss" class="px-7 py-3 bg-[#c9a227] hover:bg-amber-500 text-zinc-950 font-semibold rounded-2xl transition-all text-sm">
-            Continue exploring
-        </button>
+        <p class="text-zinc-300 text-sm sm:text-base leading-relaxed mb-4">We’re stronger together — in unison, with clear focus on the objectives that protect our families and lift our communities.</p>
+        <p class="text-zinc-500 text-xs sm:text-sm leading-relaxed mb-6">One step at a time. One conversation at a time. Moving forward with purpose.</p>
+        <button type="button" id="thanks-dismiss" class="px-7 py-3 bg-[#c9a227] hover:bg-amber-500 text-zinc-950 font-semibold rounded-2xl transition-all text-sm">Continue exploring</button>
     </div>
 </div>
 
