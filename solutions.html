@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Solutions from Xavier Enciso — term life insurance, financial education, legal protection, and more for Central Valley families. Investments coming soon.">
+    <title>Solutions | Xavier Enciso | Delano, CA</title>
+    <link rel="icon" type="image/jpeg" href="xe-logo.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .heading-serif { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; letter-spacing: -0.025em; }
+        .section-header { position: relative; display: inline-block; }
+        .section-header:after { content: ''; position: absolute; bottom: -8px; left: 0; width: 60px; height: 3px; background: linear-gradient(to right, #c9a227, #d4af37); border-radius: 3px; }
+        .section-header.centered:after { left: 50%; transform: translateX(-50%); }
+        .product-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .product-card:hover { transform: translateY(-5px); border-color: #c9a227; }
+        .coming-soon-badge { background: linear-gradient(135deg, #c9a227 0%, #a6851f 100%); color: #0a0a0a; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; padding: 3px 8px; border-radius: 9999px; text-transform: uppercase; }
+        a:focus-visible, button:focus-visible { outline: 2px solid #c9a227; outline-offset: 3px; }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-200 antialiased">
+
+<nav class="bg-zinc-900/95 backdrop-blur-lg border-b border-zinc-800 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6">
+        <div class="flex justify-between items-center h-18 sm:h-20">
+            <a href="index.html" class="flex items-center gap-x-3 group">
+                <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden border border-zinc-700 group-hover:border-[#c9a227]/60 transition-colors">
+                    <img src="xe-logo.jpg" alt="XE Logo" class="w-full h-full object-cover" width="44" height="44">
+                </div>
+                <div>
+                    <div class="font-semibold text-lg sm:text-xl tracking-tight">Xavier Enciso</div>
+                    <div class="text-[10px] text-zinc-500 -mt-0.5 tracking-wide">FINANCIAL PROFESSIONAL</div>
+                </div>
+            </a>
+            <div class="hidden lg:flex items-center gap-x-7 text-sm font-medium">
+                <a href="about.html" class="text-zinc-300 hover:text-white transition-colors">About</a>
+                <a href="solutions.html" class="text-white">Solutions</a>
+                <a href="community.html" class="text-zinc-300 hover:text-white transition-colors">Community</a>
+                <a href="join.html" class="text-zinc-300 hover:text-white transition-colors">Join the Team</a>
+                <a href="faq.html" class="text-zinc-300 hover:text-white transition-colors">FAQ</a>
+            </div>
+            <div class="hidden lg:flex items-center gap-x-3">
+                <a href="contact.html" class="px-5 py-2.5 text-sm font-medium border border-zinc-700 hover:border-zinc-500 rounded-full transition-colors">Contact Me</a>
+                <a href="join.html" class="px-6 py-2.5 bg-[#c9a227] hover:bg-amber-500 text-zinc-950 font-semibold text-sm rounded-full transition-all">Join My Team</a>
+            </div>
+            <button id="mobile-menu-btn" class="lg:hidden w-10 h-10 flex items-center justify-center text-zinc-400 hover:text-white" aria-label="Open menu">
+                <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-zinc-900 px-5 py-5">
+        <div class="flex flex-col gap-y-1 text-sm font-medium">
+            <a href="about.html" class="mobile-nav-link py-2.5 px-3 rounded-lg text-zinc-300 hover:bg-zinc-800">About</a>
+            <a href="solutions.html" class="mobile-nav-link py-2.5 px-3 rounded-lg text-white">Solutions</a>
+            <a href="community.html" class="mobile-nav-link py-2.5 px-3 rounded-lg text-zinc-300 hover:bg-zinc-800">Community</a>
+            <a href="join.html" class="mobile-nav-link py-2.5 px-3 rounded-lg text-zinc-300 hover:bg-zinc-800">Join the Team</a>
+            <a href="faq.html" class="mobile-nav-link py-2.5 px-3 rounded-lg text-zinc-300 hover:bg-zinc-800">FAQ</a>
+            <div class="pt-4 mt-2 border-t border-zinc-800 flex flex-col gap-y-3">
+                <a href="contact.html" class="py-2.5 text-center border border-zinc-700 rounded-full">Contact Me</a>
+                <a href="join.html" class="py-2.5 text-center bg-[#c9a227] text-zinc-950 font-semibold rounded-full">Join My Team</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<section class="bg-zinc-900 border-b border-zinc-800 py-16 sm:py-20">
+    <div class="max-w-6xl mx-auto px-5 sm:px-6">
+        <div class="text-center mb-12 sm:mb-14">
+            <div class="uppercase tracking-[2.5px] text-xs font-semibold text-[#c9a227]">WHAT I OFFER</div>
+            <h1 class="section-header centered text-4xl sm:text-5xl md:text-6xl tracking-tighter heading-serif mt-3">Solutions for Every Stage</h1>
+            <p class="mt-6 max-w-2xl mx-auto text-zinc-400 text-base sm:text-lg">Practical tools that help Central Valley families protect income, reduce risk, and build toward the future.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-6 mb-8">
+            <div class="product-card bg-zinc-950 border border-[#c9a227]/40 rounded-3xl p-7 sm:p-8 relative overflow-hidden">
+                <div class="absolute top-4 right-4">
+                    <span class="text-[10px] font-bold tracking-wider text-emerald-400 bg-emerald-950/60 px-3 py-1 rounded-full">AVAILABLE NOW</span>
+                </div>
+                <div class="w-12 h-12 flex items-center justify-center bg-zinc-900 rounded-2xl mb-5">
+                    <i class="fa-solid fa-shield-halved text-[#c9a227] text-2xl"></i>
+                </div>
+                <h2 class="font-semibold text-2xl tracking-tight mb-3">Term Life Insurance</h2>
+                <p class="text-zinc-400 text-sm sm:text-base leading-relaxed mb-4">
+                    Affordable income protection designed for the years your family needs it most. Term life gives you the highest amount of coverage for the premium you pay — so your mortgage, income, and children’s future stay protected if something happens to you.
+                </p>
+                <ul class="space-y-2 text-sm text-zinc-300">
+                    <li class="flex gap-x-2"><i class="fa-solid fa-check text-[#c9a227] mt-0.5"></i> Level premiums for 10–35 year terms</li>
+                    <li class="flex gap-x-2"><i class="fa-solid fa-check text-[#c9a227] mt-0.5"></i> Ideal for young families and growing households</li>
+                    <li class="flex gap-x-2"><i class="fa-solid fa-check text-[#c9a227] mt-0.5"></i> Foundation of the “Buy Term and Invest the Difference” approach</li>
+                </ul>
+            </div>
+
+            <div class="product-card bg-zinc-950 border border-zinc-800 rounded-3xl p-7 sm:p-8 relative overflow-hidden">
+                <div class="absolute top-4 right-4">
+                    <span class="coming-soon-badge">Coming Soon</span>
+                </div>
+                <div class="w-12 h-12 flex items-center justify-center bg-zinc-900 rounded-2xl mb-5">
+                    <i class="fa-solid fa-chart-line text-[#c9a227] text-2xl"></i>
+                </div>
+                <h2 class="font-semibold text-2xl tracking-tight mb-3">Investments &amp; Wealth Building</h2>
+                <p class="text-zinc-400 text-sm sm:text-base leading-relaxed mb-4">
+                    Once properly protected with term life, many families want to put the difference to work. Mutual funds, managed accounts, IRAs, and education savings plans help turn monthly contributions into long-term growth potential.
+                </p>
+                <ul class="space-y-2 text-sm text-zinc-300">
+                    <li class="flex gap-x-2"><i class="fa-solid fa-check text-[#c9a227] mt-0.5"></i> Mutual funds &amp; managed investments</li>
+                    <li class="flex gap-x-2"><i class="fa-solid fa-check text-[#c9a227] mt-0.5"></i> Traditional &amp; Roth IRAs, 529 education plans</li>
+                    <li class="flex gap-x-2"><i class="fa-solid fa-check text-[#c9a227] mt-0.5"></i> Annuities for retirement income planning</li>
+                </ul>
+                <p class="mt-4 text-xs text-zinc-500 italic">Securities licensing in progress. Educational conversations available now; product transactions coming after licensing.</p>
+            </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+            <div class="product-card bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-7">
+                <div class="w-11 h-11 flex items-center justify-center bg-zinc-900 rounded-xl mb-4">
+                    <i class="fa-solid fa-piggy-bank text-[#c9a227] text-xl"></i>
+                </div>
+                <h3 class="font-semibold text-lg sm:text-xl tracking-tight mb-2">Retirement Strategies</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed">Clear, actionable plans to prepare for retirement. Start with protection, then layer savings and investment strategies as your situation allows.</p>
+            </div>
+            <div class="product-card bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-7">
+                <div class="w-11 h-11 flex items-center justify-center bg-zinc-900 rounded-xl mb-4">
+                    <i class="fa-solid fa-graduation-cap text-[#c9a227] text-xl"></i>
+                </div>
+                <h3 class="font-semibold text-lg sm:text-xl tracking-tight mb-2">Financial Education</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed">One-on-one guidance and workshops that demystify budgeting, debt, credit, insurance, and long-term planning. Knowledge first — products second.</p>
+            </div>
+            <div class="product-card bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-7">
+                <div class="w-11 h-11 flex items-center justify-center bg-zinc-900 rounded-xl mb-4">
+                    <i class="fa-solid fa-scale-balanced text-[#c9a227] text-xl"></i>
+                </div>
+                <h3 class="font-semibold text-lg sm:text-xl tracking-tight mb-2">Legal Protection</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed">Access to attorney services for everyday legal needs — will preparation, document review, and more — through a prepaid legal program.</p>
+            </div>
+            <div class="product-card bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-7">
+                <div class="w-11 h-11 flex items-center justify-center bg-zinc-900 rounded-xl mb-4">
+                    <i class="fa-solid fa-user-shield text-[#c9a227] text-xl"></i>
+                </div>
+                <h3 class="font-semibold text-lg sm:text-xl tracking-tight mb-2">Identity Theft Defense</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed">Monitoring, counseling, and restoration support if your identity is compromised. A practical layer of protection in today’s world.</p>
+            </div>
+            <div class="product-card bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-7 sm:col-span-2 lg:col-span-1">
+                <div class="w-11 h-11 flex items-center justify-center bg-zinc-900 rounded-xl mb-4">
+                    <i class="fa-solid fa-car text-[#c9a227] text-xl"></i>
+                </div>
+                <h3 class="font-semibold text-lg sm:text-xl tracking-tight mb-2">Auto &amp; Home Quotes</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed">Competitive quotes from multiple carriers through a referral program. Many families improve coverage or reduce premiums by comparing options.</p>
+            </div>
+        </div>
+
+        <div class="mt-12 sm:mt-14 bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-8">
+            <div class="flex flex-col md:flex-row md:items-center gap-6">
+                <div class="flex-1">
+                    <div class="text-xs font-semibold tracking-[2px] text-[#c9a227] mb-2">THE CORE IDEA</div>
+                    <h3 class="text-xl sm:text-2xl font-semibold tracking-tight mb-3">Buy Term and Invest the Difference</h3>
+                    <p class="text-zinc-400 text-sm sm:text-base leading-relaxed">
+                        Instead of locking most of your premium into permanent life insurance, many families choose affordable term coverage for pure protection and then systematically invest the difference they save. The goal: protect the family today while building assets for tomorrow. Education comes first.
+                    </p>
+                </div>
+                <div class="md:w-auto">
+                    <a href="contact.html" class="inline-flex items-center gap-x-2 px-6 py-3.5 bg-white text-zinc-950 font-semibold rounded-2xl hover:bg-zinc-100 transition-all text-sm whitespace-nowrap">
+                        Talk Through Your Situation <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-black border-t border-zinc-800 pt-12 pb-8">
+    <div class="max-w-6xl mx-auto px-5 sm:px-6">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+            <div class="sm:col-span-2">
+                <div class="flex items-center gap-x-3 mb-4">
+                    <div class="w-10 h-10 rounded-full overflow-hidden border border-zinc-700">
+                        <img src="xe-logo.jpg" alt="XE Logo" class="w-full h-full object-cover" width="40" height="40">
+                    </div>
+                    <div>
+                        <div class="font-semibold text-lg">Xavier Enciso</div>
+                        <div class="text-[10px] text-zinc-500 tracking-wide">FINANCIAL PROFESSIONAL</div>
+                    </div>
+                </div>
+                <p class="text-sm text-zinc-400 max-w-sm leading-relaxed">California-licensed Insurance Producer helping families in Delano, Bakersfield, and the Central Valley build lasting financial security.</p>
+            </div>
+            <div>
+                <div class="text-xs font-semibold tracking-widest text-zinc-500 mb-4">QUICK LINKS</div>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="about.html" class="text-zinc-400 hover:text-[#c9a227]">About</a></li>
+                    <li><a href="solutions.html" class="text-zinc-400 hover:text-[#c9a227]">Solutions</a></li>
+                    <li><a href="community.html" class="text-zinc-400 hover:text-[#c9a227]">Community</a></li>
+                    <li><a href="join.html" class="text-zinc-400 hover:text-[#c9a227]">Join the Team</a></li>
+                    <li><a href="contact.html" class="text-zinc-400 hover:text-[#c9a227]">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="text-xs font-semibold tracking-widest text-zinc-500 mb-4">CONNECT</div>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="https://x.com/masterxe" target="_blank" rel="noopener" class="text-zinc-400 hover:text-[#c9a227] inline-flex items-center gap-x-2"><i class="fa-brands fa-x-twitter"></i> @masterxe</a></li>
+                    <li><a href="mailto:encisox03@gmail.com" class="text-zinc-400 hover:text-[#c9a227] inline-flex items-center gap-x-2"><i class="fa-solid fa-envelope"></i> Email</a></li>
+                    <li class="pt-2 text-zinc-500 text-xs">License #4279749<br>California Department of Insurance</li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-zinc-800 pt-6 text-center">
+            <p class="text-xs text-zinc-500 leading-relaxed max-w-3xl mx-auto mb-3">Xavier Enciso is a licensed insurance producer in the State of California (License #4279749). Investment and securities products are not currently offered. This website is for informational purposes. Not affiliated with any government agency.</p>
+            <p class="text-xs text-zinc-600">© 2026 Xavier Enciso. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('fa-bars');
+        menuIcon.classList.toggle('fa-times');
+    });
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            menuIcon.classList.add('fa-bars');
+            menuIcon.classList.remove('fa-times');
+        });
+    });
+</script>
+</body>
+</html>
