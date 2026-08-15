@@ -10,18 +10,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap');
-        body { font-family: 'Inter', system-ui, sans-serif; }
+        body { font-family: 'Inter', system-ui, sans-serif; animation: pageFade 0.5s ease; }
         .heading-serif { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; letter-spacing: -0.025em; }
-        .benefit-card { transition: all 0.3s ease; }
-        .benefit-card:hover { transform: translateY(-5px); border-color: #c9a227; }
+        .benefit-card { transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s ease, box-shadow 0.35s ease; }
+        .benefit-card:hover { transform: translateY(-8px) scale(1.01); border-color: #c9a227; box-shadow: 0 20px 40px -15px rgba(201, 162, 39, 0.25); }
+        .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
         .modal { animation: modalPopIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
         @keyframes modalPopIn { from { opacity: 0; transform: scale(0.85) translateY(30px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+        .nav-scrolled { background: rgba(9, 9, 11, 0.95) !important; border-bottom-color: #3f3f46 !important; box-shadow: 0 4px 30px rgba(0,0,0,0.4); }
+        .float-cta { position: fixed; bottom: 24px; right: 20px; z-index: 40; opacity: 0; transform: translateY(20px) scale(0.9); transition: opacity 0.4s ease, transform 0.4s ease; pointer-events: none; }
+        .float-cta.show { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
         a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid #c9a227; outline-offset: 3px; }
+        @keyframes pageFade { from { opacity: 0; } to { opacity: 1; } }
     </style>
 </head>
 <body class="bg-zinc-950 text-zinc-200 antialiased">
 
-<nav class="bg-zinc-900/95 backdrop-blur-lg border-b border-zinc-800 sticky top-0 z-50">
+<nav id="main-nav" class="bg-zinc-900/80 backdrop-blur-lg border-b border-zinc-800 sticky top-0 z-50 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-5 sm:px-6">
         <div class="flex justify-between items-center h-18 sm:h-20">
             <a href="index.html" class="flex items-center gap-x-3 group">
@@ -42,7 +50,7 @@
             </div>
             <div class="hidden lg:flex items-center gap-x-3">
                 <a href="contact.html" class="px-5 py-2.5 text-sm font-medium border border-zinc-700 hover:border-zinc-500 rounded-full transition-colors">Contact Me</a>
-                <a href="join.html" class="px-6 py-2.5 bg-[#c9a227] hover:bg-amber-500 text-zinc-950 font-semibold text-sm rounded-full transition-all">Join My Team</a>
+                <a href="join.html" class="px-6 py-2.5 bg-[#c9a227] hover:bg-amber-500 text-zinc-950 font-semibold text-sm rounded-full transition-all hover:shadow-[0_0_20px_rgba(201,162,39,0.4)]">Join My Team</a>
             </div>
             <button id="mobile-menu-btn" class="lg:hidden w-10 h-10 flex items-center justify-center text-zinc-400 hover:text-white" aria-label="Open menu">
                 <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
@@ -67,7 +75,7 @@
 <section class="bg-zinc-900 border-b border-zinc-800 py-16 sm:py-20">
     <div class="max-w-5xl mx-auto px-5 sm:px-6">
         <div class="grid lg:grid-cols-2 gap-x-14 gap-y-10 items-center">
-            <div>
+            <div class="reveal">
                 <div class="uppercase tracking-[2px] text-xs font-semibold text-[#c9a227] mb-3">OPPORTUNITY TO GROW</div>
                 <h1 class="text-4xl sm:text-5xl md:text-6xl tracking-tighter heading-serif leading-none mb-5 sm:mb-6">Join My Team.<br>Build Your Legacy.</h1>
                 <p class="text-lg sm:text-xl text-zinc-300 mb-6 sm:mb-8 leading-relaxed">
@@ -78,25 +86,25 @@
                     <li class="flex items-start gap-x-3"><i class="fa-solid fa-check text-[#c9a227] mt-1"></i><span>Flexible schedule — work from home and set your own hours</span></li>
                     <li class="flex items-start gap-x-3"><i class="fa-solid fa-check text-[#c9a227] mt-1"></i><span>Ongoing mentorship and step-by-step training</span></li>
                 </ul>
-                <button onclick="showJoinModal()" class="w-full sm:w-auto px-9 py-4 bg-[#c9a227] hover:bg-amber-500 transition-all text-zinc-950 font-bold text-base sm:text-lg rounded-2xl">Start Your Journey Today</button>
+                <button onclick="showJoinModal()" class="w-full sm:w-auto px-9 py-4 bg-[#c9a227] hover:bg-amber-500 transition-all text-zinc-950 font-bold text-base sm:text-lg rounded-2xl hover:shadow-[0_0_25px_rgba(201,162,39,0.4)]">Start Your Journey Today</button>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div class="benefit-card bg-zinc-950 border border-zinc-800 rounded-3xl p-6">
+                <div class="benefit-card reveal reveal-delay-1 bg-zinc-950 border border-zinc-800 rounded-3xl p-6">
                     <i class="fa-solid fa-graduation-cap text-2xl text-[#c9a227] mb-4"></i>
                     <div class="font-semibold mb-1.5 text-lg">Comprehensive Training</div>
                     <div class="text-sm text-zinc-400 leading-relaxed">Step-by-step education and ongoing mentorship so you never feel alone.</div>
                 </div>
-                <div class="benefit-card bg-zinc-950 border border-zinc-800 rounded-3xl p-6">
+                <div class="benefit-card reveal reveal-delay-2 bg-zinc-950 border border-zinc-800 rounded-3xl p-6">
                     <i class="fa-solid fa-house text-2xl text-[#c9a227] mb-4"></i>
                     <div class="font-semibold mb-1.5 text-lg">Work-Life Flexibility</div>
                     <div class="text-sm text-zinc-400 leading-relaxed">Work from home and set your own hours around family and life.</div>
                 </div>
-                <div class="benefit-card bg-zinc-950 border border-zinc-800 rounded-3xl p-6">
+                <div class="benefit-card reveal reveal-delay-1 bg-zinc-950 border border-zinc-800 rounded-3xl p-6">
                     <i class="fa-solid fa-handshake text-2xl text-[#c9a227] mb-4"></i>
                     <div class="font-semibold mb-1.5 text-lg">Client-First Culture</div>
                     <div class="text-sm text-zinc-400 leading-relaxed">We put families first. Ethics and genuine service are non-negotiable.</div>
                 </div>
-                <div class="benefit-card bg-zinc-950 border border-zinc-800 rounded-3xl p-6">
+                <div class="benefit-card reveal reveal-delay-2 bg-zinc-950 border border-zinc-800 rounded-3xl p-6">
                     <i class="fa-solid fa-seedling text-2xl text-[#c9a227] mb-4"></i>
                     <div class="font-semibold mb-1.5 text-lg">Growth Path</div>
                     <div class="text-sm text-zinc-400 leading-relaxed">Build skills, income, and eventually lead your own team.</div>
@@ -184,6 +192,11 @@
     </div>
 </footer>
 
+<a href="contact.html" id="float-cta" class="float-cta lg:hidden flex items-center gap-x-2 px-5 py-3.5 bg-[#c9a227] text-zinc-950 font-semibold rounded-full shadow-lg shadow-[#c9a227]/30">
+    <i class="fa-solid fa-message"></i>
+    <span>Contact</span>
+</a>
+
 <script>
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -199,6 +212,25 @@
             menuIcon.classList.add('fa-bars');
             menuIcon.classList.remove('fa-times');
         });
+    });
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 40) nav.classList.add('nav-scrolled');
+        else nav.classList.remove('nav-scrolled');
+    });
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    const floatCta = document.getElementById('float-cta');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) floatCta.classList.add('show');
+        else floatCta.classList.remove('show');
     });
     function showJoinModal() {
         const modal = document.getElementById('join-modal');
