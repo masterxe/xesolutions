@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Solutions from Xavier Enciso — term life insurance, financial education, legal protection, and more for Central Valley families. Investments coming soon.">
+    <meta name="description" content="Solutions from Xavier Enciso — term life insurance, financial education, legal protection, and more for Central Valley families.">
     <title>Solutions | Xavier Enciso | Delano, CA</title>
     <link rel="icon" type="image/jpeg" href="xe-logo.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -15,23 +15,22 @@
         .section-header { position: relative; display: inline-block; }
         .section-header:after { content: ''; position: absolute; bottom: -8px; left: 0; width: 60px; height: 3px; background: linear-gradient(to right, #c9a227, #d4af37); border-radius: 3px; }
         .section-header.centered:after { left: 50%; transform: translateX(-50%); }
-        .product-card { transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s ease, box-shadow 0.35s ease; }
-        .product-card:hover { transform: translateY(-8px) scale(1.01); border-color: #c9a227; box-shadow: 0 20px 40px -15px rgba(201, 162, 39, 0.25); }
+        .product-card { transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s ease, box-shadow 0.35s ease; cursor: pointer; }
+        .product-card:hover { transform: translateY(-6px); border-color: #c9a227; box-shadow: 0 20px 40px -15px rgba(201, 162, 39, 0.25); }
+        .product-card.selected { border-color: #c9a227; box-shadow: 0 0 0 1px #c9a227, 0 20px 40px -15px rgba(201, 162, 39, 0.3); background: rgba(201,162,39,0.06); }
         .coming-soon-badge { background: linear-gradient(135deg, #c9a227 0%, #a6851f 100%); color: #0a0a0a; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; padding: 3px 8px; border-radius: 9999px; text-transform: uppercase; }
         .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
         .reveal.visible { opacity: 1; transform: translateY(0); }
-        .reveal-delay-1 { transition-delay: 0.1s; }
-        .reveal-delay-2 { transition-delay: 0.2s; }
-        .reveal-delay-3 { transition-delay: 0.3s; }
-        .reveal-delay-4 { transition-delay: 0.4s; }
         .nav-scrolled { background: rgba(9, 9, 11, 0.95) !important; border-bottom-color: #3f3f46 !important; box-shadow: 0 4px 30px rgba(0,0,0,0.4); }
-        .float-cta { position: fixed; bottom: 24px; right: 20px; z-index: 40; opacity: 0; transform: translateY(20px) scale(0.9); transition: opacity 0.4s ease, transform 0.4s ease; pointer-events: none; }
-        .float-cta.show { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+        .request-bar { transform: translateY(120%); transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1); }
+        .request-bar.show { transform: translateY(0); }
         a:focus-visible, button:focus-visible { outline: 2px solid #c9a227; outline-offset: 3px; }
         @keyframes pageFade { from { opacity: 0; } to { opacity: 1; } }
+        .svc-check { width: 22px; height: 22px; border-radius: 6px; border: 2px solid #52525b; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.2s ease; }
+        .product-card.selected .svc-check { border-color: #c9a227; background: #c9a227; color: #0a0a0a; }
     </style>
 </head>
-<body class="bg-zinc-950 text-zinc-200 antialiased">
+<body class="bg-zinc-950 text-zinc-200 antialiased pb-28">
 
 <nav id="main-nav" class="bg-zinc-900/80 backdrop-blur-lg border-b border-zinc-800 sticky top-0 z-50 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-5 sm:px-6">
@@ -54,7 +53,7 @@
             </div>
             <div class="hidden lg:flex items-center gap-x-3">
                 <a href="contact.html" class="px-5 py-2.5 text-sm font-medium border border-zinc-700 hover:border-zinc-500 rounded-full transition-colors">Contact Me</a>
-                <a href="join.html" class="px-6 py-2.5 bg-[#c9a227] hover:bg-amber-500 text-zinc-950 font-semibold text-sm rounded-full transition-all hover:shadow-[0_0_20px_rgba(201,162,39,0.4)]">Join My Team</a>
+                <a href="join.html" class="px-6 py-2.5 bg-[#c9a227] hover:bg-amber-500 text-zinc-950 font-semibold text-sm rounded-full transition-all">Join My Team</a>
             </div>
             <button id="mobile-menu-btn" class="lg:hidden w-10 h-10 flex items-center justify-center text-zinc-400 hover:text-white" aria-label="Open menu">
                 <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
@@ -78,153 +77,120 @@
 
 <section class="bg-zinc-900 border-b border-zinc-800 py-16 sm:py-20">
     <div class="max-w-6xl mx-auto px-5 sm:px-6">
-        <div class="text-center mb-12 sm:mb-14 reveal">
+        <div class="text-center mb-10 sm:mb-12 reveal">
             <div class="uppercase tracking-[2.5px] text-xs font-semibold text-[#c9a227]">WHAT I OFFER</div>
             <h1 class="section-header centered text-4xl sm:text-5xl md:text-6xl tracking-tighter heading-serif mt-3">Solutions for Every Stage</h1>
-            <p class="mt-6 max-w-2xl mx-auto text-zinc-400 text-base sm:text-lg">Practical tools that help Central Valley families protect income, reduce risk, and build toward the future.</p>
+            <p class="mt-6 max-w-2xl mx-auto text-zinc-400 text-base sm:text-lg">Tap one or more services below, then request a conversation. Your selections will auto-fill the inquiry form.</p>
         </div>
 
         <div class="grid lg:grid-cols-2 gap-6 mb-8">
-            <div class="product-card reveal reveal-delay-1 bg-zinc-950 border border-[#c9a227]/40 rounded-3xl p-7 sm:p-8 relative overflow-hidden">
-                <div class="absolute top-4 right-4">
-                    <span class="text-[10px] font-bold tracking-wider text-emerald-400 bg-emerald-950/60 px-3 py-1 rounded-full">AVAILABLE NOW</span>
-                </div>
-                <div class="w-12 h-12 flex items-center justify-center bg-zinc-900 rounded-2xl mb-5">
-                    <i class="fa-solid fa-shield-halved text-[#c9a227] text-2xl"></i>
+            <div class="product-card reveal bg-zinc-950 border border-[#c9a227]/40 rounded-3xl p-7 sm:p-8 relative" data-service="term-life" data-label="Term Life Insurance" role="checkbox" aria-checked="false" tabindex="0">
+                <div class="flex items-start justify-between gap-3 mb-4">
+                    <div class="w-12 h-12 flex items-center justify-center bg-zinc-900 rounded-2xl"><i class="fa-solid fa-shield-halved text-[#c9a227] text-2xl"></i></div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-[10px] font-bold tracking-wider text-emerald-400 bg-emerald-950/60 px-3 py-1 rounded-full">AVAILABLE NOW</span>
+                        <div class="svc-check"><i class="fa-solid fa-check text-xs opacity-0 selected-icon"></i></div>
+                    </div>
                 </div>
                 <h2 class="font-semibold text-2xl tracking-tight mb-3">Term Life Insurance</h2>
-                <p class="text-zinc-400 text-sm sm:text-base leading-relaxed mb-4">
-                    Affordable income protection designed for the years your family needs it most. Term life gives you the highest amount of coverage for the premium you pay — so your mortgage, income, and children’s future stay protected if something happens to you.
-                </p>
+                <p class="text-zinc-400 text-sm sm:text-base leading-relaxed mb-4">Affordable income protection for the years your family needs it most — highest coverage for the premium you pay.</p>
                 <ul class="space-y-2 text-sm text-zinc-300">
                     <li class="flex gap-x-2"><i class="fa-solid fa-check text-[#c9a227] mt-0.5"></i> Level premiums for 10–35 year terms</li>
-                    <li class="flex gap-x-2"><i class="fa-solid fa-check text-[#c9a227] mt-0.5"></i> Ideal for young families and growing households</li>
-                    <li class="flex gap-x-2"><i class="fa-solid fa-check text-[#c9a227] mt-0.5"></i> Foundation of the “Buy Term and Invest the Difference” approach</li>
+                    <li class="flex gap-x-2"><i class="fa-solid fa-check text-[#c9a227] mt-0.5"></i> Ideal for young and growing families</li>
+                    <li class="flex gap-x-2"><i class="fa-solid fa-check text-[#c9a227] mt-0.5"></i> Foundation of “Buy Term and Invest the Difference”</li>
                 </ul>
             </div>
 
-            <div class="product-card reveal reveal-delay-2 bg-zinc-950 border border-zinc-800 rounded-3xl p-7 sm:p-8 relative overflow-hidden">
-                <div class="absolute top-4 right-4">
-                    <span class="coming-soon-badge">Coming Soon</span>
-                </div>
-                <div class="w-12 h-12 flex items-center justify-center bg-zinc-900 rounded-2xl mb-5">
-                    <i class="fa-solid fa-chart-line text-[#c9a227] text-2xl"></i>
+            <div class="product-card reveal bg-zinc-950 border border-zinc-800 rounded-3xl p-7 sm:p-8 relative" data-service="investments" data-label="Investments & Wealth Building" role="checkbox" aria-checked="false" tabindex="0">
+                <div class="flex items-start justify-between gap-3 mb-4">
+                    <div class="w-12 h-12 flex items-center justify-center bg-zinc-900 rounded-2xl"><i class="fa-solid fa-chart-line text-[#c9a227] text-2xl"></i></div>
+                    <div class="flex items-center gap-2">
+                        <span class="coming-soon-badge">Coming Soon</span>
+                        <div class="svc-check"><i class="fa-solid fa-check text-xs opacity-0 selected-icon"></i></div>
+                    </div>
                 </div>
                 <h2 class="font-semibold text-2xl tracking-tight mb-3">Investments &amp; Wealth Building</h2>
-                <p class="text-zinc-400 text-sm sm:text-base leading-relaxed mb-4">
-                    Once properly protected with term life, many families want to put the difference to work. Mutual funds, managed accounts, IRAs, and education savings plans help turn monthly contributions into long-term growth potential.
-                </p>
+                <p class="text-zinc-400 text-sm sm:text-base leading-relaxed mb-4">After protection is in place, put the difference to work through long-term growth strategies. Educational conversations available now.</p>
                 <ul class="space-y-2 text-sm text-zinc-300">
                     <li class="flex gap-x-2"><i class="fa-solid fa-check text-[#c9a227] mt-0.5"></i> Mutual funds &amp; managed investments</li>
-                    <li class="flex gap-x-2"><i class="fa-solid fa-check text-[#c9a227] mt-0.5"></i> Traditional &amp; Roth IRAs, 529 education plans</li>
-                    <li class="flex gap-x-2"><i class="fa-solid fa-check text-[#c9a227] mt-0.5"></i> Annuities for retirement income planning</li>
+                    <li class="flex gap-x-2"><i class="fa-solid fa-check text-[#c9a227] mt-0.5"></i> IRAs &amp; 529 education plans</li>
+                    <li class="flex gap-x-2"><i class="fa-solid fa-check text-[#c9a227] mt-0.5"></i> Retirement income planning</li>
                 </ul>
-                <p class="mt-4 text-xs text-zinc-500 italic">Securities licensing in progress. Educational conversations available now; product transactions coming after licensing.</p>
             </div>
         </div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-            <div class="product-card reveal reveal-delay-1 bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-7">
-                <div class="w-11 h-11 flex items-center justify-center bg-zinc-900 rounded-xl mb-4">
-                    <i class="fa-solid fa-piggy-bank text-[#c9a227] text-xl"></i>
+            <div class="product-card reveal bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-7" data-service="retirement" data-label="Retirement Strategies" role="checkbox" aria-checked="false" tabindex="0">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="w-11 h-11 flex items-center justify-center bg-zinc-900 rounded-xl"><i class="fa-solid fa-piggy-bank text-[#c9a227] text-xl"></i></div>
+                    <div class="svc-check"><i class="fa-solid fa-check text-xs opacity-0 selected-icon"></i></div>
                 </div>
                 <h3 class="font-semibold text-lg sm:text-xl tracking-tight mb-2">Retirement Strategies</h3>
-                <p class="text-zinc-400 text-sm leading-relaxed">Clear, actionable plans to prepare for retirement. Start with protection, then layer savings and investment strategies as your situation allows.</p>
+                <p class="text-zinc-400 text-sm leading-relaxed">Clear plans to prepare for retirement. Start with protection, then layer savings as your situation allows.</p>
             </div>
-            <div class="product-card reveal reveal-delay-2 bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-7">
-                <div class="w-11 h-11 flex items-center justify-center bg-zinc-900 rounded-xl mb-4">
-                    <i class="fa-solid fa-graduation-cap text-[#c9a227] text-xl"></i>
+            <div class="product-card reveal bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-7" data-service="education" data-label="Financial Education" role="checkbox" aria-checked="false" tabindex="0">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="w-11 h-11 flex items-center justify-center bg-zinc-900 rounded-xl"><i class="fa-solid fa-graduation-cap text-[#c9a227] text-xl"></i></div>
+                    <div class="svc-check"><i class="fa-solid fa-check text-xs opacity-0 selected-icon"></i></div>
                 </div>
                 <h3 class="font-semibold text-lg sm:text-xl tracking-tight mb-2">Financial Education</h3>
-                <p class="text-zinc-400 text-sm leading-relaxed">One-on-one guidance and workshops that demystify budgeting, debt, credit, insurance, and long-term planning. Knowledge first — products second.</p>
+                <p class="text-zinc-400 text-sm leading-relaxed">One-on-one guidance and workshops that demystify budgeting, debt, credit, insurance, and long-term planning.</p>
             </div>
-            <div class="product-card reveal reveal-delay-3 bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-7">
-                <div class="w-11 h-11 flex items-center justify-center bg-zinc-900 rounded-xl mb-4">
-                    <i class="fa-solid fa-scale-balanced text-[#c9a227] text-xl"></i>
+            <div class="product-card reveal bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-7" data-service="legal" data-label="Legal Protection" role="checkbox" aria-checked="false" tabindex="0">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="w-11 h-11 flex items-center justify-center bg-zinc-900 rounded-xl"><i class="fa-solid fa-scale-balanced text-[#c9a227] text-xl"></i></div>
+                    <div class="svc-check"><i class="fa-solid fa-check text-xs opacity-0 selected-icon"></i></div>
                 </div>
                 <h3 class="font-semibold text-lg sm:text-xl tracking-tight mb-2">Legal Protection</h3>
-                <p class="text-zinc-400 text-sm leading-relaxed">Access to attorney services for everyday legal needs — will preparation, document review, and more — through a prepaid legal program.</p>
+                <p class="text-zinc-400 text-sm leading-relaxed">Access to attorney services for everyday legal needs — wills, documents, and more — through a prepaid legal program.</p>
             </div>
-            <div class="product-card reveal reveal-delay-1 bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-7">
-                <div class="w-11 h-11 flex items-center justify-center bg-zinc-900 rounded-xl mb-4">
-                    <i class="fa-solid fa-user-shield text-[#c9a227] text-xl"></i>
+            <div class="product-card reveal bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-7" data-service="identity" data-label="Identity Theft Defense" role="checkbox" aria-checked="false" tabindex="0">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="w-11 h-11 flex items-center justify-center bg-zinc-900 rounded-xl"><i class="fa-solid fa-user-shield text-[#c9a227] text-xl"></i></div>
+                    <div class="svc-check"><i class="fa-solid fa-check text-xs opacity-0 selected-icon"></i></div>
                 </div>
                 <h3 class="font-semibold text-lg sm:text-xl tracking-tight mb-2">Identity Theft Defense</h3>
-                <p class="text-zinc-400 text-sm leading-relaxed">Monitoring, counseling, and restoration support if your identity is compromised. A practical layer of protection in today’s world.</p>
+                <p class="text-zinc-400 text-sm leading-relaxed">Monitoring, counseling, and restoration support if your identity is compromised.</p>
             </div>
-            <div class="product-card reveal reveal-delay-2 bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-7 sm:col-span-2 lg:col-span-1">
-                <div class="w-11 h-11 flex items-center justify-center bg-zinc-900 rounded-xl mb-4">
-                    <i class="fa-solid fa-car text-[#c9a227] text-xl"></i>
+            <div class="product-card reveal bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-7 sm:col-span-2 lg:col-span-1" data-service="auto-home" data-label="Auto & Home Quotes" role="checkbox" aria-checked="false" tabindex="0">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="w-11 h-11 flex items-center justify-center bg-zinc-900 rounded-xl"><i class="fa-solid fa-car text-[#c9a227] text-xl"></i></div>
+                    <div class="svc-check"><i class="fa-solid fa-check text-xs opacity-0 selected-icon"></i></div>
                 </div>
                 <h3 class="font-semibold text-lg sm:text-xl tracking-tight mb-2">Auto &amp; Home Quotes</h3>
-                <p class="text-zinc-400 text-sm leading-relaxed">Competitive quotes from multiple carriers through a referral program. Many families improve coverage or reduce premiums by comparing options.</p>
+                <p class="text-zinc-400 text-sm leading-relaxed">Competitive quotes from multiple carriers through a referral program.</p>
             </div>
         </div>
 
-        <div class="mt-12 sm:mt-14 bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-8 reveal reveal-delay-3">
-            <div class="flex flex-col md:flex-row md:items-center gap-6">
-                <div class="flex-1">
-                    <div class="text-xs font-semibold tracking-[2px] text-[#c9a227] mb-2">THE CORE IDEA</div>
-                    <h3 class="text-xl sm:text-2xl font-semibold tracking-tight mb-3">Buy Term and Invest the Difference</h3>
-                    <p class="text-zinc-400 text-sm sm:text-base leading-relaxed">
-                        Instead of locking most of your premium into permanent life insurance, many families choose affordable term coverage for pure protection and then systematically invest the difference they save. The goal: protect the family today while building assets for tomorrow. Education comes first.
-                    </p>
-                </div>
-                <div class="md:w-auto">
-                    <a href="contact.html" class="inline-flex items-center gap-x-2 px-6 py-3.5 bg-white text-zinc-950 font-semibold rounded-2xl hover:bg-zinc-100 transition-all text-sm whitespace-nowrap hover:shadow-lg">
-                        Talk Through Your Situation <i class="fa-solid fa-arrow-right text-sm"></i>
-                    </a>
-                </div>
-            </div>
+        <div class="mt-12 sm:mt-14 bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-8 reveal">
+            <div class="text-xs font-semibold tracking-[2px] text-[#c9a227] mb-2">THE CORE IDEA</div>
+            <h3 class="text-xl sm:text-2xl font-semibold tracking-tight mb-3">Buy Term and Invest the Difference</h3>
+            <p class="text-zinc-400 text-sm sm:text-base leading-relaxed">Affordable term coverage for pure protection, then systematically invest the difference. Protect the family today while building assets for tomorrow. Education comes first.</p>
         </div>
     </div>
 </section>
 
 <footer class="bg-black border-t border-zinc-800 pt-12 pb-8">
-    <div class="max-w-6xl mx-auto px-5 sm:px-6">
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
-            <div class="sm:col-span-2">
-                <div class="flex items-center gap-x-3 mb-4">
-                    <div class="w-10 h-10 rounded-full overflow-hidden border border-zinc-700">
-                        <img src="xe-logo.jpg" alt="XE Logo" class="w-full h-full object-cover" width="40" height="40">
-                    </div>
-                    <div>
-                        <div class="font-semibold text-lg">Xavier Enciso</div>
-                        <div class="text-[10px] text-zinc-500 tracking-wide">FINANCIAL PROFESSIONAL</div>
-                    </div>
-                </div>
-                <p class="text-sm text-zinc-400 max-w-sm leading-relaxed">California-licensed Insurance Producer helping families in Delano, Bakersfield, and the Central Valley build lasting financial security.</p>
-            </div>
-            <div>
-                <div class="text-xs font-semibold tracking-widest text-zinc-500 mb-4">QUICK LINKS</div>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="about.html" class="text-zinc-400 hover:text-[#c9a227]">About</a></li>
-                    <li><a href="solutions.html" class="text-zinc-400 hover:text-[#c9a227]">Solutions</a></li>
-                    <li><a href="community.html" class="text-zinc-400 hover:text-[#c9a227]">Community</a></li>
-                    <li><a href="join.html" class="text-zinc-400 hover:text-[#c9a227]">Join the Team</a></li>
-                    <li><a href="contact.html" class="text-zinc-400 hover:text-[#c9a227]">Contact</a></li>
-                </ul>
-            </div>
-            <div>
-                <div class="text-xs font-semibold tracking-widest text-zinc-500 mb-4">CONNECT</div>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="https://x.com/masterxe" target="_blank" rel="noopener" class="text-zinc-400 hover:text-[#c9a227] inline-flex items-center gap-x-2"><i class="fa-brands fa-x-twitter"></i> @masterxe</a></li>
-                    <li><a href="mailto:encisox03@gmail.com" class="text-zinc-400 hover:text-[#c9a227] inline-flex items-center gap-x-2"><i class="fa-solid fa-envelope"></i> Email</a></li>
-                    <li class="pt-2 text-zinc-500 text-xs">License #4279749<br>California Department of Insurance</li>
-                </ul>
-            </div>
-        </div>
-        <div class="border-t border-zinc-800 pt-6 text-center">
-            <p class="text-xs text-zinc-500 leading-relaxed max-w-3xl mx-auto mb-3">Xavier Enciso is a licensed insurance producer in the State of California (License #4279749). Investment and securities products are not currently offered. This website is for informational purposes. Not affiliated with any government agency.</p>
-            <p class="text-xs text-zinc-600">© 2026 Xavier Enciso. All rights reserved.</p>
-        </div>
+    <div class="max-w-6xl mx-auto px-5 sm:px-6 text-center">
+        <p class="text-xs text-zinc-500 mb-2">License #4279749 · California Department of Insurance</p>
+        <p class="text-xs text-zinc-600">© 2026 Xavier Enciso. All rights reserved.</p>
     </div>
 </footer>
 
-<a href="contact.html" id="float-cta" class="float-cta lg:hidden flex items-center gap-x-2 px-5 py-3.5 bg-[#c9a227] text-zinc-950 font-semibold rounded-full shadow-lg shadow-[#c9a227]/30">
-    <i class="fa-solid fa-message"></i>
-    <span>Contact</span>
-</a>
+<div id="request-bar" class="request-bar fixed bottom-0 inset-x-0 z-50 border-t border-zinc-800 bg-zinc-950/95 backdrop-blur-lg">
+    <div class="max-w-6xl mx-auto px-5 sm:px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div class="text-sm text-zinc-300 text-center sm:text-left">
+            <span id="selected-count" class="font-semibold text-[#c9a227]">0</span> service(s) selected
+            <span id="selected-names" class="block sm:inline text-zinc-500 text-xs sm:text-sm sm:ml-2"></span>
+        </div>
+        <div class="flex gap-3 w-full sm:w-auto">
+            <button type="button" id="clear-btn" class="flex-1 sm:flex-none px-5 py-3 border border-zinc-700 rounded-2xl text-sm text-zinc-400 hover:text-white hover:border-zinc-500 transition-colors">Clear</button>
+            <button type="button" id="request-btn" class="flex-1 sm:flex-none px-6 py-3 bg-[#c9a227] hover:bg-amber-500 text-zinc-950 font-semibold rounded-2xl text-sm transition-all">
+                Request selected <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+            </button>
+        </div>
+    </div>
+</div>
 
 <script>
     const mobileBtn = document.getElementById('mobile-menu-btn');
@@ -256,10 +222,49 @@
         });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    const floatCta = document.getElementById('float-cta');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) floatCta.classList.add('show');
-        else floatCta.classList.remove('show');
+
+    const cards = document.querySelectorAll('.product-card[data-service]');
+    const requestBar = document.getElementById('request-bar');
+    const selectedCount = document.getElementById('selected-count');
+    const selectedNames = document.getElementById('selected-names');
+    const requestBtn = document.getElementById('request-btn');
+    const clearBtn = document.getElementById('clear-btn');
+
+    function getSelected() {
+        return [...cards].filter(c => c.classList.contains('selected'));
+    }
+    function updateUI() {
+        const selected = getSelected();
+        selectedCount.textContent = selected.length;
+        selectedNames.textContent = selected.length ? '— ' + selected.map(c => c.dataset.label).join(', ') : '';
+        if (selected.length > 0) requestBar.classList.add('show');
+        else requestBar.classList.remove('show');
+        cards.forEach(c => {
+            const on = c.classList.contains('selected');
+            c.setAttribute('aria-checked', on ? 'true' : 'false');
+            const icon = c.querySelector('.selected-icon');
+            if (icon) icon.style.opacity = on ? '1' : '0';
+        });
+    }
+    function toggleCard(card) {
+        card.classList.toggle('selected');
+        updateUI();
+    }
+    cards.forEach(card => {
+        card.addEventListener('click', () => toggleCard(card));
+        card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleCard(card); }
+        });
+    });
+    clearBtn.addEventListener('click', () => {
+        cards.forEach(c => c.classList.remove('selected'));
+        updateUI();
+    });
+    requestBtn.addEventListener('click', () => {
+        const selected = getSelected();
+        if (!selected.length) return;
+        const ids = selected.map(c => c.dataset.service).join(',');
+        window.location.href = 'contact.html?services=' + encodeURIComponent(ids);
     });
 </script>
 </body>
