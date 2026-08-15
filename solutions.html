@@ -10,20 +10,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap');
-        body { font-family: 'Inter', system-ui, sans-serif; }
+        body { font-family: 'Inter', system-ui, sans-serif; animation: pageFade 0.5s ease; }
         .heading-serif { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; letter-spacing: -0.025em; }
         .section-header { position: relative; display: inline-block; }
         .section-header:after { content: ''; position: absolute; bottom: -8px; left: 0; width: 60px; height: 3px; background: linear-gradient(to right, #c9a227, #d4af37); border-radius: 3px; }
         .section-header.centered:after { left: 50%; transform: translateX(-50%); }
-        .product-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        .product-card:hover { transform: translateY(-5px); border-color: #c9a227; }
+        .product-card { transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s ease, box-shadow 0.35s ease; }
+        .product-card:hover { transform: translateY(-8px) scale(1.01); border-color: #c9a227; box-shadow: 0 20px 40px -15px rgba(201, 162, 39, 0.25); }
         .coming-soon-badge { background: linear-gradient(135deg, #c9a227 0%, #a6851f 100%); color: #0a0a0a; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; padding: 3px 8px; border-radius: 9999px; text-transform: uppercase; }
+        .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        .nav-scrolled { background: rgba(9, 9, 11, 0.95) !important; border-bottom-color: #3f3f46 !important; box-shadow: 0 4px 30px rgba(0,0,0,0.4); }
+        .float-cta { position: fixed; bottom: 24px; right: 20px; z-index: 40; opacity: 0; transform: translateY(20px) scale(0.9); transition: opacity 0.4s ease, transform 0.4s ease; pointer-events: none; }
+        .float-cta.show { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
         a:focus-visible, button:focus-visible { outline: 2px solid #c9a227; outline-offset: 3px; }
+        @keyframes pageFade { from { opacity: 0; } to { opacity: 1; } }
     </style>
 </head>
 <body class="bg-zinc-950 text-zinc-200 antialiased">
 
-<nav class="bg-zinc-900/95 backdrop-blur-lg border-b border-zinc-800 sticky top-0 z-50">
+<nav id="main-nav" class="bg-zinc-900/80 backdrop-blur-lg border-b border-zinc-800 sticky top-0 z-50 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-5 sm:px-6">
         <div class="flex justify-between items-center h-18 sm:h-20">
             <a href="index.html" class="flex items-center gap-x-3 group">
@@ -44,7 +54,7 @@
             </div>
             <div class="hidden lg:flex items-center gap-x-3">
                 <a href="contact.html" class="px-5 py-2.5 text-sm font-medium border border-zinc-700 hover:border-zinc-500 rounded-full transition-colors">Contact Me</a>
-                <a href="join.html" class="px-6 py-2.5 bg-[#c9a227] hover:bg-amber-500 text-zinc-950 font-semibold text-sm rounded-full transition-all">Join My Team</a>
+                <a href="join.html" class="px-6 py-2.5 bg-[#c9a227] hover:bg-amber-500 text-zinc-950 font-semibold text-sm rounded-full transition-all hover:shadow-[0_0_20px_rgba(201,162,39,0.4)]">Join My Team</a>
             </div>
             <button id="mobile-menu-btn" class="lg:hidden w-10 h-10 flex items-center justify-center text-zinc-400 hover:text-white" aria-label="Open menu">
                 <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
@@ -68,14 +78,14 @@
 
 <section class="bg-zinc-900 border-b border-zinc-800 py-16 sm:py-20">
     <div class="max-w-6xl mx-auto px-5 sm:px-6">
-        <div class="text-center mb-12 sm:mb-14">
+        <div class="text-center mb-12 sm:mb-14 reveal">
             <div class="uppercase tracking-[2.5px] text-xs font-semibold text-[#c9a227]">WHAT I OFFER</div>
             <h1 class="section-header centered text-4xl sm:text-5xl md:text-6xl tracking-tighter heading-serif mt-3">Solutions for Every Stage</h1>
             <p class="mt-6 max-w-2xl mx-auto text-zinc-400 text-base sm:text-lg">Practical tools that help Central Valley families protect income, reduce risk, and build toward the future.</p>
         </div>
 
         <div class="grid lg:grid-cols-2 gap-6 mb-8">
-            <div class="product-card bg-zinc-950 border border-[#c9a227]/40 rounded-3xl p-7 sm:p-8 relative overflow-hidden">
+            <div class="product-card reveal reveal-delay-1 bg-zinc-950 border border-[#c9a227]/40 rounded-3xl p-7 sm:p-8 relative overflow-hidden">
                 <div class="absolute top-4 right-4">
                     <span class="text-[10px] font-bold tracking-wider text-emerald-400 bg-emerald-950/60 px-3 py-1 rounded-full">AVAILABLE NOW</span>
                 </div>
@@ -93,7 +103,7 @@
                 </ul>
             </div>
 
-            <div class="product-card bg-zinc-950 border border-zinc-800 rounded-3xl p-7 sm:p-8 relative overflow-hidden">
+            <div class="product-card reveal reveal-delay-2 bg-zinc-950 border border-zinc-800 rounded-3xl p-7 sm:p-8 relative overflow-hidden">
                 <div class="absolute top-4 right-4">
                     <span class="coming-soon-badge">Coming Soon</span>
                 </div>
@@ -114,35 +124,35 @@
         </div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-            <div class="product-card bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-7">
+            <div class="product-card reveal reveal-delay-1 bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-7">
                 <div class="w-11 h-11 flex items-center justify-center bg-zinc-900 rounded-xl mb-4">
                     <i class="fa-solid fa-piggy-bank text-[#c9a227] text-xl"></i>
                 </div>
                 <h3 class="font-semibold text-lg sm:text-xl tracking-tight mb-2">Retirement Strategies</h3>
                 <p class="text-zinc-400 text-sm leading-relaxed">Clear, actionable plans to prepare for retirement. Start with protection, then layer savings and investment strategies as your situation allows.</p>
             </div>
-            <div class="product-card bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-7">
+            <div class="product-card reveal reveal-delay-2 bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-7">
                 <div class="w-11 h-11 flex items-center justify-center bg-zinc-900 rounded-xl mb-4">
                     <i class="fa-solid fa-graduation-cap text-[#c9a227] text-xl"></i>
                 </div>
                 <h3 class="font-semibold text-lg sm:text-xl tracking-tight mb-2">Financial Education</h3>
                 <p class="text-zinc-400 text-sm leading-relaxed">One-on-one guidance and workshops that demystify budgeting, debt, credit, insurance, and long-term planning. Knowledge first — products second.</p>
             </div>
-            <div class="product-card bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-7">
+            <div class="product-card reveal reveal-delay-3 bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-7">
                 <div class="w-11 h-11 flex items-center justify-center bg-zinc-900 rounded-xl mb-4">
                     <i class="fa-solid fa-scale-balanced text-[#c9a227] text-xl"></i>
                 </div>
                 <h3 class="font-semibold text-lg sm:text-xl tracking-tight mb-2">Legal Protection</h3>
                 <p class="text-zinc-400 text-sm leading-relaxed">Access to attorney services for everyday legal needs — will preparation, document review, and more — through a prepaid legal program.</p>
             </div>
-            <div class="product-card bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-7">
+            <div class="product-card reveal reveal-delay-1 bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-7">
                 <div class="w-11 h-11 flex items-center justify-center bg-zinc-900 rounded-xl mb-4">
                     <i class="fa-solid fa-user-shield text-[#c9a227] text-xl"></i>
                 </div>
                 <h3 class="font-semibold text-lg sm:text-xl tracking-tight mb-2">Identity Theft Defense</h3>
                 <p class="text-zinc-400 text-sm leading-relaxed">Monitoring, counseling, and restoration support if your identity is compromised. A practical layer of protection in today’s world.</p>
             </div>
-            <div class="product-card bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-7 sm:col-span-2 lg:col-span-1">
+            <div class="product-card reveal reveal-delay-2 bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-7 sm:col-span-2 lg:col-span-1">
                 <div class="w-11 h-11 flex items-center justify-center bg-zinc-900 rounded-xl mb-4">
                     <i class="fa-solid fa-car text-[#c9a227] text-xl"></i>
                 </div>
@@ -151,7 +161,7 @@
             </div>
         </div>
 
-        <div class="mt-12 sm:mt-14 bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-8">
+        <div class="mt-12 sm:mt-14 bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-8 reveal reveal-delay-3">
             <div class="flex flex-col md:flex-row md:items-center gap-6">
                 <div class="flex-1">
                     <div class="text-xs font-semibold tracking-[2px] text-[#c9a227] mb-2">THE CORE IDEA</div>
@@ -161,7 +171,7 @@
                     </p>
                 </div>
                 <div class="md:w-auto">
-                    <a href="contact.html" class="inline-flex items-center gap-x-2 px-6 py-3.5 bg-white text-zinc-950 font-semibold rounded-2xl hover:bg-zinc-100 transition-all text-sm whitespace-nowrap">
+                    <a href="contact.html" class="inline-flex items-center gap-x-2 px-6 py-3.5 bg-white text-zinc-950 font-semibold rounded-2xl hover:bg-zinc-100 transition-all text-sm whitespace-nowrap hover:shadow-lg">
                         Talk Through Your Situation <i class="fa-solid fa-arrow-right text-sm"></i>
                     </a>
                 </div>
@@ -211,6 +221,11 @@
     </div>
 </footer>
 
+<a href="contact.html" id="float-cta" class="float-cta lg:hidden flex items-center gap-x-2 px-5 py-3.5 bg-[#c9a227] text-zinc-950 font-semibold rounded-full shadow-lg shadow-[#c9a227]/30">
+    <i class="fa-solid fa-message"></i>
+    <span>Contact</span>
+</a>
+
 <script>
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -226,6 +241,25 @@
             menuIcon.classList.add('fa-bars');
             menuIcon.classList.remove('fa-times');
         });
+    });
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 40) nav.classList.add('nav-scrolled');
+        else nav.classList.remove('nav-scrolled');
+    });
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    const floatCta = document.getElementById('float-cta');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) floatCta.classList.add('show');
+        else floatCta.classList.remove('show');
     });
 </script>
 </body>
