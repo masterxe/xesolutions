@@ -47,9 +47,11 @@ a:focus-visible,button:focus-visible{outline:2px solid #c9a227;outline-offset:3p
 </head>
 <body class="bg-zinc-950 text-zinc-200 antialiased">
 
-<a href="#" data-open-logo-menu class="fixed top-4 left-4 sm:top-5 sm:left-5 z-[60] flex items-center gap-x-2.5 group rounded-full pr-3 sm:pr-4 bg-zinc-950/80 backdrop-blur-md border border-zinc-800 hover:border-[#c9a227]/50 shadow-lg transition-all hover:scale-[1.03]" title="Open site menu" aria-label="Open site menu">
-<div class="w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden border border-zinc-700 group-hover:border-[#c9a227]/70"><img src="xe-logo.jpg" alt="XE" class="w-full h-full object-cover" width="44" height="44"></div>
-<span class="text-sm font-medium tracking-wide text-zinc-400 group-hover:text-white hidden sm:block py-2">XE Solutions</span>
+<a href="#" data-open-logo-menu class="fixed top-4 left-4 sm:top-5 sm:left-5 z-[60] flex items-center gap-x-2.5 group rounded-full pl-1 pr-3 sm:pr-4 py-1 bg-zinc-950/80 backdrop-blur-md border border-zinc-800 hover:border-[#c9a227]/50 shadow-lg transition-all hover:scale-[1.03]" title="Open site menu" aria-label="Open site menu">
+<div class="w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden border border-zinc-700 group-hover:border-[#c9a227]/70 flex-shrink-0">
+<img src="xe-logo.jpg" alt="XE" class="w-full h-full object-cover object-center" width="44" height="44">
+</div>
+<span class="text-sm font-medium tracking-wide text-zinc-400 group-hover:text-white hidden sm:block leading-none">XE Solutions</span>
 </a>
 
 <div class="title-bg flex flex-col">
@@ -62,7 +64,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #c9a227;outline-offset:3p
 <div class="relative z-10 flex-1 flex flex-col items-center justify-center px-5 sm:px-8 pb-10 pt-4 text-center">
 <div class="mb-8 sm:mb-10 enter enter-2">
 <button type="button" id="main-logo-btn" class="w-36 h-36 sm:w-44 sm:h-44 md:w-52 md:h-52 rounded-full border-[8px] sm:border-[10px] border-[#c9a227]/25 p-2 logo-ring mx-auto cursor-pointer hover:scale-[1.03] transition-transform" aria-label="Thank you message">
-<div class="w-full h-full rounded-full overflow-hidden border border-[#c9a227]/40"><img src="xe-logo.jpg" alt="Xavier Enciso" class="w-full h-full object-cover pointer-events-none" width="208" height="208"></div>
+<div class="w-full h-full rounded-full overflow-hidden border border-[#c9a227]/40"><img src="xe-logo.jpg" alt="Xavier Enciso" class="w-full h-full object-cover object-center pointer-events-none" width="208" height="208"></div>
 </button>
 </div>
 <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl heading-serif tracking-tighter mb-3 enter enter-3">Xavier Enciso</h1>
@@ -191,7 +193,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #c9a227;outline-offset:3p
 <div id="thanks-modal" class="hidden fixed inset-0 z-[100] items-center justify-center p-5 bg-black/80 backdrop-blur-sm" role="dialog" aria-modal="true">
 <div class="relative w-full max-w-md bg-zinc-900 border border-zinc-700 rounded-3xl p-7 sm:p-9 text-center shadow-2xl">
 <button type="button" id="thanks-close" class="absolute top-4 right-4 w-9 h-9 flex items-center justify-center rounded-full text-zinc-500 hover:text-white hover:bg-zinc-800" aria-label="Close"><i class="fa-solid fa-times"></i></button>
-<div class="w-16 h-16 mx-auto mb-5 rounded-full overflow-hidden border-2 border-[#c9a227]/40"><img src="xe-logo.jpg" alt="" class="w-full h-full object-cover"></div>
+<div class="w-16 h-16 mx-auto mb-5 rounded-full overflow-hidden border-2 border-[#c9a227]/40"><img src="xe-logo.jpg" alt="" class="w-full h-full object-cover object-center"></div>
 <h2 class="text-2xl sm:text-3xl heading-serif tracking-tight mb-3 text-white">Thank you for being here</h2>
 <p class="text-zinc-300 text-sm sm:text-base leading-relaxed mb-4">We’re stronger together — in unison, with clear focus on the objectives that protect our families and lift our communities.</p>
 <p class="text-zinc-500 text-xs sm:text-sm leading-relaxed mb-6">One step at a time. One conversation at a time. Moving forward with purpose.</p>
@@ -203,7 +205,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #c9a227;outline-offset:3p
 <div class="logo-menu-sheet" role="dialog" aria-label="Site navigation">
 <div class="flex items-center justify-between mb-6 px-1">
 <div class="flex items-center gap-x-2.5">
-<div class="w-9 h-9 rounded-full overflow-hidden border border-zinc-700"><img src="xe-logo.jpg" alt="" class="w-full h-full object-cover"></div>
+<div class="w-9 h-9 rounded-full overflow-hidden border border-zinc-700"><img src="xe-logo.jpg" alt="" class="w-full h-full object-cover object-center"></div>
 <span class="font-semibold text-sm tracking-wide">Navigate</span>
 </div>
 <button type="button" id="logo-menu-close" class="w-9 h-9 flex items-center justify-center rounded-full text-zinc-500 hover:text-white hover:bg-zinc-800" aria-label="Close menu"><i class="fa-solid fa-times"></i></button>
