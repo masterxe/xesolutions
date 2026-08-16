@@ -20,6 +20,13 @@
         .source-card { transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
         .source-card:hover { transform: translateY(-4px); border-color: #c9a227; box-shadow: 0 16px 36px -18px rgba(201,162,39,0.25); }
         .nav-scrolled { background: rgba(9, 9, 11, 0.95) !important; border-bottom-color: #3f3f46 !important; box-shadow: 0 4px 30px rgba(0,0,0,0.4); }
+        .logo-menu-panel { position: fixed; inset: 0; z-index: 80; background: rgba(0,0,0,0.72); backdrop-filter: blur(6px); opacity: 0; pointer-events: none; transition: opacity 0.25s ease; }
+        .logo-menu-panel.open { opacity: 1; pointer-events: auto; }
+        .logo-menu-sheet { position: absolute; top: 0; left: 0; bottom: 0; width: min(320px, 88vw); background: #09090b; border-right: 1px solid #27272a; transform: translateX(-100%); transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1); display: flex; flex-direction: column; padding: 1.25rem; }
+        .logo-menu-panel.open .logo-menu-sheet { transform: translateX(0); }
+        .logo-menu-link { display: flex; align-items: center; gap: 0.75rem; padding: 0.85rem 1rem; border-radius: 0.75rem; color: #d4d4d8; font-size: 0.95rem; font-weight: 500; transition: background 0.2s, color 0.2s; }
+        .logo-menu-link:hover, .logo-menu-link.active { background: #18181b; color: #fff; }
+        .logo-menu-link i { width: 1.25rem; color: #c9a227; text-align: center; }
         a:focus-visible, button:focus-visible { outline: 2px solid #c9a227; outline-offset: 3px; }
         @keyframes pageFade { from { opacity: 0; } to { opacity: 1; } }
     </style>
@@ -29,7 +36,7 @@
 <nav id="main-nav" class="bg-zinc-900/80 backdrop-blur-lg border-b border-zinc-800 sticky top-0 z-50 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-5 sm:px-6">
         <div class="flex justify-between items-center h-18 sm:h-20">
-            <a href="index.html" class="flex items-center gap-x-3 group">
+            <a href="#" data-open-logo-menu class="flex items-center gap-x-3 group" title="Open site menu" aria-label="Open site menu">
                 <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden border border-zinc-700 group-hover:border-[#c9a227]/60 transition-colors">
                     <img src="xe-logo.jpg" alt="XE Logo" class="w-full h-full object-cover" width="44" height="44">
                 </div>
@@ -87,36 +94,33 @@
                 <div>
                     <h2 class="font-semibold text-xl tracking-tight mb-1">Art Williams</h2>
                     <p class="text-xs text-zinc-500 mb-3">Founder, A.L. Williams · Term life movement</p>
-                    <p class="text-sm text-zinc-300 leading-relaxed mb-3">Popularized “Buy term and invest the difference” as a practical alternative to high-cost permanent insurance for middle-income families. His work shaped how many agents still educate clients about pure protection versus cash-value products.</p>
+                    <p class="text-sm text-zinc-300 leading-relaxed mb-3">Popularized “Buy term and invest the difference” as a practical alternative to high-cost permanent insurance for middle-income families.</p>
                     <p class="text-xs text-zinc-500">Public speeches, training materials, and the historical record of A.L. Williams / Primerica’s founding philosophy.</p>
                 </div>
             </div>
         </article>
-
         <article class="source-card reveal bg-zinc-900 border border-zinc-800 rounded-3xl p-6 sm:p-8">
             <div class="flex flex-col sm:flex-row sm:items-start gap-4">
                 <div class="w-12 h-12 rounded-2xl bg-[#c9a227]/15 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-book-open text-[#c9a227]"></i></div>
                 <div>
                     <h2 class="font-semibold text-xl tracking-tight mb-1">Suze Orman</h2>
                     <p class="text-xs text-zinc-500 mb-3">Personal finance educator &amp; author</p>
-                    <p class="text-sm text-zinc-300 leading-relaxed mb-3">Long-standing public guidance that most families are better served by affordable term life for income-replacement years, paired with clear education about what they own and why.</p>
+                    <p class="text-sm text-zinc-300 leading-relaxed mb-3">Long-standing public guidance that most families are better served by affordable term life for income-replacement years, paired with clear education.</p>
                     <p class="text-xs text-zinc-500">Books, media appearances, and published personal-finance guidance recommending term coverage for typical households.</p>
                 </div>
             </div>
         </article>
-
         <article class="source-card reveal bg-zinc-900 border border-zinc-800 rounded-3xl p-6 sm:p-8">
             <div class="flex flex-col sm:flex-row sm:items-start gap-4">
                 <div class="w-12 h-12 rounded-2xl bg-[#c9a227]/15 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-book-open text-[#c9a227]"></i></div>
                 <div>
                     <h2 class="font-semibold text-xl tracking-tight mb-1">Dave Ramsey</h2>
                     <p class="text-xs text-zinc-500 mb-3">Personal finance educator · Author</p>
-                    <p class="text-sm text-zinc-300 leading-relaxed mb-3">Teaches term life for the years dependents rely on income, combined with debt reduction, emergency funds, and step-by-step plans designed for ordinary households.</p>
-                    <p class="text-xs text-zinc-500">Published books, radio, and educational programs emphasizing term insurance and financial basics for working families.</p>
+                    <p class="text-sm text-zinc-300 leading-relaxed mb-3">Teaches term life for the years dependents rely on income, combined with debt reduction, emergency funds, and step-by-step plans for ordinary households.</p>
+                    <p class="text-xs text-zinc-500">Published books, radio, and educational programs emphasizing term insurance and financial basics.</p>
                 </div>
             </div>
         </article>
-
         <article class="source-card reveal bg-zinc-900 border border-zinc-800 rounded-3xl p-6 sm:p-8">
             <div class="flex flex-col sm:flex-row sm:items-start gap-4">
                 <div class="w-12 h-12 rounded-2xl bg-[#c9a227]/15 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-book-open text-[#c9a227]"></i></div>
@@ -128,14 +132,13 @@
                 </div>
             </div>
         </article>
-
         <article class="source-card reveal bg-zinc-900 border border-zinc-800 rounded-3xl p-6 sm:p-8">
             <div class="flex flex-col sm:flex-row sm:items-start gap-4">
                 <div class="w-12 h-12 rounded-2xl bg-[#c9a227]/15 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-book-open text-[#c9a227]"></i></div>
                 <div>
                     <h2 class="font-semibold text-xl tracking-tight mb-1">Thomas J. Stanley</h2>
                     <p class="text-xs text-zinc-500 mb-3">Author, <em>The Millionaire Next Door</em></p>
-                    <p class="text-sm text-zinc-300 leading-relaxed mb-3">Research showing many financially strong households live below their means, avoid status spending, and build wealth through discipline — not high income alone.</p>
+                    <p class="text-sm text-zinc-300 leading-relaxed mb-3">Research showing many financially strong households live below their means and build wealth through discipline — not high income alone.</p>
                     <p class="text-xs text-zinc-500"><em>The Millionaire Next Door</em> and related research on everyday wealth-building habits.</p>
                 </div>
             </div>
@@ -168,6 +171,29 @@
     </div>
 </footer>
 
+<div id="logo-menu" class="logo-menu-panel" aria-hidden="true">
+    <div class="logo-menu-sheet" role="dialog" aria-label="Site navigation">
+        <div class="flex items-center justify-between mb-6 px-1">
+            <div class="flex items-center gap-x-2.5">
+                <div class="w-9 h-9 rounded-full overflow-hidden border border-zinc-700"><img src="xe-logo.jpg" alt="" class="w-full h-full object-cover"></div>
+                <span class="font-semibold text-sm tracking-wide">Navigate</span>
+            </div>
+            <button type="button" id="logo-menu-close" class="w-9 h-9 flex items-center justify-center rounded-full text-zinc-500 hover:text-white hover:bg-zinc-800" aria-label="Close menu"><i class="fa-solid fa-times"></i></button>
+        </div>
+        <nav class="flex flex-col gap-1 flex-1">
+            <a href="index.html" class="logo-menu-link" data-nav="index"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="about.html" class="logo-menu-link" data-nav="about"><i class="fa-solid fa-user"></i> About</a>
+            <a href="solutions.html" class="logo-menu-link" data-nav="solutions"><i class="fa-solid fa-shield-halved"></i> Solutions</a>
+            <a href="community.html" class="logo-menu-link" data-nav="community"><i class="fa-solid fa-users"></i> Community</a>
+            <a href="join.html" class="logo-menu-link" data-nav="join"><i class="fa-solid fa-rocket"></i> Join the Team</a>
+            <a href="faq.html" class="logo-menu-link" data-nav="faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+            <a href="contact.html" class="logo-menu-link" data-nav="contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+            <a href="sources.html" class="logo-menu-link" data-nav="sources"><i class="fa-solid fa-book-open"></i> Sources</a>
+        </nav>
+        <div class="pt-4 border-t border-zinc-800 mt-4"><p class="text-[10px] text-zinc-600 px-1">License #4279749 · CA</p></div>
+    </div>
+</div>
+
 <script>
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -198,6 +224,23 @@
         });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    (function () {
+        const panel = document.getElementById('logo-menu');
+        const openBtns = document.querySelectorAll('[data-open-logo-menu]');
+        const closeBtn = document.getElementById('logo-menu-close');
+        function openMenu() { panel.classList.add('open'); panel.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; }
+        function closeMenu() { panel.classList.remove('open'); panel.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; }
+        openBtns.forEach(b => b.addEventListener('click', (e) => { e.preventDefault(); openMenu(); }));
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+        panel.addEventListener('click', (e) => { if (e.target === panel) closeMenu(); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+        const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+        panel.querySelectorAll('[data-nav]').forEach(a => {
+            const key = a.getAttribute('data-nav');
+            if (path === key + '.html' || (key === 'index' && (path === '' || path === 'index.html'))) a.classList.add('active');
+        });
+    })();
 </script>
 </body>
 </html>
