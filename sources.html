@@ -1,204 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Reference list for principles cited on Xavier Enciso’s site — term life, financial education, and related public sources.">
-    <title>Sources | Xavier Enciso</title>
-    <link rel="icon" type="image/jpeg" href="xe-logo.jpg">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap');
-        body { font-family: 'Inter', system-ui, sans-serif; animation: pageFade 0.5s ease; }
-        .heading-serif { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; letter-spacing: -0.025em; }
-        .section-header { position: relative; display: inline-block; }
-        .section-header:after { content: ''; position: absolute; bottom: -8px; left: 0; width: 48px; height: 3px; background: linear-gradient(to right, #c9a227, #d4af37); border-radius: 3px; }
-        .section-header.centered:after { left: 50%; transform: translateX(-50%); }
-        .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-        .nav-scrolled { background: rgba(9, 9, 11, 0.95) !important; border-bottom-color: #3f3f46 !important; box-shadow: 0 4px 30px rgba(0,0,0,0.4); }
-        .logo-menu-panel { position: fixed; inset: 0; z-index: 80; background: rgba(0,0,0,0.72); backdrop-filter: blur(6px); opacity: 0; pointer-events: none; transition: opacity 0.25s ease; }
-        .logo-menu-panel.open { opacity: 1; pointer-events: auto; }
-        .logo-menu-sheet { position: absolute; top: 0; left: 0; bottom: 0; width: min(320px, 88vw); background: #09090b; border-right: 1px solid #27272a; transform: translateX(-100%); transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1); display: flex; flex-direction: column; padding: 1.25rem; }
-        .logo-menu-panel.open .logo-menu-sheet { transform: translateX(0); }
-        .logo-menu-link { display: flex; align-items: center; gap: 0.75rem; padding: 0.85rem 1rem; border-radius: 0.75rem; color: #d4d4d8; font-size: 0.95rem; font-weight: 500; transition: background 0.2s, color 0.2s; }
-        .logo-menu-link:hover, .logo-menu-link.active { background: #18181b; color: #fff; }
-        .logo-menu-link i { width: 1.25rem; color: #c9a227; text-align: center; }
-        .ref-item { border-bottom: 1px solid #27272a; }
-        .ref-item:last-child { border-bottom: none; }
-        a:focus-visible, button:focus-visible { outline: 2px solid #c9a227; outline-offset: 3px; }
-        @keyframes pageFade { from { opacity: 0; } to { opacity: 1; } }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Reference list for principles cited on Xavier Enciso’s site.">
+<title>Sources | Xavier Enciso</title>
+<link rel="icon" type="image/jpeg" href="xe-logo.jpg">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+body{font-family:Inter,system-ui,sans-serif;animation:pageFade .5s ease}
+.heading-serif{font-family:'Playfair Display',Georgia,serif;font-weight:700;letter-spacing:-.025em}
+.section-header{position:relative;display:inline-block}
+.section-header:after{content:'';position:absolute;bottom:-8px;left:0;width:48px;height:3px;background:linear-gradient(to right,#c9a227,#d4af37);border-radius:3px}
+.section-header.centered:after{left:50%;transform:translateX(-50%)}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.nav-scrolled{background:rgba(9,9,11,.95)!important;border-bottom-color:#3f3f46!important}
+.logo-menu-panel{position:fixed;inset:0;z-index:80;background:rgba(0,0,0,.72);backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .25s}
+.logo-menu-panel.open{opacity:1;pointer-events:auto}
+.logo-menu-sheet{position:absolute;top:0;left:0;bottom:0;width:min(320px,88vw);background:#09090b;border-right:1px solid #27272a;transform:translateX(-100%);transition:transform .3s cubic-bezier(.22,1,.36,1);display:flex;flex-direction:column;padding:1.25rem}
+.logo-menu-panel.open .logo-menu-sheet{transform:translateX(0)}
+.logo-menu-link{display:flex;align-items:center;gap:.75rem;padding:.85rem 1rem;border-radius:.75rem;color:#d4d4d8;font-size:.95rem;font-weight:500}
+.logo-menu-link:hover,.logo-menu-link.active{background:#18181b;color:#fff}
+.logo-menu-link i{width:1.25rem;color:#c9a227;text-align:center}
+.ref-item{border-bottom:1px solid #27272a}
+.ref-item:last-child{border-bottom:none}
+a:focus-visible,button:focus-visible{outline:2px solid #c9a227;outline-offset:3px}
+@keyframes pageFade{from{opacity:0}to{opacity:1}}
+</style>
 </head>
 <body class="bg-zinc-950 text-zinc-200 antialiased">
 
-<nav id="main-nav" class="bg-zinc-900/80 backdrop-blur-lg border-b border-zinc-800 sticky top-0 z-50 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-5 sm:px-6">
-        <div class="flex justify-between items-center h-18 sm:h-20">
-            <a href="#" data-open-logo-menu class="flex items-center gap-x-3 group" title="Open site menu" aria-label="Open site menu">
-                <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden border border-zinc-700 group-hover:border-[#c9a227]/60 transition-colors">
-                    <img src="xe-logo.jpg" alt="XE Logo" class="w-full h-full object-cover" width="44" height="44">
-                </div>
-                <div>
-                    <div class="font-semibold text-lg sm:text-xl tracking-tight">Xavier Enciso</div>
-                    <div class="text-[10px] text-zinc-500 -mt-0.5 tracking-wide">FINANCIAL PROFESSIONAL</div>
-                </div>
-            </a>
-            <div class="hidden lg:flex items-center gap-x-7 text-sm font-medium">
-                <a href="about.html" class="text-zinc-300 hover:text-white transition-colors">About</a>
-                <a href="solutions.html" class="text-zinc-300 hover:text-white transition-colors">Solutions</a>
-                <a href="community.html" class="text-zinc-300 hover:text-white transition-colors">Community</a>
-                <a href="join.html" class="text-zinc-300 hover:text-white transition-colors">Join the Team</a>
-                <a href="faq.html" class="text-zinc-300 hover:text-white transition-colors">FAQ</a>
-                <a href="sources.html" class="text-white">Sources</a>
-            </div>
-            <div class="hidden lg:flex items-center gap-x-3">
-                <a href="contact.html" class="px-5 py-2.5 text-sm font-medium border border-zinc-700 hover:border-zinc-500 rounded-full transition-colors">Contact Me</a>
-                <a href="join.html" class="px-6 py-2.5 bg-[#c9a227] hover:bg-amber-500 text-zinc-950 font-semibold text-sm rounded-full transition-all">Join My Team</a>
-            </div>
-            <button id="mobile-menu-btn" class="lg:hidden w-10 h-10 flex items-center justify-center text-zinc-400 hover:text-white" aria-label="Open menu">
-                <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
-            </button>
-        </div>
-    </div>
-    <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-zinc-900 px-5 py-5">
-        <div class="flex flex-col gap-y-1 text-sm font-medium">
-            <a href="about.html" class="mobile-nav-link py-2.5 px-3 rounded-lg text-zinc-300 hover:bg-zinc-800">About</a>
-            <a href="solutions.html" class="mobile-nav-link py-2.5 px-3 rounded-lg text-zinc-300 hover:bg-zinc-800">Solutions</a>
-            <a href="community.html" class="mobile-nav-link py-2.5 px-3 rounded-lg text-zinc-300 hover:bg-zinc-800">Community</a>
-            <a href="join.html" class="mobile-nav-link py-2.5 px-3 rounded-lg text-zinc-300 hover:bg-zinc-800">Join the Team</a>
-            <a href="faq.html" class="mobile-nav-link py-2.5 px-3 rounded-lg text-zinc-300 hover:bg-zinc-800">FAQ</a>
-            <a href="sources.html" class="mobile-nav-link py-2.5 px-3 rounded-lg text-white">Sources</a>
-            <div class="pt-4 mt-2 border-t border-zinc-800 flex flex-col gap-y-3">
-                <a href="contact.html" class="py-2.5 text-center border border-zinc-700 rounded-full">Contact Me</a>
-                <a href="join.html" class="py-2.5 text-center bg-[#c9a227] text-zinc-950 font-semibold rounded-full">Join My Team</a>
-            </div>
-        </div>
-    </div>
+<nav id="main-nav" class="bg-zinc-900/80 backdrop-blur-lg border-b border-zinc-800 sticky top-0 z-50 transition-all">
+<div class="max-w-7xl mx-auto px-5 sm:px-6">
+<div class="flex justify-between items-center h-18 sm:h-20">
+<a href="#" data-open-logo-menu class="flex items-center gap-x-3 group" title="Open site menu" aria-label="Open site menu">
+<div class="w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden border border-zinc-700 group-hover:border-[#c9a227]/60"><img src="xe-logo.jpg" alt="XE" class="w-full h-full object-cover" width="44" height="44"></div>
+<div><div class="font-semibold text-lg sm:text-xl tracking-tight">Xavier Enciso</div><div class="text-[10px] text-zinc-500 -mt-0.5 tracking-wide">FINANCIAL PROFESSIONAL</div></div>
+</a>
+<div class="hidden lg:flex items-center gap-x-7 text-sm font-medium">
+<a href="about.html" class="text-zinc-300 hover:text-white">About</a>
+<a href="solutions.html" class="text-zinc-300 hover:text-white">Solutions</a>
+<a href="community.html" class="text-zinc-300 hover:text-white">Community</a>
+<a href="join.html" class="text-zinc-300 hover:text-white">Join the Team</a>
+<a href="faq.html" class="text-zinc-300 hover:text-white">FAQ</a>
+<a href="sources.html" class="text-white">Sources</a>
+</div>
+<div class="hidden lg:flex items-center gap-x-3">
+<a href="contact.html" class="px-5 py-2.5 text-sm border border-zinc-700 hover:border-zinc-500 rounded-full">Contact Me</a>
+<a href="join.html" class="px-6 py-2.5 bg-[#c9a227] hover:bg-amber-500 text-zinc-950 font-semibold text-sm rounded-full">Join My Team</a>
+</div>
+<button id="mobile-menu-btn" class="lg:hidden w-10 h-10 flex items-center justify-center text-zinc-400" aria-label="Open menu"><i class="fa-solid fa-bars text-xl" id="menu-icon"></i></button>
+</div>
+</div>
+<div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-zinc-900 px-5 py-5">
+<div class="flex flex-col gap-y-1 text-sm font-medium">
+<a href="about.html" class="mobile-nav-link py-2.5 px-3 rounded-lg text-zinc-300">About</a>
+<a href="solutions.html" class="mobile-nav-link py-2.5 px-3 rounded-lg text-zinc-300">Solutions</a>
+<a href="community.html" class="mobile-nav-link py-2.5 px-3 rounded-lg text-zinc-300">Community</a>
+<a href="join.html" class="mobile-nav-link py-2.5 px-3 rounded-lg text-zinc-300">Join the Team</a>
+<a href="faq.html" class="mobile-nav-link py-2.5 px-3 rounded-lg text-zinc-300">FAQ</a>
+<a href="sources.html" class="mobile-nav-link py-2.5 px-3 rounded-lg text-white">Sources</a>
+<div class="pt-4 mt-2 border-t border-zinc-800 flex flex-col gap-y-3">
+<a href="contact.html" class="py-2.5 text-center border border-zinc-700 rounded-full">Contact Me</a>
+<a href="join.html" class="py-2.5 text-center bg-[#c9a227] text-zinc-950 font-semibold rounded-full">Join My Team</a>
+</div>
+</div>
+</div>
 </nav>
 
 <section class="max-w-2xl mx-auto px-5 sm:px-6 py-16 sm:py-20">
-    <div class="text-center mb-10 reveal">
-        <div class="uppercase tracking-[2px] text-xs font-semibold text-[#c9a227]">REFERENCES</div>
-        <h1 class="section-header centered text-3xl sm:text-4xl tracking-tighter heading-serif mt-3">Sources</h1>
-        <p class="mt-4 text-zinc-500 text-sm leading-relaxed max-w-lg mx-auto">
-            Principles discussed on the home page are drawn from the public work of the following educators and authors. This page is a reference list only — the full messaging lives on the home page under Explore.
-        </p>
-    </div>
+<div class="text-center mb-10 reveal">
+<div class="uppercase tracking-[2px] text-xs font-semibold text-[#c9a227]">REFERENCES</div>
+<h1 class="section-header centered text-3xl sm:text-4xl tracking-tighter heading-serif mt-3">Sources</h1>
+<p class="mt-4 text-zinc-500 text-sm leading-relaxed max-w-lg mx-auto">Links to the public sources behind the statements on the home page. Read the quotes under Explore on Home; use this page to verify them.</p>
+</div>
 
-    <div class="reveal bg-zinc-900/80 border border-zinc-800 rounded-2xl px-5 sm:px-7 py-2 mb-8">
-        <ol class="list-none">
-            <li class="ref-item py-5">
-                <div class="text-sm font-medium text-zinc-100">Williams, A. L. (Art)</div>
-                <div class="text-xs text-zinc-500 mt-1 leading-relaxed">Founder of A.L. Williams. Public advocacy of “buy term and invest the difference” as an alternative to high-cost permanent life insurance for middle-income families. Historical training and industry materials associated with the firm’s founding philosophy.</div>
-            </li>
-            <li class="ref-item py-5">
-                <div class="text-sm font-medium text-zinc-100">Orman, Suze</div>
-                <div class="text-xs text-zinc-500 mt-1 leading-relaxed">Personal finance educator and author. Published books and media guidance recommending term life for most households during income-replacement years, with emphasis on understanding costs and ownership of coverage.</div>
-            </li>
-            <li class="ref-item py-5">
-                <div class="text-sm font-medium text-zinc-100">Ramsey, Dave</div>
-                <div class="text-xs text-zinc-500 mt-1 leading-relaxed">Personal finance educator and author. Public teaching that prioritizes term life during dependent years, emergency funds, debt reduction, and step-by-step plans aimed at ordinary working families.</div>
-            </li>
-            <li class="ref-item py-5">
-                <div class="text-sm font-medium text-zinc-100">Bogle, John C.</div>
-                <div class="text-xs text-zinc-500 mt-1 leading-relaxed">Founder of Vanguard. Books and essays on low-cost investing, index funds, and long-term discipline — relevant to the “invest the difference” side of protection-first planning.</div>
-            </li>
-            <li class="ref-item py-5">
-                <div class="text-sm font-medium text-zinc-100">Stanley, Thomas J.</div>
-                <div class="text-xs text-zinc-500 mt-1 leading-relaxed"><em>The Millionaire Next Door</em> and related research on wealth accumulation among ordinary households through discipline, under-consumption, and consistent saving — not high income alone.</div>
-            </li>
-        </ol>
-    </div>
+<div class="reveal bg-zinc-900/80 border border-zinc-800 rounded-2xl px-5 sm:px-7 py-2 mb-8">
+<div class="ref-item py-5" id="ref-williams">
+<div class="text-sm font-medium text-zinc-100">1. Williams, A. L. (Art)</div>
+<p class="text-xs text-zinc-500 mt-1 leading-relaxed">Publicly associated with <em>“buy term and invest the difference”</em> as the A.L. Williams philosophy for middle-income families.</p>
+<a href="https://www.sun-sentinel.com/1986/03/21/crusade-for-term-insurance/" target="_blank" rel="noopener noreferrer" class="inline-block mt-2 text-xs text-[#c9a227] hover:underline">Sun Sentinel (1986) — Crusade for Term Insurance ↗</a>
+</div>
+<div class="ref-item py-5" id="ref-orman">
+<div class="text-sm font-medium text-zinc-100">2. Orman, Suze</div>
+<p class="text-xs text-zinc-500 mt-1 leading-relaxed">On Oprah.com: for most people, “the only kind you need is term,” with coverage sized so survivors can invest the benefit.</p>
+<a href="https://www.oprah.com/money/how-to-buy-life-insurance" target="_blank" rel="noopener noreferrer" class="inline-block mt-2 text-xs text-[#c9a227] hover:underline">Oprah.com — Suze Orman: How to Buy Life Insurance ↗</a>
+</div>
+<div class="ref-item py-5" id="ref-ramsey">
+<div class="text-sm font-medium text-zinc-100">3. Ramsey, Dave</div>
+<p class="text-xs text-zinc-500 mt-1 leading-relaxed">Published teaching: life insurance’s purpose is income replacement; level term about 10–12× income for the dependent years.</p>
+<a href="https://www.ramseysolutions.com/insurance/dave-ramsey-teaching-on-life-insurance" target="_blank" rel="noopener noreferrer" class="inline-block mt-2 text-xs text-[#c9a227] hover:underline">Ramsey Solutions — Dave’s teaching on life insurance ↗</a>
+</div>
+<div class="ref-item py-5" id="ref-bogle">
+<div class="text-sm font-medium text-zinc-100">4. Bogle, John C.</div>
+<p class="text-xs text-zinc-500 mt-1 leading-relaxed">Founder of Vanguard; long public advocacy of low costs, simplicity, and staying the course.</p>
+<a href="https://www.vanguard.com/about-us/who-we-are/our-history" target="_blank" rel="noopener noreferrer" class="inline-block mt-2 text-xs text-[#c9a227] hover:underline">Vanguard — Our history (John C. Bogle) ↗</a>
+</div>
+<div class="ref-item py-5" id="ref-stanley">
+<div class="text-sm font-medium text-zinc-100">5. Stanley, Thomas J.</div>
+<p class="text-xs text-zinc-500 mt-1 leading-relaxed"><em>The Millionaire Next Door</em> — research on ordinary-looking households that build wealth through discipline.</p>
+<a href="https://en.wikipedia.org/wiki/The_Millionaire_Next_Door" target="_blank" rel="noopener noreferrer" class="inline-block mt-2 text-xs text-[#c9a227] hover:underline">The Millionaire Next Door (overview) ↗</a>
+</div>
+</div>
 
-    <div class="reveal text-center space-y-4">
-        <p class="text-[11px] text-zinc-600 leading-relaxed max-w-md mx-auto">
-            Cited for educational and historical context only. No endorsement, affiliation, or sponsorship is claimed. Insurance products offered only where licensed. Securities products not currently offered.
-        </p>
-        <a href="index.html#explore-proof" class="inline-flex items-center gap-x-2 text-sm text-[#c9a227] hover:underline">
-            Read the principles on the home page <i class="fa-solid fa-arrow-right text-xs"></i>
-        </a>
-    </div>
+<div class="reveal text-center space-y-4">
+<p class="text-[11px] text-zinc-600 leading-relaxed max-w-md mx-auto">Cited for educational and historical context only. No endorsement, affiliation, or sponsorship is claimed. Insurance products offered only where licensed. Securities products not currently offered.</p>
+<a href="index.html#explore-proof" class="inline-flex items-center gap-x-2 text-sm text-[#c9a227] hover:underline">Read the principles on the home page <i class="fa-solid fa-arrow-right text-xs"></i></a>
+</div>
 </section>
 
 <footer class="bg-black border-t border-zinc-800 pt-10 pb-8">
-    <div class="max-w-6xl mx-auto px-5 sm:px-6 text-center">
-        <p class="text-xs text-zinc-500 mb-2">License #4279749 · California Department of Insurance</p>
-        <p class="text-xs text-zinc-600">© 2026 Xavier Enciso. · <a href="sources.html" class="hover:text-[#c9a227]">Sources</a></p>
-    </div>
+<div class="max-w-6xl mx-auto px-5 sm:px-6 text-center">
+<p class="text-xs text-zinc-500 mb-2">License #4279749 · California Department of Insurance</p>
+<p class="text-xs text-zinc-600">© 2026 Xavier Enciso. · <a href="sources.html" class="hover:text-[#c9a227]">Sources</a></p>
+</div>
 </footer>
 
 <div id="logo-menu" class="logo-menu-panel" aria-hidden="true">
-    <div class="logo-menu-sheet" role="dialog" aria-label="Site navigation">
-        <div class="flex items-center justify-between mb-6 px-1">
-            <div class="flex items-center gap-x-2.5">
-                <div class="w-9 h-9 rounded-full overflow-hidden border border-zinc-700"><img src="xe-logo.jpg" alt="" class="w-full h-full object-cover"></div>
-                <span class="font-semibold text-sm tracking-wide">Navigate</span>
-            </div>
-            <button type="button" id="logo-menu-close" class="w-9 h-9 flex items-center justify-center rounded-full text-zinc-500 hover:text-white hover:bg-zinc-800" aria-label="Close menu"><i class="fa-solid fa-times"></i></button>
-        </div>
-        <nav class="flex flex-col gap-1 flex-1">
-            <a href="index.html" class="logo-menu-link" data-nav="index"><i class="fa-solid fa-house"></i> Home</a>
-            <a href="about.html" class="logo-menu-link" data-nav="about"><i class="fa-solid fa-user"></i> About</a>
-            <a href="solutions.html" class="logo-menu-link" data-nav="solutions"><i class="fa-solid fa-shield-halved"></i> Solutions</a>
-            <a href="community.html" class="logo-menu-link" data-nav="community"><i class="fa-solid fa-users"></i> Community</a>
-            <a href="join.html" class="logo-menu-link" data-nav="join"><i class="fa-solid fa-rocket"></i> Join the Team</a>
-            <a href="faq.html" class="logo-menu-link" data-nav="faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
-            <a href="contact.html" class="logo-menu-link" data-nav="contact"><i class="fa-solid fa-envelope"></i> Contact</a>
-            <a href="sources.html" class="logo-menu-link" data-nav="sources"><i class="fa-solid fa-book-open"></i> Sources</a>
-        </nav>
-        <div class="pt-4 border-t border-zinc-800 mt-4"><p class="text-[10px] text-zinc-600 px-1">License #4279749 · CA</p></div>
-    </div>
+<div class="logo-menu-sheet" role="dialog" aria-label="Site navigation">
+<div class="flex items-center justify-between mb-6 px-1">
+<div class="flex items-center gap-x-2.5">
+<div class="w-9 h-9 rounded-full overflow-hidden border border-zinc-700"><img src="xe-logo.jpg" alt="" class="w-full h-full object-cover"></div>
+<span class="font-semibold text-sm tracking-wide">Navigate</span>
+</div>
+<button type="button" id="logo-menu-close" class="w-9 h-9 flex items-center justify-center rounded-full text-zinc-500 hover:text-white hover:bg-zinc-800" aria-label="Close menu"><i class="fa-solid fa-times"></i></button>
+</div>
+<nav class="flex flex-col gap-1 flex-1">
+<a href="index.html" class="logo-menu-link" data-nav="index"><i class="fa-solid fa-house"></i> Home</a>
+<a href="about.html" class="logo-menu-link" data-nav="about"><i class="fa-solid fa-user"></i> About</a>
+<a href="solutions.html" class="logo-menu-link" data-nav="solutions"><i class="fa-solid fa-shield-halved"></i> Solutions</a>
+<a href="community.html" class="logo-menu-link" data-nav="community"><i class="fa-solid fa-users"></i> Community</a>
+<a href="join.html" class="logo-menu-link" data-nav="join"><i class="fa-solid fa-rocket"></i> Join the Team</a>
+<a href="faq.html" class="logo-menu-link" data-nav="faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+<a href="contact.html" class="logo-menu-link" data-nav="contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+<a href="sources.html" class="logo-menu-link" data-nav="sources"><i class="fa-solid fa-book-open"></i> Sources</a>
+</nav>
+<div class="pt-4 border-t border-zinc-800 mt-4"><p class="text-[10px] text-zinc-600 px-1">License #4279749 · CA</p></div>
+</div>
 </div>
 
 <script>
-    const mobileBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuIcon = document.getElementById('menu-icon');
-    mobileBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-        menuIcon.classList.toggle('fa-bars');
-        menuIcon.classList.toggle('fa-times');
-    });
-    document.querySelectorAll('.mobile-nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-            menuIcon.classList.add('fa-bars');
-            menuIcon.classList.remove('fa-times');
-        });
-    });
-    const nav = document.getElementById('main-nav');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 40) nav.classList.add('nav-scrolled');
-        else nav.classList.remove('nav-scrolled');
-    });
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    (function () {
-        const panel = document.getElementById('logo-menu');
-        const openBtns = document.querySelectorAll('[data-open-logo-menu]');
-        const closeBtn = document.getElementById('logo-menu-close');
-        function openMenu() { panel.classList.add('open'); panel.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; }
-        function closeMenu() { panel.classList.remove('open'); panel.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; }
-        openBtns.forEach(b => b.addEventListener('click', (e) => { e.preventDefault(); openMenu(); }));
-        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
-        panel.addEventListener('click', (e) => { if (e.target === panel) closeMenu(); });
-        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
-        const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
-        panel.querySelectorAll('[data-nav]').forEach(a => {
-            const key = a.getAttribute('data-nav');
-            if (path === key + '.html' || (key === 'index' && (path === '' || path === 'index.html'))) a.classList.add('active');
-        });
-    })();
+const mobileBtn=document.getElementById('mobile-menu-btn');
+const mobileMenu=document.getElementById('mobile-menu');
+const menuIcon=document.getElementById('menu-icon');
+mobileBtn.addEventListener('click',()=>{mobileMenu.classList.toggle('hidden');menuIcon.classList.toggle('fa-bars');menuIcon.classList.toggle('fa-times')});
+document.querySelectorAll('.mobile-nav-link').forEach(link=>{link.addEventListener('click',()=>{mobileMenu.classList.add('hidden');menuIcon.classList.add('fa-bars');menuIcon.classList.remove('fa-times')})});
+const nav=document.getElementById('main-nav');
+window.addEventListener('scroll',()=>{if(window.scrollY>40)nav.classList.add('nav-scrolled');else nav.classList.remove('nav-scrolled')});
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+(function(){const panel=document.getElementById('logo-menu');const openBtns=document.querySelectorAll('[data-open-logo-menu]');const closeBtn=document.getElementById('logo-menu-close');
+function openMenu(){panel.classList.add('open');panel.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
+function closeMenu(){panel.classList.remove('open');panel.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+openBtns.forEach(b=>b.addEventListener('click',e=>{e.preventDefault();openMenu()}));
+if(closeBtn)closeBtn.addEventListener('click',closeMenu);
+panel.addEventListener('click',e=>{if(e.target===panel)closeMenu()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
+const path=(location.pathname.split('/').pop()||'index.html').toLowerCase();
+panel.querySelectorAll('[data-nav]').forEach(a=>{const key=a.getAttribute('data-nav');if(path===key+'.html'||(key==='index'&&(path===''||path==='index.html')))a.classList.add('active')});
+})();
 </script>
 </body>
 </html>
