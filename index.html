@@ -1,240 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Xavier Enciso — California-licensed Insurance Producer and Community Educator in Delano / Central Valley.">
-    <title>Xavier Enciso | Financial Professional & Community Educator</title>
-    <link rel="icon" type="image/jpeg" href="xe-logo.jpg">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap');
-        body { font-family: 'Inter', system-ui, sans-serif; overflow-x: hidden; }
-        .heading-serif { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; letter-spacing: -0.03em; }
-        .title-bg { min-height: 100vh; background: radial-gradient(ellipse at 50% 20%, #1a1508 0%, #0a0a0a 45%, #050505 100%); position: relative; overflow: hidden; }
-        .title-bg::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 15% 70%, rgba(201,162,39,0.07) 0%, transparent 40%), radial-gradient(circle at 85% 30%, rgba(201,162,39,0.09) 0%, transparent 35%); animation: ambientShift 12s ease-in-out infinite alternate; pointer-events: none; }
-        @keyframes ambientShift { 0% { opacity: 0.7; } 100% { opacity: 1; } }
-        .logo-ring { animation: ringPulse 3s ease-out infinite; }
-        @keyframes ringPulse { 0% { box-shadow: 0 0 0 0 rgba(201,162,39,0.45), 0 0 30px rgba(201,162,39,0.25); } 70% { box-shadow: 0 0 0 25px rgba(201,162,39,0); } 100% { box-shadow: 0 0 0 0 rgba(201,162,39,0); } }
-        .enter { opacity: 0; transform: translateY(30px); animation: enterUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
-        .enter-1 { animation-delay: 0.1s; } .enter-2 { animation-delay: 0.25s; } .enter-3 { animation-delay: 0.4s; } .enter-4 { animation-delay: 0.55s; } .enter-5 { animation-delay: 0.7s; } .enter-6 { animation-delay: 0.85s; }
-        @keyframes enterUp { to { opacity: 1; transform: translateY(0); } }
-        .hot-link { position: relative; overflow: hidden; transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s ease, box-shadow 0.4s ease; }
-        .hot-link:hover { transform: translateY(-10px) scale(1.02); border-color: #c9a227; box-shadow: 0 25px 50px -20px rgba(201,162,39,0.35); }
-        .hot-link:hover .link-arrow { transform: translateX(6px); color: #c9a227; }
-        .link-arrow { transition: transform 0.3s ease, color 0.3s ease; }
-        .link-enter { opacity: 0; transform: translateY(40px) scale(0.96); animation: linkIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
-        .link-enter:nth-child(1) { animation-delay: 0.9s; } .link-enter:nth-child(2) { animation-delay: 1.0s; } .link-enter:nth-child(3) { animation-delay: 1.1s; }
-        .link-enter:nth-child(4) { animation-delay: 1.2s; } .link-enter:nth-child(5) { animation-delay: 1.3s; } .link-enter:nth-child(6) { animation-delay: 1.4s; }
-        @keyframes linkIn { to { opacity: 1; transform: translateY(0) scale(1); } }
-        .live-dot { animation: livePulse 2s ease-in-out infinite; }
-        @keyframes livePulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(52,211,153,0.5); } 50% { box-shadow: 0 0 0 8px rgba(52,211,153,0); } }
-        .scroll-hint { animation: bounceHint 2.2s ease-in-out infinite; }
-        @keyframes bounceHint { 0%, 100% { transform: translateY(0); opacity: 0.5; } 50% { transform: translateY(8px); opacity: 1; } }
-        .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-        .proof-card { transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; }
-        .proof-card:hover { transform: translateY(-4px); border-color: #c9a227; box-shadow: 0 16px 36px -18px rgba(201,162,39,0.3); }
-        .logo-menu-panel { position: fixed; inset: 0; z-index: 80; background: rgba(0,0,0,0.72); backdrop-filter: blur(6px); opacity: 0; pointer-events: none; transition: opacity 0.25s ease; }
-        .logo-menu-panel.open { opacity: 1; pointer-events: auto; }
-        .logo-menu-sheet { position: absolute; top: 0; left: 0; bottom: 0; width: min(320px, 88vw); background: #09090b; border-right: 1px solid #27272a; transform: translateX(-100%); transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1); display: flex; flex-direction: column; padding: 1.25rem; }
-        .logo-menu-panel.open .logo-menu-sheet { transform: translateX(0); }
-        .logo-menu-link { display: flex; align-items: center; gap: 0.75rem; padding: 0.85rem 1rem; border-radius: 0.75rem; color: #d4d4d8; font-size: 0.95rem; font-weight: 500; transition: background 0.2s, color 0.2s; }
-        .logo-menu-link:hover, .logo-menu-link.active { background: #18181b; color: #fff; }
-        .logo-menu-link i { width: 1.25rem; color: #c9a227; text-align: center; }
-        a:focus-visible, button:focus-visible { outline: 2px solid #c9a227; outline-offset: 3px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Xavier Enciso — California-licensed Insurance Producer and Community Educator in Delano / Central Valley.">
+<title>Xavier Enciso | Financial Professional & Community Educator</title>
+<link rel="icon" type="image/jpeg" href="xe-logo.jpg">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+body{font-family:Inter,system-ui,sans-serif;overflow-x:hidden}
+.heading-serif{font-family:'Playfair Display',Georgia,serif;font-weight:700;letter-spacing:-.03em}
+.title-bg{min-height:100vh;background:radial-gradient(ellipse at 50% 20%,#1a1508 0%,#0a0a0a 45%,#050505 100%);position:relative;overflow:hidden}
+.title-bg::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 15% 70%,rgba(201,162,39,.07) 0%,transparent 40%),radial-gradient(circle at 85% 30%,rgba(201,162,39,.09) 0%,transparent 35%);pointer-events:none}
+.logo-ring{animation:ringPulse 3s ease-out infinite}
+@keyframes ringPulse{0%{box-shadow:0 0 0 0 rgba(201,162,39,.45)}70%{box-shadow:0 0 0 22px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.enter{opacity:0;transform:translateY(28px);animation:enterUp .9s cubic-bezier(.22,1,.36,1) forwards}
+.enter-1{animation-delay:.1s}.enter-2{animation-delay:.25s}.enter-3{animation-delay:.4s}.enter-4{animation-delay:.55s}.enter-5{animation-delay:.7s}.enter-6{animation-delay:.85s}
+@keyframes enterUp{to{opacity:1;transform:translateY(0)}}
+.hot-link{transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease}
+.hot-link:hover{transform:translateY(-8px);border-color:#c9a227;box-shadow:0 20px 40px -18px rgba(201,162,39,.35)}
+.hot-link:hover .link-arrow{transform:translateX(5px);color:#c9a227}
+.link-arrow{transition:transform .3s ease,color .3s ease}
+.link-enter{opacity:0;transform:translateY(36px);animation:linkIn .75s cubic-bezier(.22,1,.36,1) forwards}
+.link-enter:nth-child(1){animation-delay:.9s}.link-enter:nth-child(2){animation-delay:1s}.link-enter:nth-child(3){animation-delay:1.1s}
+.link-enter:nth-child(4){animation-delay:1.2s}.link-enter:nth-child(5){animation-delay:1.3s}.link-enter:nth-child(6){animation-delay:1.4s}
+@keyframes linkIn{to{opacity:1;transform:translateY(0)}}
+.live-dot{animation:livePulse 2s ease-in-out infinite}
+@keyframes livePulse{0%,100%{box-shadow:0 0 0 0 rgba(52,211,153,.5)}50%{box-shadow:0 0 0 8px transparent}}
+.scroll-hint{animation:bounceHint 2.2s ease-in-out infinite}
+@keyframes bounceHint{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(8px);opacity:1}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.proof-card{transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease}
+.proof-card:hover{transform:translateY(-4px);border-color:#c9a227;box-shadow:0 16px 36px -18px rgba(201,162,39,.3)}
+.logo-menu-panel{position:fixed;inset:0;z-index:80;background:rgba(0,0,0,.72);backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .25s}
+.logo-menu-panel.open{opacity:1;pointer-events:auto}
+.logo-menu-sheet{position:absolute;top:0;left:0;bottom:0;width:min(320px,88vw);background:#09090b;border-right:1px solid #27272a;transform:translateX(-100%);transition:transform .3s cubic-bezier(.22,1,.36,1);display:flex;flex-direction:column;padding:1.25rem}
+.logo-menu-panel.open .logo-menu-sheet{transform:translateX(0)}
+.logo-menu-link{display:flex;align-items:center;gap:.75rem;padding:.85rem 1rem;border-radius:.75rem;color:#d4d4d8;font-size:.95rem;font-weight:500;transition:background .2s,color .2s}
+.logo-menu-link:hover,.logo-menu-link.active{background:#18181b;color:#fff}
+.logo-menu-link i{width:1.25rem;color:#c9a227;text-align:center}
+a:focus-visible,button:focus-visible{outline:2px solid #c9a227;outline-offset:3px}
+</style>
 </head>
 <body class="bg-zinc-950 text-zinc-200 antialiased">
 
-<a href="#" id="float-home" data-open-logo-menu class="fixed top-4 left-4 sm:top-5 sm:left-5 z-[60] flex items-center gap-x-2.5 group rounded-full pr-3 sm:pr-4 bg-zinc-950/80 backdrop-blur-md border border-zinc-800 hover:border-[#c9a227]/50 shadow-lg shadow-black/40 transition-all hover:scale-[1.03]" title="Open site menu" aria-label="Open site menu">
-    <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden border border-zinc-700 group-hover:border-[#c9a227]/70 transition-colors">
-        <img src="xe-logo.jpg" alt="XE" class="w-full h-full object-cover" width="44" height="44">
-    </div>
-    <span class="text-sm font-medium tracking-wide text-zinc-400 group-hover:text-white hidden sm:block transition-colors py-2">XE Solutions</span>
+<a href="#" data-open-logo-menu class="fixed top-4 left-4 sm:top-5 sm:left-5 z-[60] flex items-center gap-x-2.5 group rounded-full pr-3 sm:pr-4 bg-zinc-950/80 backdrop-blur-md border border-zinc-800 hover:border-[#c9a227]/50 shadow-lg transition-all hover:scale-[1.03]" title="Open site menu" aria-label="Open site menu">
+<div class="w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden border border-zinc-700 group-hover:border-[#c9a227]/70"><img src="xe-logo.jpg" alt="XE" class="w-full h-full object-cover" width="44" height="44"></div>
+<span class="text-sm font-medium tracking-wide text-zinc-400 group-hover:text-white hidden sm:block py-2">XE Solutions</span>
 </a>
 
 <div class="title-bg flex flex-col">
-    <div class="relative z-10 flex justify-end items-center px-5 sm:px-8 py-5 enter enter-1">
-        <div class="inline-flex items-center gap-x-2 px-3 py-1.5 bg-zinc-900/70 border border-zinc-800 rounded-full">
-            <div class="w-2 h-2 bg-emerald-400 rounded-full live-dot"></div>
-            <span class="text-[10px] sm:text-xs font-medium tracking-wider text-emerald-400">LICENSED · CA #4279749</span>
-        </div>
-    </div>
-
-    <div class="relative z-10 flex-1 flex flex-col items-center justify-center px-5 sm:px-8 pb-10 pt-4 text-center">
-        <div class="mb-8 sm:mb-10 enter enter-2">
-            <button type="button" id="main-logo-btn" class="w-36 h-36 sm:w-44 sm:h-44 md:w-52 md:h-52 rounded-full border-[8px] sm:border-[10px] border-[#c9a227]/25 p-2 logo-ring mx-auto cursor-pointer transition-transform hover:scale-[1.03]" aria-label="A message of thanks and unity" title="Tap for a message">
-                <div class="w-full h-full rounded-full overflow-hidden border border-[#c9a227]/40">
-                    <img src="xe-logo.jpg" alt="Xavier Enciso" class="w-full h-full object-cover pointer-events-none" width="208" height="208">
-                </div>
-            </button>
-        </div>
-        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl heading-serif tracking-tighter mb-3 enter enter-3">Xavier Enciso</h1>
-        <p class="text-lg sm:text-xl md:text-2xl text-zinc-400 tracking-tight mb-3 enter enter-4">Financial Professional &amp; Community Educator</p>
-        <p class="max-w-md mx-auto text-sm sm:text-base text-zinc-500 mb-10 sm:mb-12 leading-relaxed enter enter-5">Protecting families. Building leaders. Raising financial literacy across the Central Valley — and recruiting nationwide.</p>
-        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-14 sm:mb-16 enter enter-6">
-            <a href="solutions.html" class="px-8 py-3.5 bg-white text-zinc-950 font-semibold rounded-2xl hover:bg-zinc-100 transition-all text-sm sm:text-base">Explore Solutions</a>
-            <a href="join.html" class="px-8 py-3.5 border-2 border-[#c9a227] text-[#c9a227] hover:bg-[#c9a227] hover:text-zinc-950 font-semibold rounded-2xl transition-all text-sm sm:text-base">Join My Team</a>
-        </div>
-        <div class="w-full max-w-3xl grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
-            <a href="about.html" class="hot-link link-enter bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5 sm:p-6 text-left group">
-                <div class="flex items-center justify-between mb-3"><i class="fa-solid fa-user text-[#c9a227] text-lg"></i><i class="fa-solid fa-arrow-right link-arrow text-zinc-600 text-sm"></i></div>
-                <div class="font-semibold text-sm sm:text-base mb-1">About</div><div class="text-xs text-zinc-500">Who I am &amp; credentials</div>
-            </a>
-            <a href="solutions.html" class="hot-link link-enter bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5 sm:p-6 text-left group">
-                <div class="flex items-center justify-between mb-3"><i class="fa-solid fa-shield-halved text-[#c9a227] text-lg"></i><i class="fa-solid fa-arrow-right link-arrow text-zinc-600 text-sm"></i></div>
-                <div class="font-semibold text-sm sm:text-base mb-1">Solutions</div><div class="text-xs text-zinc-500">Protection &amp; education</div>
-            </a>
-            <a href="community.html" class="hot-link link-enter bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5 sm:p-6 text-left group">
-                <div class="flex items-center justify-between mb-3"><i class="fa-solid fa-users text-[#c9a227] text-lg"></i><i class="fa-solid fa-arrow-right link-arrow text-zinc-600 text-sm"></i></div>
-                <div class="font-semibold text-sm sm:text-base mb-1">Community</div><div class="text-xs text-zinc-500">Youth &amp; family impact</div>
-            </a>
-            <a href="join.html" class="hot-link link-enter bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5 sm:p-6 text-left group">
-                <div class="flex items-center justify-between mb-3"><i class="fa-solid fa-rocket text-[#c9a227] text-lg"></i><i class="fa-solid fa-arrow-right link-arrow text-zinc-600 text-sm"></i></div>
-                <div class="font-semibold text-sm sm:text-base mb-1">Join the Team</div><div class="text-xs text-zinc-500">Build your legacy</div>
-            </a>
-            <a href="faq.html" class="hot-link link-enter bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5 sm:p-6 text-left group">
-                <div class="flex items-center justify-between mb-3"><i class="fa-solid fa-circle-question text-[#c9a227] text-lg"></i><i class="fa-solid fa-arrow-right link-arrow text-zinc-600 text-sm"></i></div>
-                <div class="font-semibold text-sm sm:text-base mb-1">FAQ</div><div class="text-xs text-zinc-500">Common questions</div>
-            </a>
-            <a href="contact.html" class="hot-link link-enter bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5 sm:p-6 text-left group">
-                <div class="flex items-center justify-between mb-3"><i class="fa-solid fa-envelope text-[#c9a227] text-lg"></i><i class="fa-solid fa-arrow-right link-arrow text-zinc-600 text-sm"></i></div>
-                <div class="font-semibold text-sm sm:text-base mb-1">Contact</div><div class="text-xs text-zinc-500">Let’s connect</div>
-            </a>
-        </div>
-    </div>
-    <div class="relative z-10 pb-8 text-center">
-        <button type="button" id="explore-btn" class="group inline-flex flex-col items-center gap-1 text-zinc-500 hover:text-[#c9a227] transition-colors cursor-pointer" aria-label="Explore">
-            <span class="scroll-hint text-xs tracking-widest uppercase">Explore</span>
-            <i class="fa-solid fa-chevron-down text-sm scroll-hint"></i>
-        </button>
-    </div>
+<div class="relative z-10 flex justify-end px-5 sm:px-8 py-5 enter enter-1">
+<div class="inline-flex items-center gap-x-2 px-3 py-1.5 bg-zinc-900/70 border border-zinc-800 rounded-full">
+<div class="w-2 h-2 bg-emerald-400 rounded-full live-dot"></div>
+<span class="text-[10px] sm:text-xs font-medium tracking-wider text-emerald-400">LICENSED · CA #4279749</span>
 </div>
-
-<section id="explore-proof" class="bg-zinc-950 border-t border-zinc-800 py-16 sm:py-20">
-    <div class="max-w-5xl mx-auto px-5 sm:px-6">
-        <div class="text-center mb-12 reveal">
-            <div class="uppercase tracking-[2px] text-xs font-semibold text-[#c9a227] mb-3">WHY THIS APPROACH WORKS</div>
-            <h2 class="text-3xl sm:text-4xl md:text-5xl heading-serif tracking-tighter mb-4">Principles, Voices &amp; Facts</h2>
-            <p class="text-zinc-400 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">The ideas behind family protection, term life, and financial education have been taught by leaders who spent decades helping ordinary families build security.</p>
-        </div>
-        <div class="grid md:grid-cols-2 gap-5 sm:gap-6 mb-10">
-            <div class="proof-card reveal bg-zinc-900 border border-zinc-800 rounded-3xl p-6 sm:p-8">
-                <div class="font-semibold mb-1">Art Williams</div>
-                <div class="text-xs text-zinc-500 mb-3">Founder, A.L. Williams</div>
-                <p class="text-zinc-300 text-sm leading-relaxed">“Buy term and invest the difference.” Pure protection at the lowest cost, then put the difference to work building assets.</p>
-            </div>
-            <div class="proof-card reveal bg-zinc-900 border border-zinc-800 rounded-3xl p-6 sm:p-8">
-                <div class="font-semibold mb-1">Suze Orman</div>
-                <div class="text-xs text-zinc-500 mb-3">Personal finance educator</div>
-                <p class="text-zinc-300 text-sm leading-relaxed">For most families, term life is the practical choice — high coverage when income is needed, without draining cash flow. Education first.</p>
-            </div>
-            <div class="proof-card reveal bg-zinc-900 border border-zinc-800 rounded-3xl p-6 sm:p-8">
-                <div class="font-semibold mb-1">Dave Ramsey</div>
-                <div class="text-xs text-zinc-500 mb-3">Personal finance educator</div>
-                <p class="text-zinc-300 text-sm leading-relaxed">Term life for the years your family depends on your income. Clear steps, emergency funds, and progress on solid ground.</p>
-            </div>
-            <div class="proof-card reveal bg-zinc-900 border border-zinc-800 rounded-3xl p-6 sm:p-8">
-                <div class="font-semibold mb-1">John C. Bogle</div>
-                <div class="text-xs text-zinc-500 mb-3">Founder, Vanguard</div>
-                <p class="text-zinc-300 text-sm leading-relaxed">Keep costs low. Invest simply. Stay the course — the practical side of investing the difference.</p>
-            </div>
-            <div class="proof-card reveal bg-zinc-900 border border-zinc-800 rounded-3xl p-6 sm:p-8 md:col-span-2">
-                <div class="font-semibold mb-1">Thomas J. Stanley</div>
-                <div class="text-xs text-zinc-500 mb-3">Author, The Millionaire Next Door</div>
-                <p class="text-zinc-300 text-sm leading-relaxed">Many strong households look ordinary. They live below their means and build assets through discipline — not flash.</p>
-            </div>
-        </div>
-        <div class="reveal bg-zinc-900 border border-zinc-800 rounded-3xl p-6 sm:p-8 text-center">
-            <h3 class="text-xl font-semibold mb-3">How this shows up in my work</h3>
-            <p class="text-zinc-400 text-sm leading-relaxed max-w-2xl mx-auto mb-6">I focus on term life and practical education for Central Valley families, and I recruit people who want to serve. The goal: protect the family, then build from a position of strength.</p>
-            <div class="flex flex-col sm:flex-row gap-3 justify-center">
-                <a href="solutions.html" class="px-6 py-3 bg-white text-zinc-950 font-semibold rounded-2xl text-sm">See Solutions</a>
-                <a href="sources.html" class="px-6 py-3 border border-zinc-600 hover:border-[#c9a227] rounded-2xl text-sm">View Sources</a>
-                <a href="contact.html" class="px-6 py-3 border border-[#c9a227] text-[#c9a227] hover:bg-[#c9a227] hover:text-zinc-950 font-semibold rounded-2xl text-sm">Start a Conversation</a>
-            </div>
-        </div>
-        <p class="mt-8 text-center text-[11px] text-zinc-600 max-w-2xl mx-auto">References are educational and historical. This site does not claim endorsement by any individual or organization. <a href="sources.html" class="text-[#c9a227] hover:underline">Full sources →</a></p>
-    </div>
+</div>
+<div class="relative z-10 flex-1 flex flex-col items-center justify-center px-5 sm:px-8 pb-10 pt-4 text-center">
+<div class="mb-8 sm:mb-10 enter enter-2">
+<button type="button" id="main-logo-btn" class="w-36 h-36 sm:w-44 sm:h-44 md:w-52 md:h-52 rounded-full border-[8px] sm:border-[10px] border-[#c9a227]/25 p-2 logo-ring mx-auto cursor-pointer hover:scale-[1.03] transition-transform" aria-label="Thank you message">
+<div class="w-full h-full rounded-full overflow-hidden border border-[#c9a227]/40"><img src="xe-logo.jpg" alt="Xavier Enciso" class="w-full h-full object-cover pointer-events-none" width="208" height="208"></div>
+</button>
+</div>
+<h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl heading-serif tracking-tighter mb-3 enter enter-3">Xavier Enciso</h1>
+<p class="text-lg sm:text-xl md:text-2xl text-zinc-400 tracking-tight mb-3 enter enter-4">Financial Professional &amp; Community Educator</p>
+<p class="max-w-md mx-auto text-sm sm:text-base text-zinc-500 mb-10 sm:mb-12 leading-relaxed enter enter-5">Protecting families. Building leaders. Raising financial literacy across the Central Valley — and recruiting nationwide.</p>
+<div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-14 sm:mb-16 enter enter-6">
+<a href="solutions.html" class="px-8 py-3.5 bg-white text-zinc-950 font-semibold rounded-2xl hover:bg-zinc-100 text-sm sm:text-base">Explore Solutions</a>
+<a href="join.html" class="px-8 py-3.5 border-2 border-[#c9a227] text-[#c9a227] hover:bg-[#c9a227] hover:text-zinc-950 font-semibold rounded-2xl text-sm sm:text-base">Join My Team</a>
+</div>
+<div class="w-full max-w-3xl grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
+<a href="about.html" class="hot-link link-enter bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5 sm:p-6 text-left group"><div class="flex items-center justify-between mb-3"><i class="fa-solid fa-user text-[#c9a227] text-lg"></i><i class="fa-solid fa-arrow-right link-arrow text-zinc-600 text-sm"></i></div><div class="font-semibold text-sm sm:text-base mb-1">About</div><div class="text-xs text-zinc-500">Who I am &amp; credentials</div></a>
+<a href="solutions.html" class="hot-link link-enter bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5 sm:p-6 text-left group"><div class="flex items-center justify-between mb-3"><i class="fa-solid fa-shield-halved text-[#c9a227] text-lg"></i><i class="fa-solid fa-arrow-right link-arrow text-zinc-600 text-sm"></i></div><div class="font-semibold text-sm sm:text-base mb-1">Solutions</div><div class="text-xs text-zinc-500">Protection &amp; education</div></a>
+<a href="community.html" class="hot-link link-enter bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5 sm:p-6 text-left group"><div class="flex items-center justify-between mb-3"><i class="fa-solid fa-users text-[#c9a227] text-lg"></i><i class="fa-solid fa-arrow-right link-arrow text-zinc-600 text-sm"></i></div><div class="font-semibold text-sm sm:text-base mb-1">Community</div><div class="text-xs text-zinc-500">Youth &amp; family impact</div></a>
+<a href="join.html" class="hot-link link-enter bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5 sm:p-6 text-left group"><div class="flex items-center justify-between mb-3"><i class="fa-solid fa-rocket text-[#c9a227] text-lg"></i><i class="fa-solid fa-arrow-right link-arrow text-zinc-600 text-sm"></i></div><div class="font-semibold text-sm sm:text-base mb-1">Join the Team</div><div class="text-xs text-zinc-500">Build your legacy</div></a>
+<a href="faq.html" class="hot-link link-enter bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5 sm:p-6 text-left group"><div class="flex items-center justify-between mb-3"><i class="fa-solid fa-circle-question text-[#c9a227] text-lg"></i><i class="fa-solid fa-arrow-right link-arrow text-zinc-600 text-sm"></i></div><div class="font-semibold text-sm sm:text-base mb-1">FAQ</div><div class="text-xs text-zinc-500">Common questions</div></a>
+<a href="contact.html" class="hot-link link-enter bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5 sm:p-6 text-left group"><div class="flex items-center justify-between mb-3"><i class="fa-solid fa-envelope text-[#c9a227] text-lg"></i><i class="fa-solid fa-arrow-right link-arrow text-zinc-600 text-sm"></i></div><div class="font-semibold text-sm sm:text-base mb-1">Contact</div><div class="text-xs text-zinc-500">Let’s connect</div></a>
+</div>
+</div>
+<div class="relative z-10 pb-8 text-center">
+<button type="button" id="explore-btn" class="inline-flex flex-col items-center gap-1 text-zinc-500 hover:text-[#c9a227] transition-colors" aria-label="Explore">
+<span class="scroll-hint text-xs tracking-widest uppercase">Explore</span>
+<i class="fa-solid fa-chevron-down text-sm scroll-hint"></i>
+</button>
+</div>
+</div><section id="explore-proof" class="bg-zinc-950 border-t border-zinc-800 py-16 sm:py-20">
+<div class="max-w-5xl mx-auto px-5 sm:px-6">
+<div class="text-center mb-12 reveal">
+<div class="uppercase tracking-[2px] text-xs font-semibold text-[#c9a227] mb-3">WHY THIS APPROACH WORKS</div>
+<h2 class="text-3xl sm:text-4xl md:text-5xl heading-serif tracking-tighter mb-4">Principles, Voices &amp; Facts</h2>
+<p class="text-zinc-400 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">The ideas behind family protection, term life, and financial education have been taught by leaders who spent decades helping ordinary families build security.</p>
+</div>
+<div class="grid md:grid-cols-2 gap-5 sm:gap-6 mb-10">
+<div class="proof-card reveal bg-zinc-900 border border-zinc-800 rounded-3xl p-6 sm:p-8">
+<div class="font-semibold mb-1">Art Williams</div>
+<div class="text-xs text-zinc-500 mb-3">Founder, A.L. Williams</div>
+<p class="text-zinc-300 text-sm leading-relaxed mb-3 italic">“Buy term and invest the difference.”</p>
+<p class="text-xs text-zinc-500 mb-3">Affordable pure protection first — then put the difference to work building assets for middle-income families.</p>
+<a href="sources.html#ref-williams" class="text-xs text-[#c9a227] hover:underline">See source ↗</a>
+</div>
+<div class="proof-card reveal bg-zinc-900 border border-zinc-800 rounded-3xl p-6 sm:p-8">
+<div class="font-semibold mb-1">Suze Orman</div>
+<div class="text-xs text-zinc-500 mb-3">Personal finance educator</div>
+<p class="text-zinc-300 text-sm leading-relaxed mb-3 italic">“With the exception of a few situations… the only kind you need is term.”</p>
+<p class="text-xs text-zinc-500 mb-3">Size coverage so survivors can invest the benefit and live off the interest — not deplete principal.</p>
+<a href="sources.html#ref-orman" class="text-xs text-[#c9a227] hover:underline">See source ↗</a>
+</div>
+<div class="proof-card reveal bg-zinc-900 border border-zinc-800 rounded-3xl p-6 sm:p-8">
+<div class="font-semibold mb-1">Dave Ramsey</div>
+<div class="text-xs text-zinc-500 mb-3">Personal finance educator</div>
+<p class="text-zinc-300 text-sm leading-relaxed mb-3 italic">“Life insurance has one purpose: to replace your income if you die so your dependents can maintain financial stability.”</p>
+<p class="text-xs text-zinc-500 mb-3">Level term — about 10–12× annual income — for the years your family depends on you.</p>
+<a href="sources.html#ref-ramsey" class="text-xs text-[#c9a227] hover:underline">See source ↗</a>
+</div>
+<div class="proof-card reveal bg-zinc-900 border border-zinc-800 rounded-3xl p-6 sm:p-8">
+<div class="font-semibold mb-1">John C. Bogle</div>
+<div class="text-xs text-zinc-500 mb-3">Founder, Vanguard</div>
+<p class="text-zinc-300 text-sm leading-relaxed mb-3 italic">Keep costs low. Invest simply. Stay the course.</p>
+<p class="text-xs text-zinc-500 mb-3">The practical side of investing the difference after your family is protected.</p>
+<a href="sources.html#ref-bogle" class="text-xs text-[#c9a227] hover:underline">See source ↗</a>
+</div>
+<div class="proof-card reveal bg-zinc-900 border border-zinc-800 rounded-3xl p-6 sm:p-8 md:col-span-2">
+<div class="font-semibold mb-1">Thomas J. Stanley</div>
+<div class="text-xs text-zinc-500 mb-3">Author, The Millionaire Next Door</div>
+<p class="text-zinc-300 text-sm leading-relaxed mb-3 italic">Many financially strong households look ordinary — they live below their means and build wealth through discipline.</p>
+<p class="text-xs text-zinc-500 mb-3">Not high income alone. Quiet, consistent planning wins.</p>
+<a href="sources.html#ref-stanley" class="text-xs text-[#c9a227] hover:underline">See source ↗</a>
+</div>
+</div>
+<div class="reveal bg-zinc-900 border border-zinc-800 rounded-3xl p-6 sm:p-8 text-center mb-8">
+<h3 class="text-xl sm:text-2xl font-semibold tracking-tight mb-3">How this shows up in my work</h3>
+<p class="text-zinc-400 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto mb-6">I focus on term life and practical education for Central Valley families, and I recruit people who want to serve. The goal: protect the family, then build from a position of strength.</p>
+<div class="flex flex-col sm:flex-row gap-3 justify-center">
+<a href="solutions.html" class="px-6 py-3 bg-white text-zinc-950 font-semibold rounded-2xl text-sm">See Solutions</a>
+<a href="sources.html" class="px-6 py-3 border border-zinc-600 hover:border-[#c9a227] rounded-2xl text-sm">View Sources</a>
+<a href="contact.html" class="px-6 py-3 border border-[#c9a227] text-[#c9a227] hover:bg-[#c9a227] hover:text-zinc-950 font-semibold rounded-2xl text-sm">Start a Conversation</a>
+</div>
+</div>
+<p class="text-center text-[11px] text-zinc-600 max-w-2xl mx-auto">Quotes and principles above are for educational context. <a href="sources.html" class="text-[#c9a227] hover:underline">Sources with links →</a> No endorsement is claimed.</p>
+</div>
 </section>
 
 <footer class="bg-black border-t border-zinc-800 pt-10 pb-8">
-    <div class="max-w-6xl mx-auto px-5 sm:px-6 text-center">
-        <p class="text-xs text-zinc-500 mb-2">License #4279749 · California Department of Insurance</p>
-        <p class="text-xs text-zinc-600">© 2026 Xavier Enciso. · <a href="sources.html" class="hover:text-[#c9a227]">Sources</a></p>
-    </div>
+<div class="max-w-6xl mx-auto px-5 sm:px-6 text-center">
+<p class="text-xs text-zinc-500 mb-2">License #4279749 · California Department of Insurance</p>
+<p class="text-xs text-zinc-600">© 2026 Xavier Enciso. · <a href="sources.html" class="hover:text-[#c9a227]">Sources</a></p>
+</div>
 </footer>
 
 <div id="thanks-modal" class="hidden fixed inset-0 z-[100] items-center justify-center p-5 bg-black/80 backdrop-blur-sm" role="dialog" aria-modal="true">
-    <div class="relative w-full max-w-md bg-zinc-900 border border-zinc-700 rounded-3xl p-7 sm:p-9 text-center shadow-2xl">
-        <button type="button" id="thanks-close" class="absolute top-4 right-4 w-9 h-9 flex items-center justify-center rounded-full text-zinc-500 hover:text-white hover:bg-zinc-800" aria-label="Close"><i class="fa-solid fa-times"></i></button>
-        <div class="w-16 h-16 mx-auto mb-5 rounded-full overflow-hidden border-2 border-[#c9a227]/40"><img src="xe-logo.jpg" alt="" class="w-full h-full object-cover"></div>
-        <h2 class="text-2xl sm:text-3xl heading-serif tracking-tight mb-3 text-white">Thank you for being here</h2>
-        <p class="text-zinc-300 text-sm sm:text-base leading-relaxed mb-4">We’re stronger together — in unison, with clear focus on the objectives that protect our families and lift our communities.</p>
-        <p class="text-zinc-500 text-xs sm:text-sm leading-relaxed mb-6">One step at a time. One conversation at a time. Moving forward with purpose.</p>
-        <button type="button" id="thanks-dismiss" class="px-7 py-3 bg-[#c9a227] hover:bg-amber-500 text-zinc-950 font-semibold rounded-2xl text-sm">Continue exploring</button>
-    </div>
+<div class="relative w-full max-w-md bg-zinc-900 border border-zinc-700 rounded-3xl p-7 sm:p-9 text-center shadow-2xl">
+<button type="button" id="thanks-close" class="absolute top-4 right-4 w-9 h-9 flex items-center justify-center rounded-full text-zinc-500 hover:text-white hover:bg-zinc-800" aria-label="Close"><i class="fa-solid fa-times"></i></button>
+<div class="w-16 h-16 mx-auto mb-5 rounded-full overflow-hidden border-2 border-[#c9a227]/40"><img src="xe-logo.jpg" alt="" class="w-full h-full object-cover"></div>
+<h2 class="text-2xl sm:text-3xl heading-serif tracking-tight mb-3 text-white">Thank you for being here</h2>
+<p class="text-zinc-300 text-sm sm:text-base leading-relaxed mb-4">We’re stronger together — in unison, with clear focus on the objectives that protect our families and lift our communities.</p>
+<p class="text-zinc-500 text-xs sm:text-sm leading-relaxed mb-6">One step at a time. One conversation at a time. Moving forward with purpose.</p>
+<button type="button" id="thanks-dismiss" class="px-7 py-3 bg-[#c9a227] hover:bg-amber-500 text-zinc-950 font-semibold rounded-2xl text-sm">Continue exploring</button>
+</div>
 </div>
 
 <div id="logo-menu" class="logo-menu-panel" aria-hidden="true">
-    <div class="logo-menu-sheet" role="dialog" aria-label="Site navigation">
-        <div class="flex items-center justify-between mb-6 px-1">
-            <div class="flex items-center gap-x-2.5">
-                <div class="w-9 h-9 rounded-full overflow-hidden border border-zinc-700"><img src="xe-logo.jpg" alt="" class="w-full h-full object-cover"></div>
-                <span class="font-semibold text-sm tracking-wide">Navigate</span>
-            </div>
-            <button type="button" id="logo-menu-close" class="w-9 h-9 flex items-center justify-center rounded-full text-zinc-500 hover:text-white hover:bg-zinc-800" aria-label="Close menu"><i class="fa-solid fa-times"></i></button>
-        </div>
-        <nav class="flex flex-col gap-1 flex-1">
-            <a href="index.html" class="logo-menu-link" data-nav="index"><i class="fa-solid fa-house"></i> Home</a>
-            <a href="about.html" class="logo-menu-link" data-nav="about"><i class="fa-solid fa-user"></i> About</a>
-            <a href="solutions.html" class="logo-menu-link" data-nav="solutions"><i class="fa-solid fa-shield-halved"></i> Solutions</a>
-            <a href="community.html" class="logo-menu-link" data-nav="community"><i class="fa-solid fa-users"></i> Community</a>
-            <a href="join.html" class="logo-menu-link" data-nav="join"><i class="fa-solid fa-rocket"></i> Join the Team</a>
-            <a href="faq.html" class="logo-menu-link" data-nav="faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
-            <a href="contact.html" class="logo-menu-link" data-nav="contact"><i class="fa-solid fa-envelope"></i> Contact</a>
-            <a href="sources.html" class="logo-menu-link" data-nav="sources"><i class="fa-solid fa-book-open"></i> Sources</a>
-        </nav>
-        <div class="pt-4 border-t border-zinc-800 mt-4"><p class="text-[10px] text-zinc-600 px-1">License #4279749 · CA</p></div>
-    </div>
+<div class="logo-menu-sheet" role="dialog" aria-label="Site navigation">
+<div class="flex items-center justify-between mb-6 px-1">
+<div class="flex items-center gap-x-2.5">
+<div class="w-9 h-9 rounded-full overflow-hidden border border-zinc-700"><img src="xe-logo.jpg" alt="" class="w-full h-full object-cover"></div>
+<span class="font-semibold text-sm tracking-wide">Navigate</span>
+</div>
+<button type="button" id="logo-menu-close" class="w-9 h-9 flex items-center justify-center rounded-full text-zinc-500 hover:text-white hover:bg-zinc-800" aria-label="Close menu"><i class="fa-solid fa-times"></i></button>
+</div>
+<nav class="flex flex-col gap-1 flex-1">
+<a href="index.html" class="logo-menu-link" data-nav="index"><i class="fa-solid fa-house"></i> Home</a>
+<a href="about.html" class="logo-menu-link" data-nav="about"><i class="fa-solid fa-user"></i> About</a>
+<a href="solutions.html" class="logo-menu-link" data-nav="solutions"><i class="fa-solid fa-shield-halved"></i> Solutions</a>
+<a href="community.html" class="logo-menu-link" data-nav="community"><i class="fa-solid fa-users"></i> Community</a>
+<a href="join.html" class="logo-menu-link" data-nav="join"><i class="fa-solid fa-rocket"></i> Join the Team</a>
+<a href="faq.html" class="logo-menu-link" data-nav="faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+<a href="contact.html" class="logo-menu-link" data-nav="contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+<a href="sources.html" class="logo-menu-link" data-nav="sources"><i class="fa-solid fa-book-open"></i> Sources</a>
+</nav>
+<div class="pt-4 border-t border-zinc-800 mt-4"><p class="text-[10px] text-zinc-600 px-1">License #4279749 · CA</p></div>
+</div>
 </div>
 
 <script>
-    document.getElementById('explore-btn').addEventListener('click', () => {
-        document.getElementById('explore-proof').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    const thanksModal = document.getElementById('thanks-modal');
-    function openThanks() { thanksModal.classList.remove('hidden'); thanksModal.classList.add('flex'); document.body.style.overflow = 'hidden'; }
-    function closeThanks() { thanksModal.classList.add('hidden'); thanksModal.classList.remove('flex'); document.body.style.overflow = ''; }
-    document.getElementById('main-logo-btn').addEventListener('click', openThanks);
-    document.getElementById('thanks-close').addEventListener('click', closeThanks);
-    document.getElementById('thanks-dismiss').addEventListener('click', closeThanks);
-    thanksModal.addEventListener('click', (e) => { if (e.target === thanksModal) closeThanks(); });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeThanks(); });
-
-    (function () {
-        const panel = document.getElementById('logo-menu');
-        const openBtns = document.querySelectorAll('[data-open-logo-menu]');
-        const closeBtn = document.getElementById('logo-menu-close');
-        function openMenu() { panel.classList.add('open'); panel.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; }
-        function closeMenu() { panel.classList.remove('open'); panel.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; }
-        openBtns.forEach(b => b.addEventListener('click', (e) => { e.preventDefault(); openMenu(); }));
-        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
-        panel.addEventListener('click', (e) => { if (e.target === panel) closeMenu(); });
-        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
-        const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
-        panel.querySelectorAll('[data-nav]').forEach(a => {
-            const key = a.getAttribute('data-nav');
-            if (path === key + '.html' || (key === 'index' && (path === '' || path === 'index.html'))) a.classList.add('active');
-        });
-    })();
+document.getElementById('explore-btn').addEventListener('click',()=>{document.getElementById('explore-proof').scrollIntoView({behavior:'smooth',block:'start'})});
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const thanksModal=document.getElementById('thanks-modal');
+function openThanks(){thanksModal.classList.remove('hidden');thanksModal.classList.add('flex');document.body.style.overflow='hidden'}
+function closeThanks(){thanksModal.classList.add('hidden');thanksModal.classList.remove('flex');document.body.style.overflow=''}
+document.getElementById('main-logo-btn').addEventListener('click',openThanks);
+document.getElementById('thanks-close').addEventListener('click',closeThanks);
+document.getElementById('thanks-dismiss').addEventListener('click',closeThanks);
+thanksModal.addEventListener('click',e=>{if(e.target===thanksModal)closeThanks()});
+(function(){const panel=document.getElementById('logo-menu');const openBtns=document.querySelectorAll('[data-open-logo-menu]');const closeBtn=document.getElementById('logo-menu-close');
+function openMenu(){panel.classList.add('open');panel.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
+function closeMenu(){panel.classList.remove('open');panel.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+openBtns.forEach(b=>b.addEventListener('click',e=>{e.preventDefault();openMenu()}));
+if(closeBtn)closeBtn.addEventListener('click',closeMenu);
+panel.addEventListener('click',e=>{if(e.target===panel)closeMenu()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMenu();closeThanks()}});
+const path=(location.pathname.split('/').pop()||'index.html').toLowerCase();
+panel.querySelectorAll('[data-nav]').forEach(a=>{const key=a.getAttribute('data-nav');if(path===key+'.html'||(key==='index'&&(path===''||path==='index.html')))a.classList.add('active')});
+})();
 </script>
 </body>
 </html>
