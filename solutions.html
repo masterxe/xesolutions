@@ -24,10 +24,17 @@
         .nav-scrolled { background: rgba(9, 9, 11, 0.95) !important; border-bottom-color: #3f3f46 !important; box-shadow: 0 4px 30px rgba(0,0,0,0.4); }
         .request-bar { transform: translateY(120%); transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1); }
         .request-bar.show { transform: translateY(0); }
-        a:focus-visible, button:focus-visible { outline: 2px solid #c9a227; outline-offset: 3px; }
-        @keyframes pageFade { from { opacity: 0; } to { opacity: 1; } }
         .svc-check { width: 22px; height: 22px; border-radius: 6px; border: 2px solid #52525b; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.2s ease; }
         .product-card.selected .svc-check { border-color: #c9a227; background: #c9a227; color: #0a0a0a; }
+        .logo-menu-panel { position: fixed; inset: 0; z-index: 80; background: rgba(0,0,0,0.72); backdrop-filter: blur(6px); opacity: 0; pointer-events: none; transition: opacity 0.25s ease; }
+        .logo-menu-panel.open { opacity: 1; pointer-events: auto; }
+        .logo-menu-sheet { position: absolute; top: 0; left: 0; bottom: 0; width: min(320px, 88vw); background: #09090b; border-right: 1px solid #27272a; transform: translateX(-100%); transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1); display: flex; flex-direction: column; padding: 1.25rem; }
+        .logo-menu-panel.open .logo-menu-sheet { transform: translateX(0); }
+        .logo-menu-link { display: flex; align-items: center; gap: 0.75rem; padding: 0.85rem 1rem; border-radius: 0.75rem; color: #d4d4d8; font-size: 0.95rem; font-weight: 500; transition: background 0.2s, color 0.2s; }
+        .logo-menu-link:hover, .logo-menu-link.active { background: #18181b; color: #fff; }
+        .logo-menu-link i { width: 1.25rem; color: #c9a227; text-align: center; }
+        a:focus-visible, button:focus-visible { outline: 2px solid #c9a227; outline-offset: 3px; }
+        @keyframes pageFade { from { opacity: 0; } to { opacity: 1; } }
     </style>
 </head>
 <body class="bg-zinc-950 text-zinc-200 antialiased pb-28">
@@ -35,7 +42,7 @@
 <nav id="main-nav" class="bg-zinc-900/80 backdrop-blur-lg border-b border-zinc-800 sticky top-0 z-50 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-5 sm:px-6">
         <div class="flex justify-between items-center h-18 sm:h-20">
-            <a href="index.html" class="flex items-center gap-x-3 group">
+            <a href="#" data-open-logo-menu class="flex items-center gap-x-3 group" title="Open site menu" aria-label="Open site menu">
                 <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden border border-zinc-700 group-hover:border-[#c9a227]/60 transition-colors">
                     <img src="xe-logo.jpg" alt="XE Logo" class="w-full h-full object-cover" width="44" height="44">
                 </div>
@@ -50,6 +57,7 @@
                 <a href="community.html" class="text-zinc-300 hover:text-white transition-colors">Community</a>
                 <a href="join.html" class="text-zinc-300 hover:text-white transition-colors">Join the Team</a>
                 <a href="faq.html" class="text-zinc-300 hover:text-white transition-colors">FAQ</a>
+                <a href="sources.html" class="text-zinc-300 hover:text-white transition-colors">Sources</a>
             </div>
             <div class="hidden lg:flex items-center gap-x-3">
                 <a href="contact.html" class="px-5 py-2.5 text-sm font-medium border border-zinc-700 hover:border-zinc-500 rounded-full transition-colors">Contact Me</a>
@@ -67,6 +75,7 @@
             <a href="community.html" class="mobile-nav-link py-2.5 px-3 rounded-lg text-zinc-300 hover:bg-zinc-800">Community</a>
             <a href="join.html" class="mobile-nav-link py-2.5 px-3 rounded-lg text-zinc-300 hover:bg-zinc-800">Join the Team</a>
             <a href="faq.html" class="mobile-nav-link py-2.5 px-3 rounded-lg text-zinc-300 hover:bg-zinc-800">FAQ</a>
+            <a href="sources.html" class="mobile-nav-link py-2.5 px-3 rounded-lg text-zinc-300 hover:bg-zinc-800">Sources</a>
             <div class="pt-4 mt-2 border-t border-zinc-800 flex flex-col gap-y-3">
                 <a href="contact.html" class="py-2.5 text-center border border-zinc-700 rounded-full">Contact Me</a>
                 <a href="join.html" class="py-2.5 text-center bg-[#c9a227] text-zinc-950 font-semibold rounded-full">Join My Team</a>
@@ -123,7 +132,7 @@
                     <div class="w-11 h-11 flex items-center justify-center bg-zinc-900 rounded-xl"><i class="fa-solid fa-piggy-bank text-[#c9a227] text-xl"></i></div>
                     <div class="svc-check"><i class="fa-solid fa-check text-xs opacity-0 selected-icon"></i></div>
                 </div>
-                <h3 class="font-semibold text-lg sm:text-xl tracking-tight mb-2">Retirement Strategies</h3>
+                <h3 class="font-semibold text-lg tracking-tight mb-2">Retirement Strategies</h3>
                 <p class="text-zinc-400 text-sm leading-relaxed">Clear plans to prepare for retirement. Start with protection, then layer savings as your situation allows.</p>
             </div>
             <div class="product-card reveal bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-7" data-service="education" data-label="Financial Education" role="checkbox" aria-checked="false" tabindex="0">
@@ -131,7 +140,7 @@
                     <div class="w-11 h-11 flex items-center justify-center bg-zinc-900 rounded-xl"><i class="fa-solid fa-graduation-cap text-[#c9a227] text-xl"></i></div>
                     <div class="svc-check"><i class="fa-solid fa-check text-xs opacity-0 selected-icon"></i></div>
                 </div>
-                <h3 class="font-semibold text-lg sm:text-xl tracking-tight mb-2">Financial Education</h3>
+                <h3 class="font-semibold text-lg tracking-tight mb-2">Financial Education</h3>
                 <p class="text-zinc-400 text-sm leading-relaxed">One-on-one guidance and workshops that demystify budgeting, debt, credit, insurance, and long-term planning.</p>
             </div>
             <div class="product-card reveal bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-7" data-service="legal" data-label="Legal Protection" role="checkbox" aria-checked="false" tabindex="0">
@@ -139,7 +148,7 @@
                     <div class="w-11 h-11 flex items-center justify-center bg-zinc-900 rounded-xl"><i class="fa-solid fa-scale-balanced text-[#c9a227] text-xl"></i></div>
                     <div class="svc-check"><i class="fa-solid fa-check text-xs opacity-0 selected-icon"></i></div>
                 </div>
-                <h3 class="font-semibold text-lg sm:text-xl tracking-tight mb-2">Legal Protection</h3>
+                <h3 class="font-semibold text-lg tracking-tight mb-2">Legal Protection</h3>
                 <p class="text-zinc-400 text-sm leading-relaxed">Access to attorney services for everyday legal needs — wills, documents, and more — through a prepaid legal program.</p>
             </div>
             <div class="product-card reveal bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-7" data-service="identity" data-label="Identity Theft Defense" role="checkbox" aria-checked="false" tabindex="0">
@@ -147,7 +156,7 @@
                     <div class="w-11 h-11 flex items-center justify-center bg-zinc-900 rounded-xl"><i class="fa-solid fa-user-shield text-[#c9a227] text-xl"></i></div>
                     <div class="svc-check"><i class="fa-solid fa-check text-xs opacity-0 selected-icon"></i></div>
                 </div>
-                <h3 class="font-semibold text-lg sm:text-xl tracking-tight mb-2">Identity Theft Defense</h3>
+                <h3 class="font-semibold text-lg tracking-tight mb-2">Identity Theft Defense</h3>
                 <p class="text-zinc-400 text-sm leading-relaxed">Monitoring, counseling, and restoration support if your identity is compromised.</p>
             </div>
             <div class="product-card reveal bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-7 sm:col-span-2 lg:col-span-1" data-service="auto-home" data-label="Auto & Home Quotes" role="checkbox" aria-checked="false" tabindex="0">
@@ -155,7 +164,7 @@
                     <div class="w-11 h-11 flex items-center justify-center bg-zinc-900 rounded-xl"><i class="fa-solid fa-car text-[#c9a227] text-xl"></i></div>
                     <div class="svc-check"><i class="fa-solid fa-check text-xs opacity-0 selected-icon"></i></div>
                 </div>
-                <h3 class="font-semibold text-lg sm:text-xl tracking-tight mb-2">Auto &amp; Home Quotes</h3>
+                <h3 class="font-semibold text-lg tracking-tight mb-2">Auto &amp; Home Quotes</h3>
                 <p class="text-zinc-400 text-sm leading-relaxed">Competitive quotes from multiple carriers through a referral program.</p>
             </div>
         </div>
@@ -171,7 +180,7 @@
 <footer class="bg-black border-t border-zinc-800 pt-12 pb-8">
     <div class="max-w-6xl mx-auto px-5 sm:px-6 text-center">
         <p class="text-xs text-zinc-500 mb-2">License #4279749 · California Department of Insurance</p>
-        <p class="text-xs text-zinc-600">© 2026 Xavier Enciso. All rights reserved.</p>
+        <p class="text-xs text-zinc-600">© 2026 Xavier Enciso. · <a href="sources.html" class="hover:text-[#c9a227]">Sources</a></p>
     </div>
 </footer>
 
@@ -187,6 +196,29 @@
                 Request selected <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
             </button>
         </div>
+    </div>
+</div>
+
+<div id="logo-menu" class="logo-menu-panel" aria-hidden="true">
+    <div class="logo-menu-sheet" role="dialog" aria-label="Site navigation">
+        <div class="flex items-center justify-between mb-6 px-1">
+            <div class="flex items-center gap-x-2.5">
+                <div class="w-9 h-9 rounded-full overflow-hidden border border-zinc-700"><img src="xe-logo.jpg" alt="" class="w-full h-full object-cover"></div>
+                <span class="font-semibold text-sm tracking-wide">Navigate</span>
+            </div>
+            <button type="button" id="logo-menu-close" class="w-9 h-9 flex items-center justify-center rounded-full text-zinc-500 hover:text-white hover:bg-zinc-800" aria-label="Close menu"><i class="fa-solid fa-times"></i></button>
+        </div>
+        <nav class="flex flex-col gap-1 flex-1">
+            <a href="index.html" class="logo-menu-link" data-nav="index"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="about.html" class="logo-menu-link" data-nav="about"><i class="fa-solid fa-user"></i> About</a>
+            <a href="solutions.html" class="logo-menu-link" data-nav="solutions"><i class="fa-solid fa-shield-halved"></i> Solutions</a>
+            <a href="community.html" class="logo-menu-link" data-nav="community"><i class="fa-solid fa-users"></i> Community</a>
+            <a href="join.html" class="logo-menu-link" data-nav="join"><i class="fa-solid fa-rocket"></i> Join the Team</a>
+            <a href="faq.html" class="logo-menu-link" data-nav="faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+            <a href="contact.html" class="logo-menu-link" data-nav="contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+            <a href="sources.html" class="logo-menu-link" data-nav="sources"><i class="fa-solid fa-book-open"></i> Sources</a>
+        </nav>
+        <div class="pt-4 border-t border-zinc-800 mt-4"><p class="text-[10px] text-zinc-600 px-1">License #4279749 · CA</p></div>
     </div>
 </div>
 
@@ -227,10 +259,7 @@
     const selectedNames = document.getElementById('selected-names');
     const requestBtn = document.getElementById('request-btn');
     const clearBtn = document.getElementById('clear-btn');
-
-    function getSelected() {
-        return [...cards].filter(c => c.classList.contains('selected'));
-    }
+    function getSelected() { return [...cards].filter(c => c.classList.contains('selected')); }
     function updateUI() {
         const selected = getSelected();
         selectedCount.textContent = selected.length;
@@ -244,26 +273,36 @@
             if (icon) icon.style.opacity = on ? '1' : '0';
         });
     }
-    function toggleCard(card) {
-        card.classList.toggle('selected');
-        updateUI();
-    }
+    function toggleCard(card) { card.classList.toggle('selected'); updateUI(); }
     cards.forEach(card => {
         card.addEventListener('click', () => toggleCard(card));
         card.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleCard(card); }
         });
     });
-    clearBtn.addEventListener('click', () => {
-        cards.forEach(c => c.classList.remove('selected'));
-        updateUI();
-    });
+    clearBtn.addEventListener('click', () => { cards.forEach(c => c.classList.remove('selected')); updateUI(); });
     requestBtn.addEventListener('click', () => {
         const selected = getSelected();
         if (!selected.length) return;
-        const ids = selected.map(c => c.dataset.service).join(',');
-        window.location.href = 'contact.html?services=' + encodeURIComponent(ids);
+        window.location.href = 'contact.html?services=' + encodeURIComponent(selected.map(c => c.dataset.service).join(','));
     });
+
+    (function () {
+        const panel = document.getElementById('logo-menu');
+        const openBtns = document.querySelectorAll('[data-open-logo-menu]');
+        const closeBtn = document.getElementById('logo-menu-close');
+        function openMenu() { panel.classList.add('open'); panel.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; }
+        function closeMenu() { panel.classList.remove('open'); panel.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; }
+        openBtns.forEach(b => b.addEventListener('click', (e) => { e.preventDefault(); openMenu(); }));
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+        panel.addEventListener('click', (e) => { if (e.target === panel) closeMenu(); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+        const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+        panel.querySelectorAll('[data-nav]').forEach(a => {
+            const key = a.getAttribute('data-nav');
+            if (path === key + '.html' || (key === 'index' && (path === '' || path === 'index.html'))) a.classList.add('active');
+        });
+    })();
 </script>
 </body>
 </html>
